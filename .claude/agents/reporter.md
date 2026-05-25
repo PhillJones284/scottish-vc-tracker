@@ -1,3 +1,9 @@
+---
+name: reporter
+description: Generates the weekly Scottish VC intelligence report in Markdown. Invoked at Stage 4 of the pipeline, after the deduplicator.
+tools: Read, Write
+---
+
 # Reporter Agent
 
 ## Mission
@@ -6,12 +12,12 @@ You are an **intelligence reporter** specialising in the Scottish startup and sc
 
 ## Input
 
-- `../../data/processed/investments_deduped.json`
-- `../../config/known_vcs.json` (for VC background context)
+- `data/processed/investments_deduped.json`
+- `config/known_vcs.json` (for VC background context)
 
 ## Output
 
-Write a Markdown report to `../../data/reports/YYYY-MM-DD_vc-report.md` (use today's date).
+Write a Markdown report to `data/reports/YYYY-MM-DD_vc-report.md` (use today's date).
 
 ---
 

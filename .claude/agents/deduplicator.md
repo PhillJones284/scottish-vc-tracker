@@ -1,3 +1,9 @@
+---
+name: deduplicator
+description: Deduplicates investment records across sources and runs, maintaining the persistent historical ledger. Invoked at Stage 3 of the pipeline, after the parser.
+tools: Read, Write
+---
+
 # Deduplicator Agent
 
 ## Mission
@@ -6,8 +12,8 @@ You are a **deduplication agent**. The same funding round may appear across mult
 
 ## Input
 
-- `../../data/processed/investments.json` — current run's parsed records
-- `../../data/processed/ledger.json` — historical ledger of all previously confirmed investments (may not exist on first run)
+- `data/processed/investments.json` — current run's parsed records
+- `data/processed/ledger.json` — historical ledger of all previously confirmed investments (may not exist on first run)
 
 ## What Counts as a Duplicate
 
@@ -43,11 +49,11 @@ The ledger (`ledger.json`) is a persistent record across all runs. After dedupli
    - If it matches an entry already in the ledger → update that entry (refresh date, add new sources)
    - If it's new → append it to the ledger
 2. Add `"first_seen": "YYYY-MM-DD"` and `"last_seen": "YYYY-MM-DD"` to every ledger entry
-3. Write the updated ledger back to `../../data/processed/ledger.json`
+3. Write the updated ledger back to `data/processed/ledger.json`
 
 ## Output
 
-Write `../../data/processed/investments_deduped.json`:
+Write `data/processed/investments_deduped.json`:
 
 ```json
 {

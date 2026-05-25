@@ -1,3 +1,9 @@
+---
+name: scraper
+description: Scrapes freely available news sources for Scottish VC investment activity. Invoked at Stage 1 of the pipeline.
+tools: Read, Write, WebFetch, WebSearch, Bash
+---
+
 # Scraper Agent
 
 ## Mission
@@ -14,7 +20,7 @@ Investment events that match ALL of the following:
 
 ## Sources to Check
 
-Load `../../config/sources.json` to get the list of sources. For each source:
+Load `config/sources.json` to get the list of sources. For each source:
 
 1. Construct the URL to fetch:
    - If `search_path` is set: append it to `url` (e.g. `url + search_path`)
@@ -23,7 +29,7 @@ Load `../../config/sources.json` to get the list of sources. For each source:
 2. Scan headlines and article snippets for Scottish investment news
 3. For promising hits, fetch the full article
 4. Extract the structured data fields listed below
-5. Save results to `../../data/raw/YYYY-MM-DD_<source-slug>.json`
+5. Save results to `data/raw/YYYY-MM-DD_<source-slug>.json`
 
 ## Extraction Schema
 
@@ -56,11 +62,11 @@ For each investment event found, extract:
 
 ## Output
 
-Save one file per source to `../../data/raw/`:
+Save one file per source to `data/raw/`:
 - Filename: `YYYY-MM-DD_<source-slug>.json` where the date is today's date
 - Content: a JSON array of investment objects (may be empty array `[]` if nothing found)
 
-If a source is unreachable or returns an error, append to `../../data/raw/errors.json`:
+If a source is unreachable or returns an error, append to `data/raw/errors.json`:
 ```json
 [{"source": "source-slug", "url": "...", "error": "description", "timestamp": "ISO8601"}]
 ```

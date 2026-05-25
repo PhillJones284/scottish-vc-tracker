@@ -25,33 +25,29 @@ A Markdown report containing:
 
 
 ## Running the agent
-If asked to "run the agent", execute the full pipeline in sequence, with a gate check after each stage. Stop and report failure if any gate fails — do not proceed to the next stage.
+If asked to "run the agent", execute the full pipeline in sequence using the Agent tool, with a gate check after each stage. Stop and report failure if any gate fails — do not proceed to the next stage.
 
 ### Stage 1 — Scraper
-```
-cd agents/scraper && claude --print "Run the scraper task as described in CLAUDE.md"
-```
+Invoke the `scraper` sub-agent with the prompt: "Run the scraper task."
+
 **Gate**: At least one `data/raw/YYYY-MM-DD_*.json` file (matching today's date) must exist and contain at least one record (i.e. not an empty array `[]`).
 If the gate fails: stop, tell Phill the scraper produced no records, and suggest checking `data/raw/errors.json` for source failures.
 
 ### Stage 2 — Parser
-```
-cd agents/parser && claude --print "Run the parser task as described in CLAUDE.md"
-```
+Invoke the `parser` sub-agent with the prompt: "Run the parser task."
+
 **Gate**: `data/processed/investments.json` must exist and have `record_count > 0`.
 If the gate fails: stop, tell Phill the parser produced no records, and show the list of raw files that were consumed.
 
 ### Stage 3 — Deduplicator
-```
-cd agents/deduplicator && claude --print "Run the deduplicator task as described in CLAUDE.md"
-```
+Invoke the `deduplicator` sub-agent with the prompt: "Run the deduplicator task."
+
 **Gate**: `data/processed/investments_deduped.json` must exist.
 If the gate fails: stop, tell Phill the deduplicator did not produce output.
 
 ### Stage 4 — Reporter
-```
-cd agents/reporter && claude --print "Run the reporter task as described in CLAUDE.md"
-```
+Invoke the `reporter` sub-agent with the prompt: "Run the reporter task."
+
 **Gate**: A file matching `data/reports/YYYY-MM-DD_vc-report.md` (today's date) must exist.
 If the gate fails: stop, tell Phill the reporter did not produce a report.
 
@@ -64,13 +60,14 @@ The architecture of the project is as follows
 ```
 scottish-vc-tracker/
 │
-├── CLAUDE.md                    ← Orchestrator agent (run this first)
+├── CLAUDE.md                    ← Orchestrator instructions (this file)
 │
-├── agents/
-│   ├── scraper/CLAUDE.md        ← Stage 1: Web scraping
-│   ├── parser/CLAUDE.md         ← Stage 2: Normalisation
-│   ├── deduplicator/CLAUDE.md   ← Stage 3: Deduplication + ledger
-│   └── reporter/CLAUDE.md       ← Stage 4: Report generation
+├── .claude/
+│   └── agents/
+│       ├── scraper.md           ← Stage 1: Web scraping
+│       ├── parser.md            ← Stage 2: Normalisation
+│       ├── deduplicator.md      ← Stage 3: Deduplication + ledger
+│       └── reporter.md          ← Stage 4: Report generation
 │
 ├── config/
 │   ├── sources.json             ← News sources and search queries
