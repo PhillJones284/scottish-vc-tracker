@@ -130,11 +130,11 @@
     },
     {
       "canonical_name": "Old College Capital",
-      "aliases": ["OCC", "Old College"],
+      "aliases": ["OCC", "Old College", "Edinburgh Innovations"],
       "hq": "Edinburgh",
       "stage_focus": ["Pre-Seed", "Seed"],
       "scotland_active": true,
-      "notes": "University of Edinburgh's venture fund"
+      "notes": "University of Edinburgh's venture fund, operating as part of Edinburgh Innovations (the university's commercialisation arm). Focuses on Edinburgh spinouts across deep tech, life sciences, and energy."
     },
     {
       "canonical_name": "Mercia Asset Management",

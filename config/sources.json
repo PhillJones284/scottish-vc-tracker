@@ -159,6 +159,54 @@
       "url": "https://www.prairiefund.com/news",
       "search_path": null,
       "notes": "Check for Scottish deal announcements"
+    },
+    {
+      "slug": "maven-cap-news",
+      "name": "Maven Capital Partners — Latest News",
+      "type": "vc_newsrooms",
+      "url": "https://www.mavencp.com/latest-news",
+      "search_path": null,
+      "notes": "Maven's newsroom covers deal announcements across their funds including Investment Fund for Scotland (IFS Maven Equity Finance). Good source for Scottish Seed/Growth deals."
+    },
+    {
+      "slug": "kelvin-capital-news",
+      "name": "Kelvin Capital — News",
+      "type": "vc_newsrooms",
+      "url": "https://www.kelvincapital.com/news-blog/",
+      "search_path": null,
+      "notes": "Glasgow-based VC with West of Scotland focus. Active deal announcements and portfolio milestones."
+    },
+    {
+      "slug": "epidarex-news",
+      "name": "Epidarex Capital — News",
+      "type": "vc_newsrooms",
+      "url": "https://epidarex.com/news-2/",
+      "search_path": null,
+      "notes": "Edinburgh-based life sciences specialist. Covers funding rounds and portfolio milestones for biotech/medtech companies."
+    },
+    {
+      "slug": "mercia-news",
+      "name": "Mercia Asset Management — News",
+      "type": "vc_newsrooms",
+      "url": "https://www.mercia.co.uk/news/",
+      "search_path": null,
+      "notes": "UK-wide VC with MEIF and other funds active in Scotland. Deal announcements cover Seed through Series B."
+    },
+    {
+      "slug": "parkwalk-news",
+      "name": "Parkwalk — News",
+      "type": "vc_newsrooms",
+      "url": "https://parkwalk.vc/news/",
+      "search_path": null,
+      "notes": "University spinout specialist active across UK ecosystems including Edinburgh and St Andrews. Covers funding rounds and portfolio milestones."
+    },
+    {
+      "slug": "edinburgh-innovations-news",
+      "name": "Edinburgh Innovations — News",
+      "type": "vc_newsrooms",
+      "url": "https://edinburgh-innovations.ed.ac.uk/news",
+      "search_path": null,
+      "notes": "University of Edinburgh's commercialisation arm. Covers spinout funding rounds and investment news via Old College Capital. High relevance for Edinburgh deep tech and life sciences deals."
     }
   ]
 }
