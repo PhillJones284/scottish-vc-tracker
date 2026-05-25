@@ -97,20 +97,20 @@
       "notes": "Covers UK/EU startup funding rounds"
     },
     {
-      "slug": "techstart-news",
-      "name": "Techstart Ventures — News",
+      "slug": "techstart-portfolio",
+      "name": "Techstart Ventures — Portfolio",
       "type": "vc_newsrooms",
-      "url": "https://techstart.vc/news",
+      "url": "https://www.techstart.vc/portfolio",
       "search_path": null,
-      "notes": "Pre-seed/seed investor very active in Scotland"
+      "notes": "Pre-seed/seed investor very active in Scotland. Portfolio page links to press coverage of follow-on rounds — fetch the page and follow coverage links to extract deal details."
     },
     {
-      "slug": "octopus-ventures-news",
-      "name": "Octopus Ventures — News",
+      "slug": "octopus-ventures-blog",
+      "name": "Octopus Ventures — Blog",
       "type": "vc_newsrooms",
-      "url": "https://www.octopusventures.com/news",
+      "url": "https://octopusventures.com/blog/",
       "search_path": null,
-      "notes": "UK-wide VC with some Scottish portfolio companies"
+      "notes": "UK-wide VC with some Scottish portfolio companies. Blog features investment announcement posts explaining why they backed specific companies — scan for Scottish deals."
     },
     {
       "slug": "highlight-capital-news",
@@ -207,6 +207,14 @@
       "url": "https://edinburgh-innovations.ed.ac.uk/news",
       "search_path": null,
       "notes": "University of Edinburgh's commercialisation arm. Covers spinout funding rounds and investment news via Old College Capital. High relevance for Edinburgh deep tech and life sciences deals."
+    },
+    {
+      "slug": "archangels-news",
+      "name": "Archangels — News",
+      "type": "vc_newsrooms",
+      "url": "https://archangelsonline.com/about-us/news/",
+      "search_path": null,
+      "notes": "Scotland's oldest and largest angel syndicate. Consistently active in Edinburgh life sciences, medtech, and software. High-signal source for early-stage Scottish deals."
     }
   ]
 }
