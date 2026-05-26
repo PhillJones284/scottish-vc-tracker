@@ -62,7 +62,12 @@ The architecture of the project is as follows
 ```
 scottish-vc-tracker/
 │
-├── CLAUDE.md                    ← Orchestrator instructions (this file)
+├── CLAUDE.md
+│
+├── .gitignore                   ← Used by git. Do not touch
+├── .python-version              ← pyenv pins Python version
+├── pyproject.toml               ← project + dependencies
+├── .venv/                       ← virtual environment (NOT committed - )
 │
 ├── .claude/
 │   └── agents/
@@ -195,5 +200,8 @@ If the current rate in fx_rates.json is more than 15% different from the mid-mar
 - When proposing a change, explain what you're changing and why
 - If you spot something worth improving that's outside the current task, note it but don't act on it
 - Do not run the agent pipeline unless explicitly asked to
-
+- You do not handle version control. All git functions will be handled manually by humans
+- Python version is controlled via pyenv (.python-version)
+- All local execution uses `python`, never `python3`
+- A virtual environment (.venv) is required for any Python execution
 

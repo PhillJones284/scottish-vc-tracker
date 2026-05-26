@@ -1,172 +1,272 @@
 # Scottish VC Investment Tracker
 
-A multi-agent system built on Claude Code that monitors freely available news sources for venture capital investment activity in Scottish scale-up companies.
+A multi-stage data pipeline that monitors publicly available news sources to track venture capital investment activity in Scottish scale-up companies.
+
+It transforms unstructured reporting into a structured, deduplicated intelligence ledger of VC activity across Scotland.
+
+---
 
 ## Purpose
 
-This tool exists to answer: **Which VC firms are actively investing in Scottish companies, at what stages, in which sectors, and with what cadence?**
+The system tracks and structures venture capital investment activity in Scottish companies to enable longitudinal analysis of funding flows, investor behaviour, and sector trends.
 
-It produces a weekly analyst-quality intelligence report that can inform:
-- Fundraising strategy (who should we approach?)
-- Competitive intelligence (who is funding our competitors?)
-- Ecosystem understanding (what sectors are hot in Scotland right now?)
+It is designed to support:
+
+* Fundraising and investor targeting
+* Competitive intelligence and market mapping
+* Sector-level capital allocation analysis
+* VC firm activity and cadence tracking over time
+
+---
+
+## System Overview
+
+The system is a deterministic pipeline that converts unstructured news into structured investment intelligence.
+
+### Pipeline
+
+News Sources → Scraper → Parser → Deduplicator → Ledger → Reporter → Weekly Report
+
+Each stage performs a single transformation with clearly defined inputs and outputs.
 
 ---
 
 ## Architecture
 
-```
-scottish-vc-tracker/
-│
-├── CLAUDE.md                    ← Orchestrator agent (run this first)
-│
-├── agents/
-│   ├── scraper/CLAUDE.md        ← Stage 1: Web scraping
-│   ├── parser/CLAUDE.md         ← Stage 2: Normalisation
-│   ├── deduplicator/CLAUDE.md   ← Stage 3: Deduplication + ledger
-│   └── reporter/CLAUDE.md       ← Stage 4: Report generation
-│
-├── config/
-│   ├── sources.json             ← News sources and search queries
-│   ├── known_vcs.json           ← VC firm profiles and aliases
-│   ├── sectors.json             ← Sector taxonomy
-│   └── fx_rates.json            ← Currency conversion rates
-│
-└── data/
-    ├── raw/                     ← Scraper output (per-source JSON files)
-    ├── processed/               ← Parser and deduplicator output
-    │   ├── investments.json     ← Normalised records (this run)
-    │   ├── investments_deduped.json
-    │   └── ledger.json          ← PERSISTENT: all-time historical record
-    └── reports/                 ← Final Markdown reports
-```
+The system is composed of four stages:
+
+### 1. Scraper
+
+Responsible for collecting raw mentions of venture capital activity from configured sources.
+
+* Input: `config/sources.json`
+* Output: `data/raw/`
+* Function: extraction of unstructured investment-related content
 
 ---
 
-## How to Run
+### 2. Parser
 
-### Prerequisites
+Transforms raw text into structured investment records.
 
-- [Claude Code](https://code.claude.com) installed. If you haven't already:
-  ```bash
-  curl https://claude.ai/install.sh | bash   # macOS / Linux
-  ```
-  Or via Homebrew: `brew install --cask claude-code`
-- Authenticated with your Anthropic account (Pro, Max, Teams, or API key)
+* Extracts: companies, investors, deal stage, amount, sector, date
+* Resolves: entity aliases and inconsistent naming
+* Output: `data/processed/investments.json`
 
-### Full Pipeline (recommended)
+---
 
-From the root directory:
+### 3. Deduplicator
 
-```bash
-cd scottish-vc-tracker
-claude --print "Run the full pipeline as described in CLAUDE.md"
-```
+Maintains a canonical historical record of all observed investments.
 
-The orchestrator will invoke each subagent in sequence.
+* Matches new records against existing ledger entries
+* Prevents duplicates and resolves near-duplicates
+* Output:
 
-### Run a Single Stage
+  * `data/processed/investments_deduped.json`
+  * `data/processed/ledger.json` (system of record)
 
-You can also run any agent individually:
+---
 
-```bash
-# Just scrape
-cd agents/scraper
-claude --print "Run the scraper task as described in CLAUDE.md"
+### 4. Reporter
 
-# Just generate a report from existing data
-cd agents/reporter
-claude --print "Run the reporter task as described in CLAUDE.md"
-```
+Generates structured analytical outputs for human consumption.
 
-### Scheduled Weekly Run
-
-Add to crontab (runs every Monday at 7am):
-
-```cron
-0 7 * * 1 cd /path/to/scottish-vc-tracker && claude --print "Run the full pipeline as described in CLAUDE.md" >> logs/run-$(date +\%Y-\%m-\%d).log 2>&1
-```
+* Aggregates weekly investment activity
+* Produces sector and geography breakdowns
+* Builds VC firm activity profiles
+* Outputs: `data/reports/YYYY-MM-DD_vc-report.md`
 
 ---
 
 ## Configuration
 
-### Adding New Sources
+The system is fully configuration-driven.
 
-Edit `config/sources.json`. Each source needs:
-- `slug`: unique identifier (used in output filenames)
-- `name`: human-readable name
-- `type`: `news_site | search | database | vc_newsrooms | aggregator`
-- `url`: the base URL
-- `notes`: what kind of deals this source covers well
-
-### Adding Known VCs
-
-Edit `config/known_vcs.json`. Add any VC firm you want the system to recognise and normalise. Include common aliases — the parser will use this to resolve "Octopus" → "Octopus Ventures" etc.
-
-### Updating FX Rates
-
-Edit `config/fx_rates.json`. These are rough conversion rates for GBP normalisation; update quarterly.
+| File                    | Purpose                                       |
+| ----------------------- | --------------------------------------------- |
+| `config/sources.json`   | Defines news sources and query targets        |
+| `config/known_vcs.json` | VC firm identity resolution and alias mapping |
+| `config/sectors.json`   | Sector classification taxonomy                |
+| `config/fx_rates.json`  | Currency normalisation rules                  |
 
 ---
 
-## Output
+## Data Model
 
-### Weekly Report (`data/reports/YYYY-MM-DD_vc-report.md`)
+### Raw Data
 
-A Markdown report containing:
-1. **Executive Summary** — headline numbers and key observations
-2. **Active VCs This Period** — who invested, how much, in what
-3. **Activity by Stage** — where in the funding lifecycle is the action?
-4. **Deal-by-Deal Breakdown** — every confirmed investment with details
-5. **VC Intelligence Profiles** — historical patterns per VC firm
-6. **Sector Heat Map** — which sectors are attracting capital
-7. **Geographic Distribution** — Edinburgh vs Glasgow vs rest of Scotland
-8. **Appendix** — low-confidence records and data notes
+`data/raw/`
 
-### Data Files
-
-| File | Contents |
-|---|---|
-| `data/raw/*.json` | Raw scraped data per source |
-| `data/processed/investments.json` | Normalised records for this run |
-| `data/processed/investments_deduped.json` | Deduplicated records with new/updated flags |
-| `data/processed/ledger.json` | Persistent all-time record — do not delete |
-| `data/reports/YYYY-MM-DD_vc-report.md` | Weekly intelligence report — one file per run |
+Unstructured source material captured per ingestion cycle.
 
 ---
 
-## Limitations & Caveats
+### Processed Data
 
-- **Coverage is limited to publicly reported deals.** Many early-stage investments are never announced.
-- **Amounts are often undisclosed.** Especially at Seed and Pre-Seed stage.
-- **Some sources may be paywalled.** The scraper will note when it can't access content.
-- **This is not financial advice.** It's an intelligence-gathering tool for ecosystem mapping.
-- **VC activity ≠ VC interest.** A VC that hasn't invested in Scotland recently may still be actively evaluating Scottish companies.
+`data/processed/`
 
----
-
-## Extending the System
-
-### Add a New Agent
-
-1. Create `agents/<name>/CLAUDE.md` with a clear mission, input/output spec, and schema
-2. Add the invocation step to the root `CLAUDE.md` orchestrator
-3. Define what the new agent reads and writes in `data/`
-
-### Ideas for Future Agents
-
-- **LinkedIn Monitor**: Track when Scottish founders announce funding on LinkedIn
-- **Companies House Agent**: Parse SH01 filings for Scottish companies to catch undisclosed rounds
-- **VC Job Board Monitor**: Track VC job postings in Scotland as a leading indicator of activity
-- **Sentiment Analyser**: Flag deals where the press coverage is unusually positive/negative
+* `investments.json`: normalised extraction output
+* `investments_deduped.json`: cleaned output for the current run
+* `ledger.json`: append-only historical record of all investments
 
 ---
 
-## Troubleshooting
+### Outputs
 
-**Scraper finds nothing**: Check `data/raw/errors.json`. Sources may have changed their HTML structure or URLs.
+`data/reports/`
 
-**Duplicate ledger entries**: The deduplicator uses fuzzy matching. If two genuinely different companies share a similar name, they may have been incorrectly merged. Check `flagged_for_review` in `investments_deduped.json`.
+Human-readable analytical reports generated per run.
 
-**Report is sparse**: If the report has few deals, it may be a quiet period — or the sources may not have been updated. Check the raw files for timestamps.
+---
+
+## Setup
+
+### Requirements
+
+* Python 3.14+ (recommended via pyenv)
+* Claude Code CLI authenticated environment
+
+Install Claude Code:
+
+```bash
+brew install --cask claude-code
+```
+
+---
+
+### Installation
+
+```bash
+git clone <repository-url>
+cd scottish-vc-tracker
+
+pyenv install 3.14.5
+pyenv local 3.14.5
+
+python -m venv .venv
+source .venv/bin/activate
+
+pip install -e .
+```
+
+---
+
+## Execution
+
+### Full pipeline
+
+```bash
+claude --print "Run the full VC tracking pipeline as defined in CLAUDE.md"
+```
+
+### Single stage execution
+
+```bash
+cd agents/scraper
+claude --print "Run scraper as defined in CLAUDE.md"
+```
+
+Each stage can be executed independently via its agent definition.
+
+---
+
+## Outputs
+
+Each run produces:
+
+### Weekly report
+
+A structured Markdown report containing:
+
+* Total investment activity summary
+* Active VC firms in the period
+* Sector-level capital distribution
+* Geographic breakdown across Scotland
+* Deal-level structured listings
+* Historical comparisons of VC activity
+
+### Data artifacts
+
+| File                                      | Description                  |
+| ----------------------------------------- | ---------------------------- |
+| `data/raw/*`                              | Raw extracted source data    |
+| `data/processed/investments.json`         | Normalised dataset           |
+| `data/processed/investments_deduped.json` | Deduplicated dataset         |
+| `data/processed/ledger.json`              | Persistent historical record |
+| `data/reports/*`                          | Generated analytical reports |
+
+---
+
+## Limitations
+
+* Only publicly reported deals are captured
+* Deal values are often undisclosed or estimated
+* Coverage depends on source availability and access constraints
+* The system reflects reported activity, not private deal flow
+* Outputs are for analysis only and are not financial advice
+
+---
+
+## Extensibility
+
+The pipeline is designed for incremental extension through additional agents or data sources.
+
+Possible extensions include:
+
+* Alternative data sources (e.g. Companies House filings)
+* Founder and sentiment analysis from public discourse
+* VC hiring and recruitment signal tracking
+* Early signal detection models for investment activity
+
+---
+
+## Design Principles
+
+* Deterministic transformation of inputs into structured outputs
+* Append-only ledger as the system of record
+* Clear separation between raw, processed, and output layers
+* Configuration-driven extraction and classification
+* Modular pipeline stages with single responsibilities
+
+## Operational Notes
+
+### Data completeness
+
+This system only processes publicly available information. Coverage gaps are expected due to:
+
+- Paywalled or inaccessible sources
+- Incomplete or delayed reporting of investment events
+- Variability in source structure and formatting
+
+---
+
+### Scraper failures
+
+If a source returns no data:
+
+- Check whether the source HTML structure has changed
+- Inspect `data/raw/` for partial outputs or error markers
+- Validate `config/sources.json` endpoints
+
+---
+
+### Deduplication conflicts
+
+The deduplication layer relies on fuzzy matching. In rare cases:
+
+- Distinct companies with similar names may be merged incorrectly
+- The same deal reported with inconsistent metadata may be split
+
+These cases are surfaced in `investments_deduped.json` for review.
+
+---
+
+### Report sparsity
+
+Low activity in reports may indicate either:
+
+- A genuinely quiet funding period
+- Source degradation or ingestion failure
+
+Always validate against `data/raw/` before interpreting output quality.
