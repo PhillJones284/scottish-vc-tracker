@@ -76,10 +76,10 @@ scottish-vc-tracker/
 │
 ├── .claude/
 │   └── agents/
-│       ├── scraper.md           ← Stage 1: Web scraping
-│       ├── parser.md            ← Stage 2: Normalisation
-│       ├── deduplicator.md      ← Stage 3: Deduplication + ledger
-│       └── reporter.md          ← Stage 4: Report generation
+│       ├── scraper.md           ← Stage 1: Claude agent prompt
+│       ├── parser.md            ← Stage 2: Reference spec only (implemented in pipeline/parser.py)
+│       ├── deduplicator.md      ← Stage 3: Reference spec only (implemented in pipeline/deduplicator.py)
+│       └── reporter.md          ← Stage 4: Claude agent prompt
 │
 ├── pipeline/
 │   ├── __init__.py

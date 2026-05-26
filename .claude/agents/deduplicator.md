@@ -1,14 +1,13 @@
 ---
 name: deduplicator
-description: Deduplicates investment records across sources and runs, maintaining the persistent historical ledger. Invoked at Stage 3 of the pipeline, after the parser.
-tools: Read, Write
+description: Reference documentation for Stage 3 of the pipeline. Stage 3 is implemented as pipeline/deduplicator.py — this file describes the spec that the Python script implements.
 ---
 
-# Deduplicator Agent
+# Deduplicator — Stage 3 Reference
 
-## Mission
+## Purpose
 
-You are a **deduplication agent**. The same funding round may appear across multiple sources, or may have been picked up in previous weekly runs. Your job is to merge duplicate records into single canonical entries and maintain a running historical ledger.
+Stage 3 merges duplicate records into single canonical entries and maintains a running historical ledger. The same funding round may appear across multiple sources or weekly runs. Implemented in `pipeline/deduplicator.py`; run with `python pipeline/deduplicator.py [--date YYYY-MM-DD]`.
 
 ## Input
 

@@ -14,7 +14,7 @@
     },
     {
       "canonical": "Energy & Cleantech",
-      "aliases": ["cleantech", "clean technology", "renewable energy", "energy storage", "net zero", "sustainability tech", "offshore tech", "hydrogen"]
+      "aliases": ["cleantech", "clean technology", "renewable energy", "energy storage", "net zero", "sustainability tech", "offshore tech", "hydrogen", "climate tech", "nature tech", "nature risk", "ESG tech"]
     },
     {
       "canonical": "Deep Tech",
@@ -26,7 +26,7 @@
     },
     {
       "canonical": "SaaS & Enterprise Software",
-      "aliases": ["SaaS", "software as a service", "B2B software", "enterprise software", "cloud software", "HR tech", "edtech", "legaltech"]
+      "aliases": ["SaaS", "software as a service", "B2B software", "enterprise software", "cloud software", "HR tech", "edtech", "legaltech", "govtech", "government technology", "civic tech"]
     },
     {
       "canonical": "Space & Defence",
@@ -42,7 +42,7 @@
     },
     {
       "canonical": "Mobility & Transport",
-      "aliases": ["mobility tech", "transport tech", "logistics tech", "autonomous vehicles", "EV", "electric vehicles"]
+      "aliases": ["mobility tech", "transport tech", "logistics tech", "autonomous vehicles", "EV", "electric vehicles", "infrastructure tech", "smart infrastructure"]
     },
     {
       "canonical": "Consumer & Retail",

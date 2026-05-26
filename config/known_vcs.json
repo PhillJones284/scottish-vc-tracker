@@ -97,6 +97,94 @@
       "notes": "Quasi-public, co-invests with VCs"
     },
     {
+      "canonical_name": "Zero Carbon Capital",
+      "aliases": [],
+      "hq": "United Kingdom",
+      "stage_focus": ["Seed"],
+      "scotland_active": true,
+      "notes": "UK-based climate/cleantech VC. Co-invested in Exergy3 £10m seed round (Edinburgh, April 2026)."
+    },
+    {
+      "canonical_name": "Kibo Invest",
+      "aliases": ["Kibo"],
+      "hq": "Singapore",
+      "stage_focus": ["Seed"],
+      "scotland_active": true,
+      "notes": "Singapore-based private investment office. Impact/ESG lean — tagline 'Investing with purpose'. Co-invested in Exergy3 £10m seed round (Edinburgh, April 2026) alongside Axeleo Capital and Bayern Kapital."
+    },
+    {
+      "canonical_name": "British Business Investments",
+      "aliases": ["BBI", "British Business Bank Investments"],
+      "hq": "Sheffield",
+      "stage_focus": ["Seed", "Series A", "Growth"],
+      "scotland_active": true,
+      "notes": "Commercial subsidiary of the British Business Bank. Makes direct and fund investments to support UK smaller businesses. Co-invested in BIOCAPTIVA £1.58m seed round (Edinburgh, March 2026) alongside Archangels."
+    },
+    {
+      "canonical_name": "GU Holdings",
+      "aliases": ["GU Holdings Ltd", "University of Glasgow Ventures"],
+      "hq": "Glasgow",
+      "stage_focus": ["Pre-Seed", "Seed"],
+      "scotland_active": true,
+      "notes": "University of Glasgow's investment arm. Backs Glasgow spinouts at pre-seed and seed stage. Co-invested in Entourage AI $5m pre-seed (March 2026)."
+    },
+    {
+      "canonical_name": "Conduit Connect",
+      "aliases": ["The Conduit Connect", "Conduit EIS Impact Fund"],
+      "hq": "London",
+      "stage_focus": ["Pre-Seed", "Seed", "Series A"],
+      "scotland_active": true,
+      "notes": "Female-founded London impact VC, FCA-regulated. Runs the Conduit EIS Impact Fund (est. 2021). Focus on sustainable industry, integrated health, and financial resilience. UK-only. Connected to the Conduit Club (4,000+ member network). Invested in Bioliberty £10.5m Series A (March 2026)."
+    },
+    {
+      "canonical_name": "Hanna Capital SEZC",
+      "aliases": ["Hanna Capital"],
+      "hq": "London",
+      "stage_focus": ["Series A"],
+      "scotland_active": true,
+      "notes": "London-based fund (Cayman Islands structure). Existing investor in Bioliberty £10.5m Series A (March 2026). Very limited public profile — likely a family office or single-LP vehicle."
+    },
+    {
+      "canonical_name": "Green Angel Ventures",
+      "aliases": ["Green Angel Syndicate"],
+      "hq": "London",
+      "stage_focus": ["Pre-Seed", "Seed"],
+      "scotland_active": true,
+      "notes": "London-based angel syndicate focused on green/climate investments. Co-led Carbogenics $3m seed round (Edinburgh, January 2026). Backs early-stage cleantech, carbon, and energy transition companies across the UK."
+    },
+    {
+      "canonical_name": "Dangerous Ventures",
+      "aliases": [],
+      "hq": "United States",
+      "stage_focus": ["Seed"],
+      "scotland_active": true,
+      "notes": "US-based climate/cleantech VC. Co-led Carbogenics $3m seed round (Edinburgh, January 2026). Focus on carbon removal and nature-based solutions."
+    },
+    {
+      "canonical_name": "Provision",
+      "aliases": [],
+      "hq": "United Kingdom",
+      "stage_focus": ["Pre-Seed"],
+      "scotland_active": true,
+      "notes": "Led Entourage AI $5m pre-seed (Glasgow, March 2026). Likely UK-based but maintains a very low public profile — no website or other deals found. Healthtech/longevity focus inferred."
+    },
+    {
+      "canonical_name": "Thairm Bio",
+      "aliases": ["Thairm"],
+      "hq": "Edinburgh",
+      "stage_focus": ["Growth"],
+      "scotland_active": true,
+      "notes": "Biopharmaceutical-focused investor. Led EnteroBiotix £19m growth round (April 2026). Very limited public profile — may be a single-LP vehicle or family office."
+    },
+    {
+      "canonical_name": "Scottish National Investment Bank",
+      "aliases": ["SNIB", "The Scottish National Investment Bank"],
+      "hq": "Edinburgh",
+      "stage_focus": ["Series A", "Growth"],
+      "scotland_active": true,
+      "notes": "Scotland's government-backed development bank, established 2020 with a £2bn mandate. Co-invests alongside private capital at Series A and above. Broad sector mandate — net zero, place, wellbeing."
+    },
+    {
       "canonical_name": "BGF",
       "aliases": ["Business Growth Fund"],
       "hq": "London",

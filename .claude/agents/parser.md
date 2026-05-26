@@ -1,14 +1,13 @@
 ---
 name: parser
-description: Normalises raw scraped investment data into a clean structured dataset. Invoked at Stage 2 of the pipeline, after the scraper.
-tools: Read, Write
+description: Reference documentation for Stage 2 of the pipeline. Stage 2 is implemented as pipeline/parser.py — this file describes the spec that the Python script implements.
 ---
 
-# Parser Agent
+# Parser — Stage 2 Reference
 
-## Mission
+## Purpose
 
-You are a **data normalisation agent**. You take the raw JSON files produced by the scraper and produce a single, clean, normalised dataset of Scottish VC investment events.
+Stage 2 takes the raw JSON files produced by the scraper and produces a single, clean, normalised dataset of Scottish VC investment events. Implemented in `pipeline/parser.py`; run with `python pipeline/parser.py [--date YYYY-MM-DD]`.
 
 ## Input
 

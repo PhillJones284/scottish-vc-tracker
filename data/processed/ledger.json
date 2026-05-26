@@ -7,7 +7,7 @@
     "amount_gbp_millions": 10.0,
     "investors": [
       "Axeleo Capital",
-      "Bayern Capital",
+      "Bayern Kapital",
       "Kibo Invest",
       "Scottish Enterprise Investment Fund",
       "Zero Carbon Capital",
@@ -16,23 +16,24 @@
     "lead_investor": "Axeleo Capital",
     "announcement_date": "2026-04-21",
     "source_urls": [
-      "https://edinburgh-innovations.ed.ac.uk/news/spinout-exergy3-raises-10m-to-decarbonise-industrial-heat"
+      "https://edinburgh-innovations.ed.ac.uk/news/spinout-exergy3-raises-10m-to-decarbonise-industrial-heat",
+      "https://www.scottishfinancialnews.com/articles/edinburgh-spinout-secures-ps10m-to-solve-two-energy-crises-at-once"
     ],
     "confidence": "high",
     "data_quality_score": 100,
-    "source_count": 1,
+    "source_count": 2,
     "first_seen": "2026-05-25",
-    "last_seen": "2026-05-26",
+    "last_seen": "--date",
     "sector_normalised": true,
     "amount_original": "\u00a310m",
     "currency_original": "GBP",
-    "source_url": "https://edinburgh-innovations.ed.ac.uk/news/spinout-exergy3-raises-10m-to-decarbonise-industrial-heat",
-    "source_name": "Edinburgh Innovations \u2014 News",
-    "headline": "Spinout Exergy3 raises \u00a310m to decarbonise industrial heat",
-    "summary": "Exergy3, a University of Edinburgh spinout, raised \u00a310m in a seed round led by Axeleo Capital to commercialise its ultra-high-temperature thermal energy storage system. The technology converts surplus renewable electricity into industrial-grade heat up to 1,200\u00b0C, addressing both wasted renewable generation and the need for decarbonised industrial processes. The company piloted its system at Annandale Distillery, enabling one of the world's first low-carbon whisky productions.",
+    "source_url": "https://www.scottishfinancialnews.com/articles/edinburgh-spinout-secures-ps10m-to-solve-two-energy-crises-at-once",
+    "source_name": "Scottish Financial News",
+    "headline": "Edinburgh spinout secures \u00a310m to solve two energy crises at once",
+    "summary": "Exergy3, a University of Edinburgh spinout developing ultra-high temperature thermal energy storage, has raised \u00a310m in seed funding led by Axeleo Capital. The company converts surplus renewable electricity into high-temperature heat for industrial use. Funds will be used to scale manufacturing, double headcount, and open a Munich office.",
     "issues": [],
-    "raw_snippet": "Exergy3, a University of Edinburgh spinout founded on technology invented by Dr Adam Robinson, secured \u00a310m in seed funding led by Axeleo Capital's Article 9 Green Tech Industry I fund. Other investors include Bayern Capital, Kibo Invest, Scottish Enterprise, Zero Carbon Capital, and Old College Capital. The technology converts surplus renewable electricity into industrial heat and was piloted at Annandale Distillery. Announced 21 April 2026.",
-    "merge_confidence": null,
+    "raw_snippet": "Exergy3 has raised \u00a310 million in seed funding to scale its proprietary technology addressing three of Europe's most pressing challenges: industrial decarbonisation, grid balancing and energy security. Lead investor Guillaume Sarlat stated: 'we at AXC Greentech Industry are proud to lead this \u00a310m seed round in support of their commercial rollout.'",
+    "merge_confidence": "definite",
     "duplicate_of": null,
     "company_sectors": [
       "Energy & Cleantech"
@@ -56,7 +57,7 @@
     "data_quality_score": 90,
     "source_count": 1,
     "first_seen": "2026-05-25",
-    "last_seen": "2026-05-25",
+    "last_seen": "--date",
     "sector_normalised": false,
     "amount_original": "\u00a31.25m",
     "currency_original": "GBP",
@@ -95,7 +96,7 @@
     "data_quality_score": 95,
     "source_count": 1,
     "first_seen": "2026-05-25",
-    "last_seen": "2026-05-25",
+    "last_seen": "--date",
     "sector_normalised": true,
     "amount_original": "$3m",
     "currency_original": "USD",
@@ -135,7 +136,7 @@
     "source_count": 2,
     "merge_confidence": "definite",
     "first_seen": "2026-05-25",
-    "last_seen": "2026-05-25",
+    "last_seen": "--date",
     "sector_normalised": true,
     "amount_original": "\u00a32.5m",
     "currency_original": "GBP",
@@ -151,10 +152,10 @@
     ]
   },
   {
-    "id": "biocaptiva_unknown_2026-03-09",
+    "id": "biocaptiva_seed_2026-03-09",
     "company_name": "Biocaptiva",
     "company_location": "Edinburgh",
-    "round_type": "Unknown",
+    "round_type": "Seed",
     "amount_gbp_millions": 1.58,
     "investors": [
       "Archangels",
@@ -166,23 +167,24 @@
     "lead_investor": "Archangels",
     "announcement_date": "2026-03-09",
     "source_urls": [
-      "https://archangelsonline.com/biocaptiva-secures-1-58m-to-transform-how-blood-samples-are-prepared-for-liquid-biopsy/"
+      "https://archangelsonline.com/biocaptiva-secures-1-58m-to-transform-how-blood-samples-are-prepared-for-liquid-biopsy/",
+      "https://tech.eu/2026/03/09/university-of-edinburgh-spin-out-biocaptiva-raises-ps158m-and-launches-liquid-biopsy-technology-in-the-us/"
     ],
     "confidence": "high",
-    "data_quality_score": 85,
-    "source_count": 1,
+    "data_quality_score": 95,
+    "source_count": 2,
     "first_seen": "2026-05-25",
-    "last_seen": "2026-05-26",
+    "last_seen": "--date",
     "sector_normalised": true,
     "amount_original": "\u00a31.58m",
     "currency_original": "GBP",
-    "source_url": "https://archangelsonline.com/biocaptiva-secures-1-58m-to-transform-how-blood-samples-are-prepared-for-liquid-biopsy/",
-    "source_name": "Archangels \u2014 News",
-    "headline": "BIOCAPTIVA secures \u00a31.58M to transform how blood samples are prepared for liquid biopsy",
-    "summary": "BIOCAPTIVA, a University of Edinburgh spinout based at the Easter Bush Campus, raised \u00a31.58m led by Archangels to advance its magnetic bead platform for liquid biopsy cancer testing. The patented msX technology extracts cell-free DNA from whole blood without centrifuges, enabling faster processing and higher-quality results. Funds will support US market entry and R&D expansion.",
+    "source_url": "https://tech.eu/2026/03/09/university-of-edinburgh-spin-out-biocaptiva-raises-ps158m-and-launches-liquid-biopsy-technology-in-the-us/",
+    "source_name": "Tech.eu",
+    "headline": "University of Edinburgh biotech spin-out BIOCAPTIVA raises \u00a31.58M",
+    "summary": "BIOCAPTIVA, a University of Edinburgh spinout, raised \u00a31.58m led by Archangels to scale its novel magnetic bead technology for liquid biopsy cancer testing. The company's msX platform extracts DNA directly from whole blood without centrifuges, making cancer diagnostics faster and more accessible. The raise coincides with the launch of its first product in the US market.",
     "issues": [],
-    "raw_snippet": "BIOCAPTIVA secured \u00a31.58m in funding led by Archangels, with participation from Old College Capital, BBI, Scottish Enterprise, and new investor EverQuest Capital Partners. The company's msX technology extracts cell-free DNA directly from whole blood without centrifuges, enabling larger samples, faster extraction, simpler processing, and fully automatable capabilities. CEO Jeremy Wheeler said the innovation 'has the potential to revolutionise how samples are collected' for liquid biopsy cancer research.",
-    "merge_confidence": null,
+    "raw_snippet": "University of Edinburgh spin-out BIOCAPTIVA has raised \u00a31.58 million in a new funding round and launched its first product in the US. The raise was led by existing investor Archangels, with support from Old College Capital, BBI, Scottish Enterprise, and new investor EverQuest Capital Partners. BIOCAPTIVA's novel magnetic bead technology is designed to solve one of liquid biopsy's biggest bottlenecks: preparing blood samples for cancer research and diagnostics.",
+    "merge_confidence": "probable",
     "duplicate_of": null,
     "company_sectors": [
       "Life Sciences"
@@ -196,38 +198,39 @@
     "amount_gbp_millions": 0.2,
     "investors": [
       "Gareth Williams (Skyscanner co-founder)",
-      "Anna Lagerqvist Christopherson (Boda Bars)",
-      "unnamed HNW investors"
+      "Anna Lagerqvist Christopherson"
     ],
     "lead_investor": null,
     "announcement_date": "2026-03-09",
     "source_urls": [
-      "https://dailybusinessgroup.co.uk/2026/03/gibson-raises-200k-to-expand-swurf-platform/"
+      "https://dailybusinessgroup.co.uk/2026/03/gibson-raises-200k-to-expand-swurf-platform/",
+      "https://www.scottishfinancialnews.com/articles/funding-round-worth-ps200k-to-help-scottish-startup-make-edinburgh-most-flexible-working-capital"
     ],
     "confidence": "medium",
-    "data_quality_score": 85,
-    "source_count": 1,
+    "data_quality_score": 100,
+    "source_count": 2,
     "first_seen": "2026-05-25",
-    "last_seen": "2026-05-26",
-    "sector_normalised": false,
+    "last_seen": "--date",
+    "sector_normalised": true,
     "amount_original": "\u00a3200k",
     "currency_original": "GBP",
-    "source_url": "https://dailybusinessgroup.co.uk/2026/03/gibson-raises-200k-to-expand-swurf-platform/",
-    "source_name": "DuckDuckGo \u2014 Scottish VC search (via Daily Business)",
-    "headline": "SWURF raises \u00a3200k to expand platform",
-    "summary": "Edinburgh-based SWURF, a remote-working platform connecting workers to on-demand private meeting pods, raised \u00a3200k in March 2026 from existing angel backers including Skyscanner co-founder Gareth Williams, alongside new unnamed high-net-worth investors. The funding will accelerate rollout of SWURF Pods across Edinburgh with the goal of making Edinburgh the world's most flexible working-friendly city.",
+    "source_url": "https://www.scottishfinancialnews.com/articles/funding-round-worth-ps200k-to-help-scottish-startup-make-edinburgh-most-flexible-working-capital",
+    "source_name": "Scottish Financial News",
+    "headline": "Funding round worth \u00a3200k to help Scottish startup make Edinburgh most flexible working capital",
+    "summary": "Edinburgh-based remote working platform SWURF raised \u00a3200k from named angel investors including Gareth Williams (Skyscanner co-founder) and hospitality entrepreneur Anna Lagerqvist Christopherson. The investment will fund rollout of SWURF Pods \u2014 private on-demand meeting spaces \u2014 across Edinburgh. This follows a six-figure raise in 2025.",
     "issues": [],
-    "raw_snippet": "SWURF secured \u00a3200,000 of investment on March 9, 2026, to accelerate expansion. Existing backers include Gareth Williams (Skyscanner co-founder) and Anna Lagerqvist Christopherson (owner of Boda BV, Green Room and Victoria Bar). New investors are unnamed high-net-worth individuals. Platform currently lists over 450 venues and serves approximately 14,000 users. Board chaired by Alison Grieve (G-Hold founder).",
-    "merge_confidence": null,
+    "raw_snippet": "Edinburgh-based remote working platform SWURF has announced a new \u00a3200,000 funding round. The investment will accelerate SWURF's expansion, with the goal of turning Edinburgh into the world's most flexible working friendly city. Existing backers include Gareth Williams, co-founder of Skyscanner, and hospitality entrepreneur Anna Lagerqvist Christopherson.",
+    "merge_confidence": "definite",
     "duplicate_of": null,
     "company_sectors": [
+      "Property & Construction Tech",
       "Worktech / Flexible workspace platform"
     ]
   },
   {
     "id": "nami-surgical_growth_2026-01-29",
     "company_name": "Nami Surgical",
-    "company_location": "Unknown",
+    "company_location": "Glasgow",
     "round_type": "Growth",
     "amount_gbp_millions": 1.9,
     "investors": [
@@ -244,7 +247,7 @@
     "data_quality_score": 90,
     "source_count": 1,
     "first_seen": "2026-05-25",
-    "last_seen": "2026-05-25",
+    "last_seen": "--date",
     "sector_normalised": true,
     "amount_original": "\u00a31.9m",
     "currency_original": "GBP",
@@ -260,7 +263,8 @@
     "merge_confidence": null,
     "duplicate_of": null,
     "company_sectors": [
-      "Healthtech"
+      "Healthtech",
+      "SaaS & Enterprise Software"
     ]
   },
   {
@@ -271,30 +275,29 @@
     "amount_gbp_millions": 2.6,
     "investors": [
       "Maven Capital Partners",
-      "Maven Income and Growth VCTs",
-      "Investment Fund for Scotland (IFS Maven Equity Finance)",
-      "British Business Bank"
+      "Investment Fund for Scotland (British Business Bank)"
     ],
     "lead_investor": "Maven Capital Partners",
     "announcement_date": "2026-05-11",
     "source_urls": [
+      "https://scottishbusinessnews.net/maven-backs-esk-with-2-6m-investment-to-support-international-growth/",
       "https://www.mavencp.com/latest-news/maven-leads-2.6-million-funding-round-in-esk"
     ],
     "confidence": "high",
     "data_quality_score": 100,
-    "source_count": 1,
+    "source_count": 2,
     "first_seen": "2026-05-25",
-    "last_seen": "2026-05-26",
+    "last_seen": "--date",
     "sector_normalised": true,
     "amount_original": "\u00a32.6m",
     "currency_original": "GBP",
-    "source_url": "https://www.mavencp.com/latest-news/maven-leads-2.6-million-funding-round-in-esk",
-    "source_name": "Maven Capital Partners \u2014 Latest News",
-    "headline": "Maven leads \u00a32.6 million funding round in Esk",
-    "summary": "Edinburgh-based Esk, which delivers high-end live experiences for blue-chip brands including Netflix, Paramount, and BAFTA, secured \u00a32.6m from Maven Capital Partners via its VCTs and the Investment Fund for Scotland. The funding will support business development, marketing, IP portfolio growth, and development of the company's proprietary hardware technology. Esk has completed over 550 shows globally.",
+    "source_url": "https://scottishbusinessnews.net/maven-backs-esk-with-2-6m-investment-to-support-international-growth/",
+    "source_name": "Scottish Business News",
+    "headline": "Maven backs Esk with \u00a32.6m investment to support international growth",
+    "summary": "Edinburgh-based live entertainment technology company Esk has secured \u00a32.6m from Maven Capital Partners and the Investment Fund for Scotland. Esk specialises in licensing iconic IP and producing live experiences for brands including Netflix, Paramount and BAFTA. The funding will support international expansion, marketing, and development of its proprietary hardware.",
     "issues": [],
-    "raw_snippet": "Maven leads \u00a32.6m investment in Esk, an Edinburgh-based global entertainment technology company that delivers high-end live experiences for brands such as Netflix, Paramount and BAFTA. Funding from Maven Income and Growth VCTs and the Investment Fund for Scotland (IFS Maven Equity Finance), delivered by the British Business Bank. The capital will enable Esk to invest in business development, marketing, IP portfolio expansion, and proprietary hardware development. Announced May 11, 2026.",
-    "merge_confidence": null,
+    "raw_snippet": "Maven has completed an investment in Esk, a global entertainment company which delivers high-end live experiences for blue chip brands such as Netflix, Paramount and BAFTA. The company specializes in licensing intellectual property and transforming it into live entertainment formats. CEO Sam Weatherstone said: 'This investment from Maven and the British Business Bank is a massive vote of confidence in the company and our approach.'",
+    "merge_confidence": "definite",
     "duplicate_of": null,
     "company_sectors": [
       "Creative & Media"
@@ -318,7 +321,7 @@
     "data_quality_score": 95,
     "source_count": 1,
     "first_seen": "2026-05-25",
-    "last_seen": "2026-05-25",
+    "last_seen": "--date",
     "sector_normalised": true,
     "amount_original": "\u00a3222k",
     "currency_original": "GBP",
@@ -352,7 +355,7 @@
     "data_quality_score": 95,
     "source_count": 1,
     "first_seen": "2026-05-25",
-    "last_seen": "2026-05-25",
+    "last_seen": "--date",
     "sector_normalised": true,
     "amount_original": "\u00a3300k",
     "currency_original": "GBP",
@@ -374,8 +377,8 @@
     "company_location": "Edinburgh",
     "sector_normalised": true,
     "round_type": "Series A",
-    "amount_original": "\u00a37.7m",
-    "amount_gbp_millions": 7.7,
+    "amount_original": "\u00a310.5m",
+    "amount_gbp_millions": 10.5,
     "currency_original": "GBP",
     "investors": [
       "Scottish National Investment Bank",
@@ -385,12 +388,12 @@
       "Hanna Capital SEZC",
       "Conduit Connect"
     ],
-    "lead_investor": "Scottish National Investment Bank",
+    "lead_investor": "Archangels",
     "announcement_date": "2026-03-19",
     "source_url": "https://edinburgh-innovations.ed.ac.uk/news/bioliberty-7-7m-investment",
     "source_name": "Edinburgh Innovations \u2014 News",
     "headline": "Bioliberty \u00a37.7m investment",
-    "summary": "University of Edinburgh spinout Bioliberty secured \u00a37.7m in Series A funding to accelerate product development and support international growth of its AI-enabled soft-robotic rehabilitation technology. The Scottish National Investment Bank led the round with \u00a33m, supported by existing and new investors.",
+    "summary": "University of Edinburgh spinout Bioliberty secured \u00a310.5m in Series A funding to accelerate product development and support international growth of its AI-enabled soft-robotic rehabilitation technology. Archangels, EOS Advisory, and Old College Capital contributed \u00a37.7m; the Scottish National Investment Bank contributed \u00a33m.",
     "confidence": "high",
     "data_quality_score": 100,
     "issues": [],
@@ -403,9 +406,10 @@
     "merge_confidence": "definite",
     "duplicate_of": null,
     "first_seen": "2026-05-26",
-    "last_seen": "2026-05-26",
+    "last_seen": "--date",
     "is_new_this_run": true,
     "company_sectors": [
+      "Deep Tech",
       "Healthtech"
     ]
   },
@@ -442,7 +446,7 @@
     "merge_confidence": "definite",
     "duplicate_of": null,
     "first_seen": "2026-05-26",
-    "last_seen": "2026-05-26",
+    "last_seen": "--date",
     "is_new_this_run": true,
     "company_sectors": [
       "Climate tech / Nature risk analytics"
@@ -468,12 +472,10 @@
     "source_url": "https://adbioresources.org/newsroom/member-press-release-3-million-investment-for-edinburgh-based-specialist-bio-carbon-designer-carbogenics/",
     "source_name": "DuckDuckGo \u2014 Scottish VC search (via ADBA press release)",
     "headline": "$3 Million Investment for Edinburgh-Based Specialist Bio-Carbon Designer Carbogenics",
-    "summary": "Carbogenics, a University of Edinburgh spinout founded in 2016, closed a $3m funding round on January 19, 2026 to accelerate development and international expansion of its CreChar biochar product. Equity investors include Dangerous Ventures (US), Green Angel Ventures (UK), and Old College Capital; grant funding from Innovate UK, New Mexico Gas, and New Mexico Government Economic Development Department also contributed. The company plans US manufacturing expansion alongside scaled UK operations.",
-    "confidence": "medium",
+    "summary": "Carbogenics, a University of Edinburgh spinout founded in 2016, closed a $3m funding round on January 19, 2026 to accelerate development and international expansion of its CreChar biochar product. Equity investors include Dangerous Ventures (US), Green Angel Ventures (UK), Old College Capital, and Scottish Enterprise Investment Fund. The company plans US manufacturing expansion alongside scaled UK operations.",
+    "confidence": "high",
     "data_quality_score": 100,
-    "issues": [
-      "possible_grant_not_vc"
-    ],
+    "issues": [],
     "raw_snippet": "Carbogenics closed $3 million in investment and grant funding on January 19, 2026. Equity investors: Dangerous Ventures, Green Angel Ventures, Old College Capital (University of Edinburgh venture fund), Scottish Enterprise. Grant bodies: Innovate UK, New Mexico Gas, New Mexico Government Economic Development Department. Funds accelerate development of CreChar biochar for the biogas industry and support US manufacturing expansion.",
     "source_urls": [
       "https://adbioresources.org/newsroom/member-press-release-3-million-investment-for-edinburgh-based-specialist-bio-carbon-designer-carbogenics/"
@@ -482,45 +484,10 @@
     "merge_confidence": null,
     "duplicate_of": null,
     "first_seen": "2026-05-26",
-    "last_seen": "2026-05-26",
+    "last_seen": "--date",
     "is_new_this_run": true,
     "company_sectors": [
       "Energy & Cleantech"
-    ]
-  },
-  {
-    "id": "highway-data-systems_unknown_2026-04-30",
-    "company_name": "Highway Data Systems",
-    "company_location": "Glasgow",
-    "sector_normalised": true,
-    "round_type": "Unknown",
-    "amount_original": "\u00a31.25m",
-    "amount_gbp_millions": 1.25,
-    "currency_original": "GBP",
-    "investors": [
-      "Investment Fund for Scotland (IFS Maven Equity Finance)"
-    ],
-    "lead_investor": "Investment Fund for Scotland (IFS Maven Equity Finance)",
-    "announcement_date": "2026-04-30",
-    "source_url": "https://www.mavencp.com/latest-news/ifs-maven-equity-finance-invests-in-1.25-million-in-highway-data-systems",
-    "source_name": "Maven Capital Partners \u2014 Latest News",
-    "headline": "IFS Maven Equity Finance invests \u00a31.25 million in Highway Data Systems",
-    "summary": "Glasgow-based Highway Data Systems (HDS) secured \u00a31.25m from the Investment Fund for Scotland, managed by Maven Capital Partners and delivered by the British Business Bank. HDS develops automated quality assurance technology combining hardware, electronics, and software to replace manual testing processes in road construction. HDS was the first business to secure funding through the Greater Glasgow Innovation Cluster.",
-    "confidence": "high",
-    "data_quality_score": 90,
-    "issues": [],
-    "raw_snippet": "IFS Maven Equity Finance invests \u00a31.25 million in Highway Data Systems, a Glasgow-based company that develops automated quality assurance technologies for the road construction and asphalt industries. HDS serves major contractors including Eurovia, Holcim, and Tarmac across UK and US markets. The company is the first to secure investment through the Greater Glasgow Innovation Cluster. Announced April 30, 2026.",
-    "source_urls": [
-      "https://www.mavencp.com/latest-news/ifs-maven-equity-finance-invests-in-1.25-million-in-highway-data-systems"
-    ],
-    "source_count": 1,
-    "merge_confidence": null,
-    "duplicate_of": null,
-    "first_seen": "2026-05-26",
-    "last_seen": "2026-05-26",
-    "is_new_this_run": true,
-    "company_sectors": [
-      "Property & Construction Tech"
     ]
   },
   {
@@ -553,10 +520,90 @@
     "merge_confidence": null,
     "duplicate_of": null,
     "first_seen": "2026-05-26",
-    "last_seen": "2026-05-26",
+    "last_seen": "--date",
     "is_new_this_run": true,
     "company_sectors": [
       "GovTech / Licensing and permitting platform"
     ]
+  },
+  {
+    "id": "enterobiotix_growth_2026-04-29",
+    "company_name": "EnteroBiotix",
+    "company_location": "Glasgow",
+    "company_sectors": [
+      "Life Sciences"
+    ],
+    "sector_normalised": true,
+    "round_type": "Growth",
+    "amount_original": "\u00a319m",
+    "amount_gbp_millions": 19.0,
+    "currency_original": "GBP",
+    "investors": [
+      "Thairm Bio",
+      "Scottish National Investment Bank",
+      "existing and new investors (undisclosed)"
+    ],
+    "lead_investor": "Thairm Bio",
+    "announcement_date": "2026-04-29",
+    "source_url": "https://scottishfinancialreview.com/2026/04/29/enterobiotix-bellshill-biopharma-raises-19m/",
+    "source_name": "DuckDuckGo \u2014 Scottish VC search (via Scottish Financial Review)",
+    "headline": "EnteroBiotix, Bellshill biopharma, raises \u00a319m",
+    "summary": "EnteroBiotix, a Bellshill-based biopharmaceutical company focused on microbiome therapeutics, raised \u00a319m in growth financing led by Thairm Bio, with participation from the Scottish National Investment Bank. The funds will advance lead candidate EBX-102-02 into Phase 2b development for irritable bowel syndrome with constipation, following a positive Phase 2a trial. First patient dosing is expected Q2 2026 with topline data anticipated H2 2027.",
+    "confidence": "high",
+    "data_quality_score": 85,
+    "issues": [
+      "location_unknown",
+      "company_not_clearly_scottish"
+    ],
+    "raw_snippet": "EnteroBiotix secured \u00a319m in growth financing led by Thairm Bio and the Scottish National Investment Bank. Following the positive Phase 2a TrIuMPH trial outcome demonstrating efficacy of EBX-102-02 over placebo in IBS patients, the company will commence the largest ever full-spectrum microbiome therapeutic trial in IBS. CEO James McIlroy confirmed first patient dosing expected Q2 2026 and topline efficacy data anticipated H2 2027. Announced April 29, 2026.",
+    "source_urls": [
+      "https://scottishfinancialreview.com/2026/04/29/enterobiotix-bellshill-biopharma-raises-19m/"
+    ],
+    "source_count": 1,
+    "merge_confidence": null,
+    "duplicate_of": null,
+    "first_seen": "2026-05-25",
+    "last_seen": "2026-05-26",
+    "is_new_this_run": true
+  },
+  {
+    "id": "entourage-ai_pre-seed_2026-03-18",
+    "company_name": "Entourage AI",
+    "company_location": "Glasgow",
+    "company_sectors": [
+      "Healthtech",
+      "AI & Machine Learning"
+    ],
+    "sector_normalised": true,
+    "round_type": "Pre-Seed",
+    "amount_original": "$5m",
+    "amount_gbp_millions": 3.705,
+    "currency_original": "USD",
+    "investors": [
+      "Provision",
+      "GU Holdings Ltd (University of Glasgow)",
+      "David Peterson",
+      "Brad Peltz",
+      "angel investors"
+    ],
+    "lead_investor": "Provision",
+    "announcement_date": "2026-03-18",
+    "source_url": "https://scottishfinancialreview.com/2026/03/18/entourage-ai-glasgow-uni-health-spinout-in-5m-raise/",
+    "source_name": "DuckDuckGo \u2014 Scottish VC search (via Scottish Financial Review)",
+    "headline": "Entourage AI, Glasgow uni health spinout, in $5m raise",
+    "summary": "Entourage AI, a University of Glasgow spinout focused on longevity science and AI-powered health data analysis, raised $5m in a pre-seed round led by Provision. The company opened a Research and Operations Centre at Glasgow's West of Scotland Science Park, with Scottish Government Business Minister Richard Lochhead attending. The company was founded by Professor Patrick T. Gunning and aims to transform how human healthspan is measured and extended.",
+    "confidence": "high",
+    "data_quality_score": 95,
+    "issues": [],
+    "raw_snippet": "Entourage AI secured $5 million in pre-seed funding led by Provision, with participation from GU Holdings Ltd (University of Glasgow's investment arm), David Peterson, Brad Peltz, and angel investors. The University of Glasgow spinout opened a Research and Operations Centre in Glasgow's West of Scotland Science Park. Founded by serial entrepreneur Professor Patrick T. Gunning, the company focuses on longevity science using AI to transform how human health is measured. Announced March 18, 2026.",
+    "source_urls": [
+      "https://scottishfinancialreview.com/2026/03/18/entourage-ai-glasgow-uni-health-spinout-in-5m-raise/"
+    ],
+    "source_count": 1,
+    "merge_confidence": null,
+    "duplicate_of": null,
+    "first_seen": "2026-05-25",
+    "last_seen": "2026-05-26",
+    "is_new_this_run": true
   }
 ]

@@ -333,7 +333,8 @@ def run(date: str = None):
 
 
 if __name__ == "__main__":
+    import argparse
     logging.basicConfig(level=logging.INFO)
-    import sys
-    date_arg = sys.argv[1] if len(sys.argv) > 1 else None
-    run(date=date_arg)
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--date", default=None)
+    run(date=ap.parse_args().date)

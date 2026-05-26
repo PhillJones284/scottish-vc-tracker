@@ -1,6 +1,16 @@
 {
   "sources": [
     {
+      "slug": "scottish-financial-review",
+      "name": "Scottish Financial Review",
+      "type": "news_site",
+      "url": "https://scottishfinancialreview.com",
+      "search_path": null,
+      "queries": [],
+      "best_effort": false,
+      "notes": "Dedicated Scottish financial and business news site. High signal-to-noise for Scottish VC deals — confirmed 6 relevant deals in the May 2026 run. URL structure: /YYYY/MM/DD/slug."
+    },
+    {
       "slug": "business-scotland",
       "name": "Business Scotland Magazine",
       "type": "news_site",
