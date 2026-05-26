@@ -32,7 +32,7 @@ Load `config/sources.json` to get the list of sources. For each source:
 4. Extract the structured data fields listed below
 5. Save results to `data/raw/YYYY-MM-DD_<source-slug>.json`
 
-**RSS feeds are more reliable than HTML scraping** — they are structured, machine-readable, and less likely to be blocked. When `rss_url` is set, always prefer it over HTML fetching.
+**RSS feeds are more reliable than HTML scraping** — they are structured, machine-readable, and less likely to be blocked. When `rss_url` is set, always prefer it over HTML fetching. If an RSS feed returns no items or is unreachable, fall back to fetching `url` directly (or `url + search_path` if set).
 
 ## Extraction Schema
 
