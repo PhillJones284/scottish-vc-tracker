@@ -45,17 +45,19 @@ Responsible for collecting raw mentions of venture capital activity from configu
 
 ---
 
-### 2. Parser
+### 2. Parser (Python)
 
 Transforms raw text into structured investment records.
 
 * Extracts: companies, investors, deal stage, amount, sector, date
 * Resolves: entity aliases and inconsistent naming
+* Normalises sectors to a taxonomy; a company may belong to multiple sectors
 * Output: `data/processed/investments.json`
+* Implementation: `pipeline/parser.py`
 
 ---
 
-### 3. Deduplicator
+### 3. Deduplicator (Python)
 
 Maintains a canonical historical record of all observed investments.
 
@@ -65,6 +67,7 @@ Maintains a canonical historical record of all observed investments.
 
   * `data/processed/investments_deduped.json`
   * `data/processed/ledger.json` (system of record)
+* Implementation: `pipeline/deduplicator.py`
 
 ---
 
@@ -83,12 +86,14 @@ Generates structured analytical outputs for human consumption.
 
 The system is fully configuration-driven.
 
-| File                    | Purpose                                       |
-| ----------------------- | --------------------------------------------- |
-| `config/sources.json`   | Defines news sources and query targets        |
-| `config/known_vcs.json` | VC firm identity resolution and alias mapping |
-| `config/sectors.json`   | Sector classification taxonomy                |
-| `config/fx_rates.json`  | Currency normalisation rules                  |
+| File                           | Purpose                                                       |
+| ------------------------------ | ------------------------------------------------------------- |
+| `config/sources.json`          | Curated news sources and query targets (do not edit directly) |
+| `config/known_vcs.json`        | VC firm identity resolution and alias mapping (do not edit directly) |
+| `config/suggested_sources.json`| Staging area — unknown sources found by scraper, pending review |
+| `config/suggested_vcs.json`    | Staging area — unknown VCs found by scraper, pending review   |
+| `config/sectors.json`          | Sector classification taxonomy                                |
+| `config/fx_rates.json`         | Currency normalisation rules                                  |
 
 ---
 
@@ -108,7 +113,7 @@ Unstructured source material captured per ingestion cycle.
 
 * `investments.json`: normalised extraction output
 * `investments_deduped.json`: cleaned output for the current run
-* `ledger.json`: append-only historical record of all investments
+* `ledger.json`: persistent historical record — new deals are appended; existing deals are updated when seen again
 
 ---
 
@@ -154,20 +159,34 @@ pip install -e .
 
 ## Execution
 
-### Full pipeline
+### Full pipeline (headless)
 
 ```bash
-claude --print "Run the full VC tracking pipeline as defined in CLAUDE.md"
+export ANTHROPIC_API_KEY=sk-...
+python pipeline/run.py
+# or for a specific date:
+python pipeline/run.py --date 2026-05-26
 ```
 
-### Single stage execution
+`pipeline/run.py` orchestrates all four stages in sequence, runs gate checks between stages, and exits with a non-zero code on failure. Requires `ANTHROPIC_API_KEY` and the `claude` CLI on `$PATH`.
+
+### Interactive run (via Claude Code)
+
+Open the project in Claude Code and say "run the agent". Claude will invoke each stage in sequence and report gate results interactively.
+
+### Individual stages
+
+Stages 1 and 4 are Claude agents — run them interactively via Claude Code.
+
+Stages 2 and 3 are Python and can be run directly:
 
 ```bash
-cd agents/scraper
-claude --print "Run scraper as defined in CLAUDE.md"
+python pipeline/parser.py
+python pipeline/deduplicator.py
+# or with a specific date:
+python pipeline/parser.py --date 2026-05-26
+python pipeline/deduplicator.py --date 2026-05-26
 ```
-
-Each stage can be executed independently via its agent definition.
 
 ---
 
