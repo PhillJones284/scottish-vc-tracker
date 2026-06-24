@@ -12,14 +12,6 @@
       "notes": "Dedicated Scottish financial and business news site. High signal-to-noise for Scottish VC deals — confirmed 6 relevant deals in the May 2026 run. URL structure: /YYYY/MM/DD/slug."
     },
     {
-      "slug": "business-scotland",
-      "name": "Business Scotland Magazine",
-      "type": "news_site",
-      "url": "https://businessscotland.co.uk",
-      "search_path": "/search?q=investment+funding",
-      "notes": "Good for mid-market and growth deals"
-    },
-    {
       "slug": "scotsman-business",
       "name": "The Scotsman — Business",
       "type": "news_site",
@@ -248,6 +240,61 @@
       "search_path": null,
       "rss_url": "https://archangelsonline.com/feed/",
       "notes": "Scotland's oldest and largest angel syndicate. Consistently active in Edinburgh life sciences, medtech, and software. High-signal source for early-stage Scottish deals."
+    },
+    {
+      "slug": "digit-fyi",
+      "name": "DIGIT",
+      "type": "news_site",
+      "url": "https://www.digit.fyi",
+      "rss_url": "https://www.digit.fyi/feed/",
+      "search_path": "/category/funding/",
+      "queries": [],
+      "best_effort": false,
+      "notes": "Scottish tech news site with a dedicated funding category and monthly deal roundup articles (e.g. 'DIGIT Deal Roundup | March 2026'). High signal-to-noise for Scottish tech VC deals. URL pattern: /digit-deal-roundup-MONTH-YEAR/ for roundups."
+    },
+    {
+      "slug": "businesscloud-scotland",
+      "name": "BusinessCloud — Scotland",
+      "type": "news_site",
+      "url": "https://businesscloud.co.uk",
+      "rss_url": "https://businesscloud.co.uk/feed/",
+      "search_path": null,
+      "queries": ["Scottish startup funding 2026"],
+      "best_effort": false,
+      "notes": "UK tech/business news site with good Scottish coverage. Supplementary search source for Scottish VC deals."
+    },
+    {
+      "slug": "daily-business-group",
+      "name": "Daily Business Group",
+      "type": "news_site",
+      "url": "https://dailybusinessgroup.co.uk",
+      "rss_url": "https://dailybusinessgroup.co.uk/feed/",
+      "search_path": null,
+      "queries": [],
+      "best_effort": false,
+      "notes": "Scottish business news site covering deals and investments. Homepage returns 403 to direct fetches (bot protection) — use the RSS feed instead, confirmed working and fresh."
+    },
+    {
+      "slug": "campfire-scot",
+      "name": "Campfire Scotland Newsletter",
+      "type": "news_site",
+      "url": "https://www.campfire.scot",
+      "rss_url": "https://www.campfire.scot/feed",
+      "search_path": null,
+      "queries": [],
+      "best_effort": true,
+      "notes": "Weekly Scottish startup newsletter covering deals, funding rounds, and ecosystem news. Substack feed confirmed working — typically includes full post content, reducing paywall risk."
+    },
+    {
+      "slug": "scottish-financial-news",
+      "name": "Scottish Financial News",
+      "type": "news_site",
+      "url": "https://www.scottishfinancialnews.com",
+      "rss_url": null,
+      "search_path": null,
+      "queries": [],
+      "best_effort": false,
+      "notes": "Scottish business and finance news site, distinct from scottishfinancialreview.com. Has a dedicated articles section. Confirmed reachable (200 OK) as of 2026-06-23 — an earlier 403 noted by the scraper appears to have been transient."
     }
   ]
 }

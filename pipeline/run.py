@@ -1,8 +1,10 @@
 """
 Pipeline orchestrator.
 
-Stages 1 (scraper) and 4 (reporter) are run as Claude agents via the Anthropic SDK.
-Stages 2 (parser) and 3 (deduplicator) are called directly as Python functions.
+Stages 1 (scraper), 4 (reporter), and the narrative half of 5 (vc-profiler) are run as
+Claude agents via the Anthropic SDK. Stages 2 (parser), 3 (deduplicator), 3.5
+(report_stats), and the stats half of 5 (vc_profile_stats) are called directly as
+Python functions.
 
 Claude agent invocation approach: we use the Anthropic Python SDK with a streaming
 Messages call rather than shelling out to the claude CLI, so the orchestrator has no
@@ -48,7 +50,9 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 sys.path.insert(0, str(ROOT))
-from pipeline import fetcher, parser, deduplicator
+from pipeline import fetcher, parser, deduplicator, report_stats, vc_profile_stats
+
+DOCS_VC_PROFILES = ROOT / "docs" / "vc-profiles"
 
 
 def _read_agent_prompt(stage_name, run_date):
@@ -130,11 +134,41 @@ def _gate_deduplicator():
     return False, "data/processed/investments_deduped.json not found."
 
 
+def _gate_report_stats():
+    path = DATA_PROCESSED / "report_stats.json"
+    if path.exists():
+        return True, None
+    return False, "data/processed/report_stats.json not found."
+
+
 def _gate_reporter(run_date):
     report_path = DATA_REPORTS / f"{run_date}_vc-report.md"
     if report_path.exists():
         return True, None
     return False, f"data/reports/{run_date}_vc-report.md not found."
+
+
+def _slugify(name):
+    import re
+    s = name.lower()
+    s = re.sub(r"\s+", "-", s)
+    s = re.sub(r"[^a-z0-9\-]", "", s)
+    s = re.sub(r"-{2,}", "-", s).strip("-")
+    return s
+
+
+def _gate_profiler(run_date, expected_names):
+    stale = []
+    for name in expected_names:
+        path = DOCS_VC_PROFILES / f"{_slugify(name)}.md"
+        if not path.exists():
+            stale.append(name)
+            continue
+        if f"last_updated: {run_date}" not in path.read_text():
+            stale.append(name)
+    if stale:
+        return False, f"Profiles not refreshed for: {stale}"
+    return True, None
 
 
 def main():
@@ -205,6 +239,10 @@ def main():
 
     # Stage 3 — Deduplicator (Python)
     logger.info("=== Stage 3: Deduplicator ===")
+    merge_candidates_before = []
+    merge_candidates_path = DATA_PROCESSED / "merge_candidates.json"
+    if merge_candidates_path.exists():
+        merge_candidates_before = json.loads(merge_candidates_path.read_text())
     try:
         deduplicator.run(date=run_date)
     except Exception as e:
@@ -216,6 +254,38 @@ def main():
         sys.exit(1)
     logger.info("Stage 3 gate passed.")
 
+    # This script runs unattended (no human present to ask) — unlike an interactive
+    # session, it cannot pause for Phill to resolve a new duplicate. The best it can
+    # do is make new pending entries impossible to miss in the log, since CLAUDE.md's
+    # synchronous-review policy still applies the moment Phill is next at the keyboard.
+    if merge_candidates_path.exists():
+        merge_candidates_after = json.loads(merge_candidates_path.read_text())
+        new_pending = [
+            c for c in merge_candidates_after
+            if c.get("status") == "pending" and c not in merge_candidates_before
+        ]
+        if new_pending:
+            logger.warning(
+                "%d new pending duplicate pair(s) staged this run — resolve with Phill at the "
+                "start of the next interactive session, before anything else: %s",
+                len(new_pending),
+                [(c["record_a"], c["record_b"]) for c in new_pending],
+            )
+
+    # Stage 3.5 — Report Stats (Python)
+    logger.info("=== Stage 3.5: Report Stats ===")
+    try:
+        report_stats.run(date_str=run_date)
+    except Exception as e:
+        print(f"GATE FAIL (Stage 3.5 — Report Stats): Exception during stats computation: {e}", file=sys.stderr)
+        sys.exit(1)
+    ok, err = _gate_report_stats()
+    if not ok:
+        print(f"GATE FAIL (Stage 3.5 — Report Stats): {err}", file=sys.stderr)
+        print("Do not let the reporter fall back to computing totals from the ledger itself.", file=sys.stderr)
+        sys.exit(1)
+    logger.info("Stage 3.5 gate passed.")
+
     # Stage 4 — Reporter (Claude agent)
     logger.info("=== Stage 4: Reporter ===")
     _run_claude_agent("reporter", run_date)
@@ -224,6 +294,22 @@ def main():
         print(f"GATE FAIL (Stage 4 — Reporter): {err}", file=sys.stderr)
         sys.exit(1)
     logger.info("Stage 4 gate passed.")
+
+    # Stage 5 — VC Profiler (Python stats + Claude agent)
+    logger.info("=== Stage 5: VC Profiler ===")
+    deduped_path = DATA_PROCESSED / "investments_deduped.json"
+    results, unknown_names = vc_profile_stats.run(deduped_path=str(deduped_path))
+    if unknown_names:
+        logger.info("Investors active this run but not in known_vcs.json (no profile generated): %s", unknown_names)
+    if results:
+        _run_claude_agent("vc-profiler", run_date)
+        ok, err = _gate_profiler(run_date, [r["canonical_name"] for r in results])
+        if not ok:
+            logger.warning("Stage 5 gate (soft): %s — profiles are reference data, not blocking the run.", err)
+        else:
+            logger.info("Stage 5 gate passed.")
+    else:
+        logger.info("No known VCs active this run — nothing to refresh.")
 
     print(f"Pipeline complete. Report: data/reports/{run_date}_vc-report.md")
 

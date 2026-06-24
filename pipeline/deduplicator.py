@@ -152,49 +152,47 @@ def _merge(base, other, merge_confidence):
     return merged
 
 
+def _duplicate_note(a, b, match_type):
+    """Human-readable reason a pair was matched at this confidence level."""
+    if _name_similarity(a["company_name"], b["company_name"]) < DEFINITE_NAME_THRESHOLD:
+        return f"Similar company names ('{a['company_name']}' vs '{b['company_name']}')"
+    if a.get("round_type") != b.get("round_type"):
+        return f"Same company name, different round types ('{a['round_type']}' vs '{b['round_type']}')"
+    if _days_apart(a.get("announcement_date"), b.get("announcement_date")) is None:
+        return "Same company and round type, but the announcement date is missing on at least one record"
+    return "Same company name, overlapping investors, announcement dates within range"
+
+
 def _deduplicate_within_run(investments):
     """
     Group investments from the current run into canonical records.
+
+    Only "definite" matches are auto-merged. "probable" and "possible" matches are
+    never auto-merged — they're returned in `flagged` as merge candidates for manual
+    review instead, per the project's conservative dedup policy (definite duplicates
+    merge automatically; anything less certain goes to Phill for approval, not a
+    silent merge or a silent drop).
+
     Returns (canonical_records, flagged_for_review).
     """
-    clusters = []  # list of {"records": [...], "match_type": str}
+    clusters = []  # list of {"records": [...]}, definite-only
     assigned = [False] * len(investments)
 
     for i, rec in enumerate(investments):
         if assigned[i]:
             continue
-        cluster = {"records": [rec], "match_type": None}
+        cluster = {"records": [rec]}
         for j in range(i + 1, len(investments)):
             if assigned[j]:
                 continue
             mt = _match_type(rec, investments[j])
-            if mt in ("definite", "probable"):
+            if mt == "definite":
                 cluster["records"].append(investments[j])
-                if cluster["match_type"] is None or mt == "definite":
-                    cluster["match_type"] = mt
                 assigned[j] = True
         assigned[i] = True
         clusters.append(cluster)
 
     canonical = []
-    flagged = []
-
-    # Collect possible-match flags (cross-cluster)
-    for i, rec_i in enumerate(investments):
-        for j in range(i + 1, len(investments)):
-            rec_j = investments[j]
-            mt = _match_type(rec_i, rec_j)
-            if mt == "possible":
-                flagged.append({
-                    "reason": "possible_duplicate",
-                    "records": [rec_i["id"], rec_j["id"]],
-                    "note": (
-                        f"Similar company names ('{rec_i['company_name']}' vs '{rec_j['company_name']}')"
-                        if _name_similarity(rec_i["company_name"], rec_j["company_name"]) < DEFINITE_NAME_THRESHOLD
-                        else f"Same company name, different round types ('{rec_i['round_type']}' vs '{rec_j['round_type']}')"
-                    ),
-                })
-
     for cluster in clusters:
         records = cluster["records"]
         if len(records) == 1:
@@ -207,36 +205,59 @@ def _deduplicate_within_run(investments):
         else:
             # Sort by data_quality_score descending; keep best as base
             sorted_recs = sorted(records, key=lambda x: x.get("data_quality_score", 0), reverse=True)
-            base = sorted_recs[0]
-            base_with_meta = dict(base)
+            base_with_meta = dict(sorted_recs[0])
             base_with_meta["source_urls"] = (
-                [base["source_url"]] if base.get("source_url") else []
+                [sorted_recs[0]["source_url"]] if sorted_recs[0].get("source_url") else []
             )
             merged = base_with_meta
             for other in sorted_recs[1:]:
-                merged = _merge(merged, other, cluster["match_type"])
+                merged = _merge(merged, other, "definite")
             canonical.append(merged)
+
+    # Flag any remaining probable/possible pairs among the final (unmerged) records
+    flagged = []
+    for i, rec_i in enumerate(canonical):
+        for j in range(i + 1, len(canonical)):
+            rec_j = canonical[j]
+            mt = _match_type(rec_i, rec_j)
+            if mt in ("probable", "possible"):
+                flagged.append({
+                    "reason": f"{mt}_duplicate",
+                    "records": [rec_i["id"], rec_j["id"]],
+                    "note": _duplicate_note(rec_i, rec_j, mt),
+                })
 
     return canonical, flagged
 
 
 def _match_against_ledger(record, ledger_entries):
     """
-    Find the best matching ledger entry.
-    Returns (ledger_entry, match_type) or (None, None).
+    Find the best matching ledger entry, at any confidence tier.
+
+    Returns (ledger_entry, match_type) where match_type is "definite", "probable",
+    "possible", or (None, None) if nothing matches even at the "possible" threshold.
+
+    Only "definite" should be auto-merged by the caller. "probable" and "possible"
+    are returned so the caller can stage a merge candidate for manual review —
+    never silently merged, and never silently dropped (the latter was the root
+    cause of the JET Connectivity duplicate: a "possible" match used to be treated
+    as no match at all).
     """
-    # Exact ID match first
+    # Exact ID match is always definite
     for entry in ledger_entries:
         if entry["id"] == record["id"]:
             return entry, "definite"
 
-    # Fuzzy match using same rules
+    priority = {"definite": 3, "probable": 2, "possible": 1}
+    best_entry, best_type = None, None
     for entry in ledger_entries:
         mt = _match_type(record, entry)
-        if mt in ("definite", "probable"):
-            return entry, mt
+        if mt and (best_type is None or priority[mt] > priority[best_type]):
+            best_entry, best_type = entry, mt
+            if mt == "definite":
+                break  # can't do better than definite
 
-    return None, None
+    return best_entry, best_type
 
 
 def run(date: str = None):
@@ -258,8 +279,36 @@ def run(date: str = None):
     else:
         ledger_entries = []
 
-    # Deduplicate within this run first
+    # Deduplicate within this run first (definite-only auto-merge; probable/possible flagged)
     canonical, flagged = _deduplicate_within_run(investments)
+
+    # Persistent merge-candidate staging — survives across runs until Phill resolves it
+    merge_candidates_path = PROCESSED_DIR / "merge_candidates.json"
+    if merge_candidates_path.exists():
+        with open(merge_candidates_path) as f:
+            merge_candidates = json.load(f)
+    else:
+        merge_candidates = []
+    staged_pairs = {frozenset((c["record_a"], c["record_b"])) for c in merge_candidates}
+
+    def _stage_merge_candidate(match_type, record_a, record_b, note, scope):
+        pair = frozenset((record_a, record_b))
+        if pair in staged_pairs:
+            return
+        staged_pairs.add(pair)
+        merge_candidates.append({
+            "match_type": match_type,
+            "scope": scope,
+            "record_a": record_a,
+            "record_b": record_b,
+            "note": note,
+            "flagged_date": run_date,
+            "status": "pending",
+        })
+
+    for f in flagged:
+        a_id, b_id = f["records"]
+        _stage_merge_candidate(f["reason"].replace("_duplicate", ""), a_id, b_id, f["note"], "within_run")
 
     new_this_run = 0
     updated_existing = 0
@@ -268,14 +317,7 @@ def run(date: str = None):
     for record in canonical:
         ledger_match, match_type = _match_against_ledger(record, ledger_entries)
 
-        if ledger_match is None:
-            # New record
-            record["first_seen"] = run_date
-            record["last_seen"] = run_date
-            record["is_new_this_run"] = True
-            ledger_entries.append(dict(record))
-            new_this_run += 1
-        else:
+        if match_type == "definite":
             # Update existing ledger entry
             first_seen = ledger_match.get("first_seen", run_date)
             unioned_sectors = _union_sectors(ledger_match, record)
@@ -297,8 +339,32 @@ def run(date: str = None):
             record["last_seen"] = run_date
             record["is_new_this_run"] = False
             updated_existing += 1
+        else:
+            # No match, or only probable/possible — never auto-merge below "definite".
+            # Add as its own ledger entry; a probable/possible match gets staged for review
+            # rather than silently merged or silently dropped (the latter was the JET
+            # Connectivity bug — a "possible" match used to be treated as no match at all).
+            record["first_seen"] = run_date
+            record["last_seen"] = run_date
+            record["is_new_this_run"] = True
+            ledger_entries.append(dict(record))
+            new_this_run += 1
+
+            if match_type in ("probable", "possible"):
+                _stage_merge_candidate(
+                    match_type,
+                    record["id"],
+                    ledger_match["id"],
+                    _duplicate_note(record, ledger_match, match_type),
+                    "against_ledger",
+                )
 
         output_investments.append(record)
+
+    with open(merge_candidates_path, "w") as f:
+        json.dump(merge_candidates, f, indent=2)
+
+    pending_candidates = [c for c in merge_candidates if c["status"] == "pending"]
 
     output = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
@@ -309,6 +375,7 @@ def run(date: str = None):
             "new_this_run": new_this_run,
             "updated_existing": updated_existing,
             "flagged_for_review": len(flagged),
+            "merge_candidates_pending": len(pending_candidates),
         },
         "investments": output_investments,
         "flagged_for_review": flagged,
@@ -322,12 +389,13 @@ def run(date: str = None):
         json.dump(ledger_entries, f, indent=2)
 
     logger.info(
-        "Deduplicator complete: %d → %d records (%d new, %d updated, %d flagged)",
+        "Deduplicator complete: %d → %d records (%d new, %d updated, %d flagged, %d merge candidates pending)",
         len(investments),
         len(output_investments),
         new_this_run,
         updated_existing,
         len(flagged),
+        len(pending_candidates),
     )
     return output
 

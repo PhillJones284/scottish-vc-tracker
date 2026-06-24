@@ -15,6 +15,10 @@ RAW_DIR = ROOT / "data" / "raw"
 PROCESSED_DIR = ROOT / "data" / "processed"
 CONFIG_DIR = ROOT / "config"
 
+# Files in data/raw/ that share the scraper's date-prefixed naming but aren't
+# per-source investment record output — must not be parsed as raw records.
+NON_SOURCE_FILE_MARKERS = ("errors", "candidates", "fetch_log")
+
 LOCATION_KEYWORDS = {
     "Edinburgh": ["edinburgh"],
     "Glasgow": ["glasgow"],
@@ -409,14 +413,14 @@ def run(date: str = None):
 
     raw_files = sorted(
         f for f in RAW_DIR.glob(f"{date_prefix}_*.json")
-        if "errors" not in f.name
+        if not any(s in f.name for s in NON_SOURCE_FILE_MARKERS)
     )
 
     if not raw_files:
         # Fall back to any raw files if date-filtered set is empty
         raw_files = sorted(
             f for f in RAW_DIR.glob("*.json")
-            if "errors" not in f.name
+            if not any(s in f.name for s in NON_SOURCE_FILE_MARKERS)
         )
 
     all_records = []

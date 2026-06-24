@@ -178,5 +178,65 @@
     "url": "https://www.seiicef.scot/news",
     "error": "[Errno 8] nodename nor servname provided, or not known",
     "timestamp": "2026-05-27T16:57:28.831027+00:00"
+  },
+  {
+    "source": "business-scotland",
+    "url": "https://businessscotland.co.uk/search?q=investment+funding",
+    "error": "[Errno 8] nodename nor servname provided, or not known",
+    "timestamp": "2026-06-08T17:06:43.991058+00:00"
+  },
+  {
+    "source": "crunchbase-scotland",
+    "url": "https://www.crunchbase.com/discover/funding_rounds?location=Scotland&date_range=90d",
+    "error": "Client error '403 Forbidden' for url 'https://www.crunchbase.com/discover/funding_rounds?location=Scotland&date_range=90d'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+    "timestamp": "2026-06-08T17:06:48.946402+00:00"
+  },
+  {
+    "source": "highlight-capital-news",
+    "url": "https://www.highlightcapital.com/news",
+    "error": "timed out",
+    "timestamp": "2026-06-08T17:07:46.010439+00:00"
+  },
+  {
+    "source": "olderbull-news",
+    "url": "https://www.olderbull.com/portfolio-news",
+    "error": "[SSL: TLSV1_UNRECOGNIZED_NAME] tlsv1 unrecognized name (_ssl.c:1081)",
+    "timestamp": "2026-06-08T17:08:05.300654+00:00"
+  },
+  {
+    "source": "seiicef-news",
+    "url": "https://www.seiicef.scot/news",
+    "error": "[Errno 8] nodename nor servname provided, or not known",
+    "timestamp": "2026-06-08T17:08:05.513066+00:00"
+  },
+  {
+    "source": "crunchbase-scotland",
+    "url": "https://www.crunchbase.com/discover/funding_rounds?location=Scotland&date_range=90d",
+    "error": "Client error '403 Forbidden' for url 'https://www.crunchbase.com/discover/funding_rounds?location=Scotland&date_range=90d'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+    "timestamp": "2026-06-24T14:13:42.815466+00:00"
+  },
+  {
+    "source": "highlight-capital-news",
+    "url": "https://www.highlightcapital.com/news",
+    "error": "timed out",
+    "timestamp": "2026-06-24T14:14:36.850062+00:00"
+  },
+  {
+    "source": "olderbull-news",
+    "url": "https://www.olderbull.com/portfolio-news",
+    "error": "[SSL: TLSV1_UNRECOGNIZED_NAME] tlsv1 unrecognized name (_ssl.c:1126)",
+    "timestamp": "2026-06-24T14:14:56.515516+00:00"
+  },
+  {
+    "source": "seiicef-news",
+    "url": "https://www.seiicef.scot/news",
+    "error": "[Errno 8] nodename nor servname provided, or not known",
+    "timestamp": "2026-06-24T14:14:56.725986+00:00"
+  },
+  {
+    "source": "daily-business-group",
+    "url": "https://dailybusinessgroup.co.uk/feed/",
+    "error": "RSS fetch failed: Client error '403 Forbidden' for url 'https://dailybusinessgroup.co.uk/feed/'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403; fallback failed: Client error '403 Forbidden' for url 'https://dailybusinessgroup.co.uk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+    "timestamp": "2026-06-24T14:15:30.370470+00:00"
   }
 ]

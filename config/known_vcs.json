@@ -287,6 +287,126 @@
       "stage_focus": ["Series A", "Series B"],
       "scotland_active": false,
       "notes": "Deep tech, has backed some Scottish spinouts"
+    },
+    {
+      "canonical_name": "Phasechange",
+      "aliases": [],
+      "hq": null,
+      "stage_focus": ["Pre-Seed"],
+      "scotland_active": true,
+      "notes": "Participated in Cnuic $3m pre-seed round (Edinburgh, April 2026). Very limited public profile. Source: https://tech.eu/2026/04/28/cnuic-secures-eur3m-pre-seed-to-unlock-next-generation-photonic-chip-production/"
+    },
+    {
+      "canonical_name": "Twin Path Ventures",
+      "aliases": ["Twin Path"],
+      "hq": "United Kingdom",
+      "stage_focus": ["Pre-Seed"],
+      "scotland_active": true,
+      "notes": "UK's only dedicated pre-seed investor in AI-first startups; typically invests £100k–£750k. Led TileBio £1.6m seed round (Glasgow, March 2026). British Business Investments committed £10m to the fund in February 2025. Source: https://glasgowcityofscienceandinnovation.com/glasgow-healthtech-spinout-raises-1-6m-to-transform-cancer-diagnosis-with-ai/"
+    },
+    {
+      "canonical_name": "R42 Group",
+      "aliases": ["R42"],
+      "hq": "Stanford, California, USA",
+      "stage_focus": ["Pre-Seed", "Seed"],
+      "scotland_active": true,
+      "notes": "Venture fund and institute focused on AI, deep science, 5G, biotech, and fintech. Long-term investor in Edinburgh-based stampfree.ai — participated in every fundraising round including the May 2026 £1.03m raise. Source: https://www.digit.fyi/edinburgh-ai-ecommerce-firm-raises-over-1m-in-new-investment/"
+    },
+    {
+      "canonical_name": "Blank Space Ventures",
+      "aliases": ["BlankSpace Ventures"],
+      "hq": "Silicon Valley, USA",
+      "stage_focus": ["Pre-Seed", "Seed"],
+      "scotland_active": true,
+      "notes": "Silicon Valley-based VC. Co-led Cnuic $3m pre-seed round (Edinburgh, April 2026) alongside Tensor Ventures. Source: https://tech.eu/2026/04/28/cnuic-secures-eur3m-pre-seed-to-unlock-next-generation-photonic-chip-production/"
+    },
+    {
+      "canonical_name": "Silicon Roundabout Ventures",
+      "aliases": ["Silicon Roundabout"],
+      "hq": "United Kingdom",
+      "stage_focus": ["Pre-Seed", "Seed"],
+      "scotland_active": true,
+      "notes": "UK-based deep-tech VC. Participated in Cnuic $3m pre-seed round (Edinburgh, April 2026). Source: https://tech.eu/2026/04/28/cnuic-secures-eur3m-pre-seed-to-unlock-next-generation-photonic-chip-production/"
+    },
+    {
+      "canonical_name": "Portfolio Ventures",
+      "aliases": ["Portfolio Ventures Ltd"],
+      "hq": "London, England, United Kingdom",
+      "stage_focus": ["Pre-Seed", "Seed", "Series A"],
+      "scotland_active": true,
+      "notes": "UK generalist VC founded 2014, ~64 investments via 1 fund, 3 exits. Participated in Edinburgh-based Infrawatch's pre-seed round (May 2026) — only confirmed Scottish deal identified to date. Source: https://theedinburghreporter.co.uk/2026/05/edinburgh-cyber-security-start-up-raises-millions-in-pre-seed-round/ ; firm profile: https://www.crunchbase.com/organization/portfolio-ventures"
+    },
+    {
+      "canonical_name": "Index Ventures",
+      "aliases": ["Index"],
+      "hq": "London / San Francisco",
+      "stage_focus": ["Seed", "Series A", "Series B", "Growth"],
+      "scotland_active": true,
+      "notes": "Major international VC. Co-led Wordsmith AI $70m Series B (Edinburgh, June 2026). One of Europe's most prominent growth-stage funds. Source: https://dailybusinessgroup.co.uk/2026/06/wordsmith-ai-raises-52-million-amid-rapid-growth/"
+    },
+    {
+      "canonical_name": "Outward VC",
+      "aliases": [],
+      "hq": null,
+      "stage_focus": ["Pre-Seed"],
+      "scotland_active": true,
+      "notes": "Led the pre-seed round for Edinburgh-based Infrawatch, a cybersecurity platform company, announced May 2026. Principal at Outward VC named as Andi Kazeroonian. Very limited public profile. Source: https://theedinburghreporter.co.uk/2026/05/edinburgh-cyber-security-start-up-raises-millions-in-pre-seed-round/"
+    },
+    {
+      "canonical_name": "Triple Point Ventures",
+      "aliases": ["Triple Point"],
+      "hq": "United Kingdom",
+      "stage_focus": ["Pre-Seed", "Seed"],
+      "scotland_active": true,
+      "notes": "UK-based VC. Participated in Edinburgh-based Infrawatch pre-seed round (May 2026). Investor Sam Stone quoted in press release. Source: https://theedinburghreporter.co.uk/2026/05/edinburgh-cyber-security-start-up-raises-millions-in-pre-seed-round/"
+    },
+    {
+      "canonical_name": "Tricapital",
+      "aliases": ["Tricapital Angels", "Tweed Renaissance Investors Capital"],
+      "hq": "Scottish Borders, Scotland",
+      "stage_focus": ["Seed"],
+      "scotland_active": true,
+      "notes": "Scottish Borders-based angel investment syndicate founded in 2004. Members invest personal capital matched by Scottish Enterprise. Led £506k HonuWorx, £430k Kaly and £620k Sisaltech seed investments announced May 2026. Has deployed £6.8m across Scottish early-stage businesses in ~2.5 years, levering £40m+ total investment. Source: https://www.scotsman.com/business/tricapital-scots-syndicate-leads-ps3m-plus-deals-and-unveils-key-hire-8640052"
+    },
+    {
+      "canonical_name": "Highland Europe",
+      "aliases": ["Highland Europe Growth"],
+      "hq": "London, United Kingdom",
+      "stage_focus": ["Series B", "Growth"],
+      "scotland_active": true,
+      "notes": "London-based growth VC focused on European tech scaleups. Led Wordsmith AI $70m Series B (Edinburgh, June 2026), one of the largest Scottish tech deals in recent years. Portfolio includes n8n, Nabla, Camunda, Wolt, WeTransfer, ContentSquare. Source: https://dailybusinessgroup.co.uk/2026/06/wordsmith-ai-raises-52-million-amid-rapid-growth/"
+    },
+    {
+      "canonical_name": "Puma Growth Partners",
+      "aliases": ["Puma Investments", "Puma VCT"],
+      "hq": "Edinburgh / London",
+      "stage_focus": ["Growth", "Series A", "Series B"],
+      "scotland_active": true,
+      "notes": "Has a Scotland office. Existing investor that re-participated in Aveni £12m growth round (Edinburgh, June 2026). Invests from Scottish office per press release. Ben Leslie listed as Investment Director at Puma Growth Partners. Source: https://scottishfinancialreview.com/2026/06/04/aveni-edinburgh-ai-wealth-startup-raises-12m/"
+    },
+    {
+      "canonical_name": "Equity Gap",
+      "aliases": [],
+      "hq": "Edinburgh",
+      "stage_focus": ["Pre-Seed", "Seed"],
+      "scotland_active": true,
+      "notes": "Edinburgh-based angel investment network. Led the £700k seed round for Edinburgh-based Lentitek (May 2026). Also co-invests with Scottish Enterprise. Source: https://angelcapital.scot/news/lentitek-raises-700k-for-cancer-treatment-technology/"
+    },
+    {
+      "canonical_name": "Lavrock Ventures",
+      "aliases": [],
+      "hq": null,
+      "stage_focus": ["Series A"],
+      "scotland_active": true,
+      "notes": "Participated in the $11m Series A for Edinburgh-based Launchpad (October 2025, announced February 2026). Specialist robotics/deep tech VC. Source: https://www.pxnventures.co.uk/launchpad-welcomes-strategic-investor-pxn-ventures/"
+    },
+    {
+      "canonical_name": "Gabriel-IS",
+      "aliases": ["Gabriel Informal Syndicate", "Gabriel"],
+      "hq": "Scotland",
+      "stage_focus": ["Pre-Seed", "Seed"],
+      "scotland_active": true,
+      "notes": "Scottish angel syndicate. Participated in Lentitek £700k seed round (Edinburgh, May 2026). Also participated in Aurora Avionics £500k seed (Edinburgh, April 2025). Source: https://angelcapital.scot/news/lentitek-raises-700k-for-cancer-treatment-technology/"
     }
   ]
 }
