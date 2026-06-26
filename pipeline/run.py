@@ -50,7 +50,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 sys.path.insert(0, str(ROOT))
-from pipeline import fetcher, parser, deduplicator, report_stats, chart_generator, vc_profile_stats, deal_table_generator
+from pipeline import fetcher, parser, deduplicator, report_stats, chart_generator, vc_profile_stats, deal_table_generator, investor_page_generator
 
 DOCS_VC_PROFILES = ROOT / "data" / "vc-profiles"
 DATA_REPORTS_CHARTS = DATA_REPORTS / "charts"
@@ -342,7 +342,16 @@ def main():
     except Exception as e:
         logger.warning("Stage 6 (Deal Table Generator) failed: %s — non-blocking, report still complete.", e)
     else:
-        logger.info("Stage 6 complete. Static table: data/reports/deals.html")
+        logger.info("Stage 6 complete. Static deal table: docs/deals/index.html")
+
+    # Stage 7 — Investor Page Generator (Python)
+    logger.info("=== Stage 7: Investor Page Generator ===")
+    try:
+        investor_page_generator.run()
+    except Exception as e:
+        logger.warning("Stage 7 (Investor Page Generator) failed: %s — non-blocking, report still complete.", e)
+    else:
+        logger.info("Stage 7 complete. Investor page: docs/investors/index.html")
 
     print(f"Pipeline complete. Report: data/reports/{run_date}_vc-report.md")
 
