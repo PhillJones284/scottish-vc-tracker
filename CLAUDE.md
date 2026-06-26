@@ -26,8 +26,8 @@ Full per-VC historical profiles are *not* rebuilt in the weekly report — see [
 ## Running the agent
 If asked to "run the agent", execute the full pipeline in sequence using the Agent tool, with a gate check after each stage. Stop and report failure if any gate fails — do not proceed to the next stage (except Stage 1a, which has a soft gate — see below).
 
-**Stage 1** has two sub-steps: **Stage 1a** (Fetcher, Python) and **Stage 1b** (Scraper, Claude agent). **Stage 3.5** (Report Stats) and **Stage 3.6** (Chart Generator) are pure Python steps that run between the deduplicator and the reporter — see below for why. **Stage 4** (reporter) is a Claude agent. **Stage 5** (VC profiler) has a Python stats step and a Claude agent step, same shape as Stage 1.
-**Stages 2, 3, 3.5, and 3.6** (parser, deduplicator, report stats, chart generator) are Python — run them with `python pipeline/parser.py`, `python pipeline/deduplicator.py`, `python pipeline/report_stats.py`, and `python pipeline/chart_generator.py` via the Bash tool. All four accept an optional `--date YYYY-MM-DD` argument; omit it to default to today.
+**Stage 1** has two sub-steps: **Stage 1a** (Fetcher, Python) and **Stage 1b** (Scraper, Claude agent). **Stage 3.5** (Report Stats) and **Stage 3.6** (Chart Generator) are pure Python steps that run between the deduplicator and the reporter — see below for why. **Stage 4** (reporter) is a Claude agent. **Stage 5** (VC profiler) has a Python stats step and a Claude agent step, same shape as Stage 1. **Stage 6** (Deal Table Generator) is a pure Python step that runs after Stage 5.
+**Stages 2, 3, 3.5, 3.6, and 6** (parser, deduplicator, report stats, chart generator, deal table generator) are Python — run them with `python pipeline/parser.py`, `python pipeline/deduplicator.py`, `python pipeline/report_stats.py`, `python pipeline/chart_generator.py`, and `python pipeline/deal_table_generator.py` via the Bash tool. All five accept an optional `--date YYYY-MM-DD` argument; omit it to default to today.
 
 **How to invoke agent stages:** Use the Agent tool with `subagent_type: "general-purpose"`. Read the body of the relevant `.claude/agents/<stage>.md` file (everything after the second `---` frontmatter delimiter) and use it as the prompt, prepending `Today's date is YYYY-MM-DD.` with today's actual date substituted.
 
@@ -123,7 +123,14 @@ Refreshes `docs/vc-profiles/` for VCs that were active this run — see [Managin
 
 **Gate (soft)**: Every VC named in `vc_stats.json` has a `docs/vc-profiles/<slug>.md` with today's date in `last_updated`. If this fails, tell Phill which VCs didn't get refreshed but do not block the run — the report has already been written by this point and profiles are reference data, not the deliverable.
 
-Report output lands in `data/reports/`. Anything else is development work.
+### Stage 6 — Deal Table Generator (Python)
+Run: `python pipeline/deal_table_generator.py` (or `python pipeline/deal_table_generator.py --date YYYY-MM-DD`)
+
+Reads `data/processed/ledger.json`, filters to the current quarter and YTD, and writes a self-contained static HTML page to `docs/deals/index.html`. All data is embedded in the HTML as a JavaScript variable — no backend or external fetch needed. The page includes live search, filter dropdowns (stage, sector, location, confidence), sortable columns, and a stats bar. Served via GitHub Pages at `/deals/`.
+
+**Gate (soft)**: `docs/deals/index.html` must exist. If it fails, log a warning but do not block — the weekly report is already complete by this point and the deal table is a web supplement, not the primary deliverable.
+
+Report output lands in `data/reports/`. Static web pages land in `docs/`. Anything else is development work.
 
 ## Project structure
 You are in the root folder of the project, which is named scottish-vc-tracker
@@ -157,7 +164,8 @@ scottish-vc-tracker/
 │   ├── report_stats.py          ← Stage 3.5: Deterministic report numbers (Python) — see Dedup confidence policy
 │   ├── chart_generator.py       ← Stage 3.6: Report charts (Python) — minimalist consulting style
 │   ├── chart_style.py           ← Shared matplotlib styling for chart_generator.py
-│   └── vc_profile_stats.py      ← Stage 5: Per-VC stats aggregation (Python)
+│   ├── vc_profile_stats.py      ← Stage 5: Per-VC stats aggregation (Python)
+│   └── deal_table_generator.py  ← Stage 6: Static deal table HTML (Python)
 │
 ├── config/
 │   ├── sources.json             ← News sources and search queries (curated — do not edit directly)
@@ -180,9 +188,10 @@ scottish-vc-tracker/
 │   └── reports/                 ← Final Markdown reports
 │       └── charts/              ← Stage 3.6 output — stage + sector PNGs per run, transient
 │
-└── docs/                        ← For user documentation, do not make changes unless told
-    ├── opening-prompt.md        ← Development prompt for pasting in. Do not touch.
-    └── vc-profiles/              ← PERSISTENT: one standing reference page per VC, refreshed by Stage 5
+└── docs/                        ← GitHub Pages web root (served at philljones284.github.io/scottish-vc-tracker/)
+    ├── vc-profiles/              ← PERSISTENT: one standing reference page per VC, refreshed by Stage 5
+    └── deals/
+        └── index.html           ← Stage 6 output: static deal table, overwritten each run
 ```
 
 ### Data Files
@@ -203,6 +212,7 @@ scottish-vc-tracker/
 | `data/reports/charts/YYYY-MM-DD_sector.png` | Stage 3.6 output — this quarter's deals by sector; transient, overwritten each run |
 | `data/reports/YYYY-MM-DD_vc-report.md` | Weekly intelligence report — one file per run |
 | `docs/vc-profiles/<slug>.md` | Standing per-VC reference profile — persistent, refreshed selectively |
+| `docs/deals/index.html` | Stage 6 output — static deal table for GitHub Pages; overwritten each run |
 
 ## Key design decisions
 - Agents communicate via JSON files in `data/`, not stdout

@@ -19,7 +19,11 @@ __pycache__/
 
 # Project data outputs (IMPORTANT: adjust to your needs)
 data/raw/
-data/processed/
+data/processed/investments.json
+data/processed/investments_deduped.json
+data/processed/investments_old_arch.json
+data/processed/report_stats.json
+data/processed/vc_stats.json
 
 # If you ever add testing
 .pytest_cache/

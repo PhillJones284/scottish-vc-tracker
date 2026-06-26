@@ -1,0 +1,20 @@
+[
+  {
+    "match_type": "possible",
+    "scope": "against_ledger",
+    "record_a": "esk_growth_2026-05-11",
+    "record_b": "esk-film-services_growth_undated",
+    "note": "Same investor (Maven Capital Partners), same amount (\u00a32.6m), same round type (Growth), same city (Edinburgh), same source domain (mavencp.com) \u2014 the second record was scraped from Maven's generic news-listing page while the first is the specific article it links to. Name similarity ('Esk' vs 'Esk Film Services') fell below the dedup matcher's auto-detection threshold, so this pair was never automatically flagged. Identified manually by Phill + Claude on 2026-06-24 during a pipeline-simulation review and merged immediately on review rather than left pending.",
+    "flagged_date": "2026-06-24",
+    "status": "merged"
+  },
+  {
+    "match_type": "possible",
+    "scope": "against_ledger",
+    "record_a": "swurf_pre-seed_2026-03-09",
+    "record_b": "swurf_seed_undated",
+    "note": "Same company (Swurf), same amount (\u00a3200k), same investors (Gareth Williams, Anna Lagerqvist Christopherson) named slightly differently across two articles, same underlying March 2026 raise \u2014 but logged under two different round-type labels ('Pre-Seed' vs 'Seed'), so the dedup matcher's name-plus-round-type check classified this as only a 'possible' match rather than 'definite', and it was never auto-merged. Identified manually by Phill + Claude on 2026-06-24 during a pipeline-simulation review and merged immediately on review rather than left pending.",
+    "flagged_date": "2026-06-24",
+    "status": "merged"
+  }
+]
