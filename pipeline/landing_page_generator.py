@@ -22,6 +22,7 @@ BUTTONDOWN_URL = "https://buttondown.com/scottish-vc-tracker"
 ARCHIVE_URL    = f"{BUTTONDOWN_URL}/archive"
 DEALS_URL      = "deals/"
 INVESTORS_URL  = "investors/"
+SOURCES_URL    = "sources/"
 
 
 # ── markdown → html ──────────────────────────────────────────────────────────
@@ -243,6 +244,11 @@ def _build_html(issue_title: str, report_html: str) -> str:
       <span class="nav-card-label">Resource</span>
       <span class="nav-card-title">Investor Directory →</span>
       <span class="nav-card-desc">Per-investor stats and profiles for every VC firm active in Scotland</span>
+    </a>
+    <a class="nav-card" href="{SOURCES_URL}">
+      <span class="nav-card-label">Reference</span>
+      <span class="nav-card-title">Intelligence Sources →</span>
+      <span class="nav-card-desc">Every news source, VC newsroom, and database monitored by the pipeline</span>
     </a>
   </div>
 

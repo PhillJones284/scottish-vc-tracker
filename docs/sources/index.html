@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Intelligence Sources — Scottish VC Tracker</title>
+  <style>
+    :root {
+      --navy:       #1F3B57;
+      --slate:      #7C93A8;
+      --grey:       #9AA0A6;
+      --light-grey: #D8DCE0;
+      --blue:       #7B9EB9;
+      --green:      #6BA58A;
+      --gold:       #C49A5A;
+      --ink:        #222222;
+      --bg:         #F7F7F6;
+      --white:      #FFFFFF;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 13px; color: var(--ink); background: var(--bg); line-height: 1.5;
+    }
+    a { color: var(--navy); text-decoration: none; }
+    a:hover { color: var(--blue); text-decoration: underline; }
+    .container { max-width: 900px; margin: 0 auto; padding: 28px 20px 48px; }
+
+    .back-link { font-size: 12px; color: var(--slate); margin-bottom: 20px; display: inline-block; }
+    .back-link:hover { color: var(--navy); text-decoration: none; }
+
+    header { margin-bottom: 24px; }
+    header h1 { font-size: 20px; font-weight: 700; color: var(--navy); letter-spacing: -0.01em; }
+    header p  { color: var(--slate); font-size: 12px; margin-top: 5px; }
+
+    .stats-bar {
+      display: flex; flex-wrap: wrap; gap: 0;
+      background: var(--white); border: 1px solid var(--light-grey); border-radius: 6px;
+      overflow: hidden; margin-bottom: 28px;
+    }
+    .stat { flex: 1; min-width: 90px; padding: 12px 18px; border-right: 1px solid var(--light-grey); }
+    .stat:last-child { border-right: none; }
+    .stat-value { font-size: 20px; font-weight: 700; color: var(--navy); }
+    .stat-label { font-size: 10px; color: var(--slate); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 2px; }
+
+    .src-group { margin-bottom: 36px; }
+    .group-header { display: flex; align-items: center; gap: 10px; margin-bottom: 4px; }
+    .group-header h2 { font-size: 14px; font-weight: 700; color: var(--navy); }
+    .group-count {
+      font-size: 11px; font-weight: 600; color: var(--slate);
+      background: var(--light-grey); border-radius: 10px; padding: 1px 7px;
+    }
+    .group-desc { font-size: 12px; color: var(--grey); margin-bottom: 10px; }
+
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; background: var(--white); border: 1px solid var(--light-grey); border-radius: 6px; overflow: hidden; }
+    thead th {
+      text-align: left; padding: 8px 12px; font-size: 10px; font-weight: 600;
+      color: var(--slate); text-transform: uppercase; letter-spacing: 0.06em;
+      background: #F0F1F2; border-bottom: 1px solid var(--light-grey);
+    }
+    tbody tr { border-bottom: 1px solid var(--light-grey); }
+    tbody tr:last-child { border-bottom: none; }
+    td { padding: 9px 12px; vertical-align: top; }
+    .src-name { width: 260px; font-weight: 500; white-space: nowrap; }
+    .src-name a { color: var(--navy); }
+    .src-name a:hover { color: var(--blue); }
+    .src-notes { font-size: 12px; color: var(--slate); line-height: 1.5; }
+
+    .badge {
+      display: inline-block; font-size: 9px; font-weight: 700;
+      padding: 1px 5px; border-radius: 3px; vertical-align: middle;
+      margin-left: 5px; letter-spacing: 0.04em; text-transform: uppercase;
+    }
+    .badge-rss { background: #E8F2EB; color: #4a8a6a; }
+    .badge-be  { background: #FFF4E0; color: #a07820; }
+
+    footer { margin-top: 24px; color: var(--grey); font-size: 11px; text-align: right; }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <a class="back-link" href="../">← Scottish VC Tracker</a>
+
+  <header>
+    <h1>Intelligence Sources</h1>
+    <p>Every source monitored by the automated pipeline. Regenerated each run. &nbsp;·&nbsp; Last updated 2026-06-27</p>
+  </header>
+
+  <div class="stats-bar">
+    <div class="stat"><div class="stat-value">47</div><div class="stat-label">Total</div></div>
+    <div class="stat"><div class="stat-value">13</div><div class="stat-label">News Sites</div></div>
+    <div class="stat"><div class="stat-value">28</div><div class="stat-label">VC Newsrooms</div></div>
+    <div class="stat"><div class="stat-value">2</div><div class="stat-label">Databases</div></div>
+    <div class="stat"><div class="stat-value">2</div><div class="stat-label">Search Engines</div></div>
+    <div class="stat"><div class="stat-value">1</div><div class="stat-label">Browser (Authenticated)</div></div>
+  </div>
+
+  <section class="src-group">
+    <div class="group-header">
+      <h2>News Sites</h2><span class="group-count">13</span>
+    </div>
+    <p class="group-desc">Scraped automatically each run via RSS feed or direct fetch.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Source</th><th>Description</th></tr></thead>
+        <tbody>
+      <tr>
+        <td class="src-name"><a href="https://scottishfinancialreview.com" target="_blank" rel="noopener">Scottish Financial Review</a><span class="badge badge-rss">RSS</span></td>
+        <td class="src-notes">Dedicated Scottish financial and business news site. High signal-to-noise for Scottish VC deals — confirmed 6 relevant deals in the May 2026 run. URL structure: /YYYY/MM/DD/slug.</td>
+      </tr>
+      <tr>
+        <td class="src-name"><a href="https://www.scotsman.com/business" target="_blank" rel="noopener">The Scotsman — Business</a><span class="badge badge-rss">RSS</span></td>
+        <td class="src-notes">Scan business section headlines. No section-specific feed — full-site RSS used.</td>
+      </tr>
+      <tr>
+        <td class="src-name"><a href="https://www.heraldscotland.com/business" target="_blank" rel="noopener">The Herald — Business</a></td>
+        <td class="src-notes">Strong Glasgow/West of Scotland coverage</td>
+      </tr>
+      <tr>
+        <td class="src-name"><a href="https://www.insider.co.uk" target="_blank" rel="noopener">Insider.co.uk</a><span class="badge badge-rss">RSS</span></td>
+        <td class="src-notes">Scottish business focused, very relevant</td>
+      </tr>
+      <tr>
+        <td class="src-name"><a href="https://sifted.eu" target="_blank" rel="noopener">Sifted — UK/Scotland</a><span class="badge badge-rss">RSS</span></td>
+        <td class="src-notes">European startup media, covers UK deals well</td>
+      </tr>
+      <tr>
+        <td class="src-name"><a href="https://techfundingnews.com" target="_blank" rel="noopener">Tech Funding News</a><span class="badge badge-rss">RSS</span></td>
+        <td class="src-notes">Covers UK/EU startup funding rounds</td>
+      </tr>
+      <tr>
+        <td class="src-name"><a href="https://www.digit.fyi" target="_blank" rel="noopener">DIGIT</a><span class="badge badge-rss">RSS</span></td>
+        <td class="src-notes">Scottish tech news site with a dedicated funding category and monthly deal roundup articles (e.g. &#x27;DIGIT Deal Roundup | March 2026&#x27;). High signal-to-noise for Scottish tech VC deals. URL pattern: /digit-deal-roundup-MONTH-YEAR/ for roundups.</td>
+      </tr>
+      <tr>
+        <td class="src-name"><a href="https://businesscloud.co.uk" target="_blank" rel="noopener">BusinessCloud — Scotland</a><span class="badge badge-rss">RSS</span></td>
+        <td class="src-notes">UK tech/business news site with good Scottish coverage. Supplementary search source for Scottish VC deals.</td>
+      </tr>
+      <tr>
+        <td class="src-name"><a href="https://dailybusinessgroup.co.uk" target="_blank" rel="noopener">Daily Business Group</a><span class="badge badge-rss">RSS</span></td>
+        <td class="src-notes">Scottish business news site covering deals and investments. Homepage returns 403 to direct fetches (bot protection) — use the RSS feed instead, confirmed working and fresh.</td>
+      </tr>
+      <tr>
+        <td class="src-name"><a href="https://www.campfire.scot" target="_blank" rel="noopener">Campfire Scotland Newsletter</a><span class="badge badge-rss">RSS</span><span class="badge badge-be">best‑effort</span></td>
+        <td class="src-notes">Weekly Scottish startup newsletter covering deals, funding rounds, and ecosystem news. Substack feed confirmed working — typically includes full post content, reducing paywall risk.</td>
+      </tr>
+      <tr>
+        <td class="src-name"><a href="https://www.scottishfinancialnews.com" target="_blank" rel="noopener">Scottish Financial News</a></td>
+        <td class="src-notes">Scottish business and finance news site, distinct from scottishfinancialreview.com. Has a dedicated articles section. Confirmed reachable (200 OK) as of 2026-06-23 — an earlier 403 noted by the scraper appears to have been transient.</td>
+      </tr>
+      <tr>
+        <td class="src-name"><a href="https://futurescot.com" target="_blank" rel="noopener">FutureScot</a></td>
+        <td class="src-notes">Scottish technology and business news site. Covered Wordsmith AI Series B (June 2026) with detailed reporting on the round, investors, and growth plans. Regularly covers Scottish startup funding events.</td>
+      </tr>
+      <tr>
+        <td class="src-name"><a href="https://theedinburghreporter.co.uk" target="_blank" rel="noopener">The Edinburgh Reporter</a></td>
+        <td class="src-notes">Edinburgh local news site that covers Edinburgh startup funding, sometimes ahead of larger outlets. Produced the primary article on Infrawatch&#x27;s pre-seed round (May 2026) before it appeared elsewhere. Worth monitoring for early Edinburgh-specific deal coverage.</td>
+      </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="src-group">
+    <div class="group-header">
+      <h2>VC Newsrooms</h2><span class="group-count">28</span>
+    </div>
+    <p class="group-desc">VC firm news pages scraped for deal announcements.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Source</th><th>Description</th></tr></thead>
+        <tbody>
+      <tr>
+        <td class="src-name"><a href="https://www.techstart.vc/portfolio" target="_blank" rel="noopener">Techstart Ventures — Portfolio</a></td>
+        <td class="src-notes">Pre-seed/seed investor very active in Scotland. Portfolio page links to press coverage of follow-on rounds — fetch the page and follow coverage links to extract deal details.</td>
+      </tr>
+      <tr>
+        <td class="src-name"><a href="https://octopusventures.com/blog/" target="_blank" rel="noopener">Octopus Ventures — Blog</a></td>
+        <td class="src-notes">UK-wide VC with some Scottish portfolio companies. Blog features investment announcement posts explaining why they backed specific companies — scan for Scottish deals.</td>
+      </tr>
+      <tr>
+        <td class="src-name"><a href="https://www.highlightcapital.com/news" target="_blank" rel="noopener">Highlight Capital — News</a></td>
+        <td class="src-notes">Check for Scottish deal announcements</td>
+      </tr>
+      <tr>
+        <td class="src-name"><a href="https://www.pxnventures.co.uk/news" target="_blank" rel="noopener">PXN Ventures — News</a><span class="badge badge-rss">RSS</span></td>
+        <td class="src-notes">Edinburgh-based successor to Par Equity (merged with Praetura Ventures in 2025). Strong Scottish focus.</td>
+      </tr>
+      <tr>
+        <td class="src-name"><a href="https://www.olderbull.com/portfolio-news" target="_blank" rel="noopener">Older Bull — Portfolio News</a></td>
+        <td class="src-notes">Check for Scottish deal announcements</td>
+      </tr>
+      <tr>
+        <td class="src-name"><a href="https://www.bgf.co.uk/news" target="_blank" rel="noopener">BGF — News</a><span class="badge badge-rss">RSS</span></td>
+        <td class="src-notes">Growth-stage investor with Edinburgh office. RSS feed exists but was empty at last check — fall back to HTML if feed yields nothing.</td>
+      </tr>
+      <tr>
+        <td class="src-name"><a href="https://www.prairiefund.com/news" target="_blank" rel="noopener">Prairie Fund — News</a></td>
+        <td class="src-notes">Check for Scottish deal announcements</td>
+      </tr>
+      <tr>
+        <td class="src-name"><a href="https://www.mavencp.com/latest-news" target="_blank" rel="noopener">Maven Capital Partners — Latest News</a></td>
+        <td class="src-notes">Maven&#x27;s newsroom covers deal announcements across their funds including Investment Fund for Scotland (IFS Maven Equity Finance). Good source for Scottish Seed/Growth deals.</td>
+      </tr>
+      <tr>
+        <td class="src-name"><a href="https://www.kelvincapital.com/news-blog/" target="_blank" rel="noopener">Kelvin Capital — News</a><span class="badge badge-rss">RSS</span></td>
+        <td class="src-notes">Glasgow-based VC with West of Scotland focus. Active deal announcements and portfolio milestones.</td>
+      </tr>
+      <tr>
+        <td class="src-name"><a href="https://epidarex.com/news-2/" target="_blank" rel="noopener">Epidarex Capital — News</a><span class="badge badge-rss">RSS</span></td>
+        <td class="src-notes">Edinburgh-based life sciences specialist. Covers funding rounds and portfolio milestones for biotech/medtech companies.</td>
+      </tr>
+      <tr>
+        <td class="src-name"><a href="https://www.mercia.co.uk/news/" target="_blank" rel="noopener">Mercia Asset Management — News</a><span class="badge badge-rss">RSS</span></td>
+        <td class="src-notes">UK-wide VC with MEIF and other funds active in Scotland. Deal announcements cover Seed through Series B.</td>
+      </tr>
+      <tr>
+        <td class="src-name"><a href="https://parkwalk.vc/news/" target="_blank" rel="noopener">Parkwalk — News</a></td>
+        <td class="src-notes">University spinout specialist active across UK ecosystems including Edinburgh and St Andrews. Covers funding rounds and portfolio milestones.</td>
+      </tr>
+      <tr>
+        <td class="src-name"><a href="https://edinburgh-innovations.ed.ac.uk/news" target="_blank" rel="noopener">Edinburgh Innovations — News</a></td>
+        <td class="src-notes">University of Edinburgh&#x27;s commercialisation arm. Covers spinout funding rounds and investment news via Old College Capital. High relevance for Edinburgh deep tech and life sciences deals.</td>
+      </tr>
+      <tr>
+        <td class="src-name"><a href="https://angelcapital.scot" target="_blank" rel="noopener">Angel Capital Scotland</a><span class="badge badge-rss">RSS</span></td>
+        <td class="src-notes">News feed for the Angel Capital Association of Scotland — covers deals from Equity Gap, Tricapital, and other Scottish angel syndicates. Confirmed source for Lentitek, JET Connectivity, Jump Ship Brewing in May 2026 comparison test.</td>
+      </tr>
+      <tr>
+        <td class="src-name"><a href="https://archangelsonline.com/about-us/news/" target="_blank" rel="noopener">Archangels — News</a><span class="badge badge-rss">RSS</span></td>
+        <td class="src-notes">Scotland&#x27;s oldest and largest angel syndicate. Consistently active in Edinburgh life sciences, medtech, and software. High-signal source for early-stage Scottish deals.</td>
+      </tr>
+      <tr>
+        <td class="src-name"><a href="https://www.scottishedge.com/news" target="_blank" rel="noopener">Scottish EDGE — News</a></td>
+        <td class="src-notes">Scotland&#x27;s biggest funding competition. News page features winner announcements and follow-on funding details for past round winners. Regular archive of competition rounds (2020–2026) with card-based layout. No RSS feed — newsletter signup available.</td>
+      </tr>
+      <tr>
+        <td class="src-name"><a href="https://sosv.com/news/" target="_blank" rel="noopener">SOSV — News</a></td>
+        <td class="src-notes">Deep tech venture capital firm with active Scottish portfolio companies. News page features investment announcements, company milestones, and founder stories. Focus on hard tech, climate, and health tech. Chronological feed format.</td>
+      </tr>
+      <tr>
+        <td class="src-name"><a href="https://www.strath.ac.uk/whystrathclyde/news/" target="_blank" rel="noopener">University of Strathclyde — News</a></td>
+        <td class="src-notes">Glasgow-based university with active spinout investment program. News section covers spinout funding announcements, company valuations, and commercialization milestones. High relevance for Glasgow tech and manufacturing spinouts.</td>
+      </tr>
+      <tr>
+        <td class="src-name"><a href="https://www.4biocapital.com/news" target="_blank" rel="noopener">4BIO Capital — News</a></td>
+        <td class="src-notes">Biotech-focused venture capital firm. Newsroom covers life sciences and biotech investment announcements and portfolio company milestones.</td>
+      </tr>
+      <tr>
+        <td class="src-name"><a href="https://foresight.group/" target="_blank" rel="noopener">Foresight Group — News &amp; Insights</a></td>
+        <td class="src-notes">Large fund manager (9 Scottish transactions). News &amp; Insights section features exit announcements, case studies, and investment themes. Recent example: Fieldway exit to Axis CLC (June 2026).</td>
+      </tr>
+      <tr>
+        <td class="src-name"><a href="https://playfair.vc/" target="_blank" rel="noopener">Playfair Capital — Content</a></td>
+        <td class="src-notes">Pre-seed focused venture capital with content and portfolio sections. Covers early-stage funding announcements and founder resources.</td>
+      </tr>
+      <tr>
+        <td class="src-name"><a href="https://sfccapital.com/blog" target="_blank" rel="noopener">SFC Capital — Blog</a></td>
+        <td class="src-notes">SFC Capital manages portfolio of 400+ early-stage businesses across B2B software, fintech, medtech, and green tech. Blog covers investment news and sector insights. 12 Scottish transactions.</td>
+      </tr>
+      <tr>
+        <td class="src-name"><a href="https://www.futureplanetcapital.com/blog" target="_blank" rel="noopener">Future Planet Capital — Blog</a></td>
+        <td class="src-notes">Impact-focused venture capital specializing in university spinouts and growth companies tackling global challenges. Blog covers portfolio company updates and investment announcements. 7 Scottish transactions.</td>
+      </tr>
+      <tr>
+        <td class="src-name"><a href="https://greenangelventures.com/stories/" target="_blank" rel="noopener">Green Angel Ventures — Stories</a></td>
+        <td class="src-notes">Climate tech focused angel syndicate. Stories section highlights portfolio companies and climate tech innovations. 4 Scottish transactions.</td>
+      </tr>
+      <tr>
+        <td class="src-name"><a href="https://www.adaventures.com/" target="_blank" rel="noopener">Ada Ventures — Updates &amp; Insights</a></td>
+        <td class="src-notes">Impact-led venture capital with focus on inclusive investing. Updates &amp; Insights section features investment rationales (e.g., &#x27;Why we invested&#x27; posts), industry research, and impact reports.</td>
+      </tr>
+      <tr>
+        <td class="src-name"><a href="https://500.co/" target="_blank" rel="noopener">500 Global — Content Hub &amp; Rise Report</a></td>
+        <td class="src-notes">Global accelerator with 35+ billion-dollar portfolio companies. Content Hub and Rise Report provide investment insights and portfolio updates. 2 Scottish transactions. Global scope but may cover relevant UK ecosystem stories.</td>
+      </tr>
+      <tr>
+        <td class="src-name"><a href="https://techstars.com/" target="_blank" rel="noopener">Techstars — Newsroom &amp; Blog</a></td>
+        <td class="src-notes">Global accelerator network with 23 billion-dollar portfolio companies ($133.4B cumulative market cap). Newsroom and blog cover portfolio company announcements and funding rounds. Global scope but captures larger UK/Scottish deals that achieve significant follow-on funding.</td>
+      </tr>
+      <tr>
+        <td class="src-name"><a href="https://www.stac.ac/news/" target="_blank" rel="noopener">STAC — News</a></td>
+        <td class="src-notes">Scottish deep tech accelerator and investor (6 transactions). News section features investment announcements across quantum computing, clean energy, healthtech, and housing tech. Card-based layout with category tags (Invest, News, Events). Active portfolio company announcements and milestone updates.</td>
+      </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="src-group">
+    <div class="group-header">
+      <h2>Databases</h2><span class="group-count">2</span>
+    </div>
+    <p class="group-desc">Investment databases. Partially paywalled — free content extracted only.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Source</th><th>Description</th></tr></thead>
+        <tbody>
+      <tr>
+        <td class="src-name"><a href="https://www.crunchbase.com/discover/funding_rounds" target="_blank" rel="noopener">Crunchbase — Scotland recent</a><span class="badge badge-be">best‑effort</span></td>
+        <td class="src-notes">Filter by Scotland, last 90 days. Partially paywalled — extract whatever free content is visible</td>
+      </tr>
+      <tr>
+        <td class="src-name"><a href="https://www.beauhurst.com" target="_blank" rel="noopener">Beauhurst</a><span class="badge badge-be">best‑effort</span></td>
+        <td class="src-notes">UK equity investment tracker. Mostly paywalled — extract whatever free headlines are visible</td>
+      </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="src-group">
+    <div class="group-header">
+      <h2>Search Engines</h2><span class="group-count">2</span>
+    </div>
+    <p class="group-desc">Web search queries run against public search engines.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Source</th><th>Description</th></tr></thead>
+        <tbody>
+      <tr>
+        <td class="src-name"><a href="https://html.duckduckgo.com/html/" target="_blank" rel="noopener">DuckDuckGo — Scottish VC search</a></td>
+        <td class="src-notes">Run each query as ?q=&lt;encoded query&gt;. JS-free endpoint, returns plain HTML results</td>
+      </tr>
+      <tr>
+        <td class="src-name"><a href="https://techcrunch.com/search/scotland+funding" target="_blank" rel="noopener">TechCrunch — Scotland search</a></td>
+        <td class="src-notes">Larger deals that make international press</td>
+      </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="src-group">
+    <div class="group-header">
+      <h2>Browser (Authenticated)</h2><span class="group-count">1</span>
+    </div>
+    <p class="group-desc">Sources requiring an authenticated browser session (Stage 1c).</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Source</th><th>Description</th></tr></thead>
+        <tbody>
+      <tr>
+        <td class="src-name"><a href="https://www.crunchbase.com/discover/funding_rounds/e3120c30307a4df552a2e1c7559da4a2" target="_blank" rel="noopener">Crunchbase</a><span class="badge badge-be">best‑effort</span></td>
+        <td class="src-notes">Scottish funding rounds filtered by HQ city (Edinburgh, Glasgow, Aberdeen, Dundee, Stirling, Perth, Inverness, Livingston, Paisley, Dunfermline). Browser-only source — handled in Stage 1c, not by Stage 1a or 1b. Free tier shows top 5 most recent results sorted by announced date. Requires Chrome open and logged in to Crunchbase via claude-in-chrome MCP. URL is a saved search with all 10 city filters applied.</td>
+      </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>Scottish VC Tracker &nbsp;·&nbsp; Data sourced from public news coverage only &nbsp;·&nbsp; Not investment advice</footer>
+
+</div>
+</body>
+</html>

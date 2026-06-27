@@ -20,7 +20,7 @@ Report format and structure is defined in `.claude/agents/reporter.md`. Full per
 If asked to "run the agent", execute the full pipeline in sequence using the Agent tool, with a gate check after each stage. Stop and report failure if any gate fails — do not proceed to the next stage (except Stage 1a, which has a soft gate — see below).
 
 **Stage 1** has three sub-steps: **Stage 1a** (Fetcher, Python), **Stage 1c** (Crunchbase Browser Scrape, inline MCP), and **Stage 1b** (Scraper, Claude agent). **Stage 3.5** (Report Stats) and **Stage 3.6** (Chart Generator) are pure Python steps that run between the deduplicator and the reporter — see below for why. **Stage 4** (reporter) is a Claude agent. **Stage 5** (VC profiler) has a Python stats step and a Claude agent step, same shape as Stage 1. **Stage 6** (Deal Table Generator) is a pure Python step that runs after Stage 5. **Stage 7** (Investor Page Generator) is a pure Python step that runs after Stage 6. **Stage 8** (Landing Page Generator) is a pure Python step that runs after Stage 7. **Stage 9** (git commit + push) and **Stage 10** (Buttondown draft) are the final two steps, both soft.
-**Stages 2, 3, 3.5, 3.6, 6, 7, and 8** are Python — run them with the relevant `python pipeline/<script>.py` command via the Bash tool. Stages 2, 3, 3.5, and 3.6 accept an optional `--date YYYY-MM-DD` argument; omit it to default to today. Stages 6, 7, and 8 take no arguments.
+**Stages 2, 3, 3.5, 3.6, 6, 7, and 8** are Python — run them with the relevant `python pipeline/<script>.py` command via the Bash tool. Stages 2, 3, 3.5, and 3.6 accept an optional `--date YYYY-MM-DD` argument; omit it to default to today. Stages 6, 7, and 8 take no arguments (Stage 8 runs two scripts — see Stage 8 section).
 
 **How to invoke agent stages:** Use the Agent tool with `subagent_type: "general-purpose"`. Read the body of the relevant `.claude/agents/<stage>.md` file (everything after the second `---` frontmatter delimiter) and use it as the prompt, prepending `Today's date is YYYY-MM-DD.` with today's actual date substituted.
 
@@ -182,8 +182,10 @@ Run: `python pipeline/investor_page_generator.py`
 
 **Gate (soft)**: `docs/investors/index.html` must exist. If it fails, log a warning but do not block.
 
-### Stage 8 — Landing Page Generator (Python)
-Run: `python pipeline/landing_page_generator.py`
+### Stage 8 — Sources Page + Landing Page Generator (Python)
+Run: `python pipeline/sources_page_generator.py` then `python pipeline/landing_page_generator.py`
+
+`sources_page_generator.py` reads `config/sources.json` and writes `docs/sources/index.html`. It takes no arguments and can also be run standalone whenever `sources.json` changes.
 
 **Gate (soft)**: `docs/index.html` must exist. If it fails, log a warning but do not block.
 
@@ -241,6 +243,7 @@ scottish-vc-tracker/
 │   ├── vc_profile_stats.py      ← Stage 5: Per-VC stats aggregation (Python)
 │   ├── deal_table_generator.py  ← Stage 6: Static deal table HTML (Python)
 │   ├── investor_page_generator.py ← Stage 7: Static investor page HTML (Python)
+│   ├── sources_page_generator.py ← Stage 8: Sources reference page HTML (Python)
 │   ├── landing_page_generator.py ← Stage 8: Landing page HTML (Python)
 │   ├── newsletter_publish.py     ← Stage 10: Buttondown draft + ImgBB upload (Python)
 │   └── rollback.py               ← Undo a publish: delete ImgBB images, delete draft, revert GitHub Pages
@@ -278,6 +281,8 @@ scottish-vc-tracker/
     │   └── index.html           ← Stage 7 output: static investor page, overwritten each run
     └── charts/
     │   └── YYYY-MM-DD_*.png     ← Stage 8 copies charts here from data/reports/charts/
+    └── sources/
+    │   └── index.html           ← Stage 8 output: intelligence sources reference page, overwritten each run
     └── index.html               ← Stage 8 output: landing page, overwritten each run
 ```
 

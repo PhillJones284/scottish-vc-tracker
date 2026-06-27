@@ -50,7 +50,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 sys.path.insert(0, str(ROOT))
-from pipeline import fetcher, parser, deduplicator, report_stats, chart_generator, vc_profile_stats, deal_table_generator, investor_page_generator, landing_page_generator, newsletter_publish
+from pipeline import fetcher, parser, deduplicator, report_stats, chart_generator, vc_profile_stats, deal_table_generator, investor_page_generator, landing_page_generator, sources_page_generator, newsletter_publish
 
 DOCS_VC_PROFILES = ROOT / "data" / "vc-profiles"
 DATA_REPORTS_CHARTS = DATA_REPORTS / "charts"
@@ -352,14 +352,22 @@ def main():
     else:
         logger.info("Stage 7 complete. Investor page: docs/investors/index.html")
 
-    # Stage 8 — Landing Page Generator (Python)
+    # Stage 8 — Sources Page + Landing Page Generator (Python)
+    logger.info("=== Stage 8: Sources Page Generator ===")
+    try:
+        sources_page_generator.run()
+    except Exception as e:
+        logger.warning("Stage 8 (Sources Page Generator) failed: %s — non-blocking.", e)
+    else:
+        logger.info("Stage 8 (sources) complete. Sources page: docs/sources/index.html")
+
     logger.info("=== Stage 8: Landing Page Generator ===")
     try:
         landing_page_generator.run()
     except Exception as e:
         logger.warning("Stage 8 (Landing Page Generator) failed: %s — non-blocking, report still complete.", e)
     else:
-        logger.info("Stage 8 complete. Landing page: docs/index.html")
+        logger.info("Stage 8 (landing) complete. Landing page: docs/index.html")
 
     # Stage 9 — Git commit + push docs/ to GitHub Pages
     logger.info("=== Stage 9: Git commit + push ===")
