@@ -146,14 +146,6 @@
       "notes": "Check for Scottish deal announcements"
     },
     {
-      "slug": "seiicef-news",
-      "name": "Scottish Enterprise Investment Fund — News",
-      "type": "vc_newsrooms",
-      "url": "https://www.seiicef.scot/news",
-      "search_path": null,
-      "notes": "Quasi-public co-investor, frequently appears alongside VC deals"
-    },
-    {
       "slug": "bgf-news",
       "name": "BGF — News",
       "type": "vc_newsrooms",
@@ -295,6 +287,161 @@
       "queries": [],
       "best_effort": false,
       "notes": "Scottish business and finance news site, distinct from scottishfinancialreview.com. Has a dedicated articles section. Confirmed reachable (200 OK) as of 2026-06-23 — an earlier 403 noted by the scraper appears to have been transient."
+    },
+    {
+      "slug": "scottish-edge-news",
+      "name": "Scottish EDGE — News",
+      "type": "vc_newsrooms",
+      "url": "https://www.scottishedge.com/news",
+      "search_path": null,
+      "rss_url": null,
+      "notes": "Scotland's biggest funding competition. News page features winner announcements and follow-on funding details for past round winners. Regular archive of competition rounds (2020–2026) with card-based layout. No RSS feed — newsletter signup available."
+    },
+    {
+      "slug": "sosv-news",
+      "name": "SOSV — News",
+      "type": "vc_newsrooms",
+      "url": "https://sosv.com/news/",
+      "search_path": null,
+      "rss_url": null,
+      "notes": "Deep tech venture capital firm with active Scottish portfolio companies. News page features investment announcements, company milestones, and founder stories. Focus on hard tech, climate, and health tech. Chronological feed format."
+    },
+    {
+      "slug": "strathclyde-news",
+      "name": "University of Strathclyde — News",
+      "type": "vc_newsrooms",
+      "url": "https://www.strath.ac.uk/whystrathclyde/news/",
+      "search_path": null,
+      "rss_url": null,
+      "notes": "Glasgow-based university with active spinout investment program. News section covers spinout funding announcements, company valuations, and commercialization milestones. High relevance for Glasgow tech and manufacturing spinouts."
+    },
+    {
+      "slug": "4bio-capital-news",
+      "name": "4BIO Capital — News",
+      "type": "vc_newsrooms",
+      "url": "https://www.4biocapital.com/news",
+      "search_path": null,
+      "rss_url": null,
+      "notes": "Biotech-focused venture capital firm. Newsroom covers life sciences and biotech investment announcements and portfolio company milestones."
+    },
+    {
+      "slug": "foresight-group-news",
+      "name": "Foresight Group — News & Insights",
+      "type": "vc_newsrooms",
+      "url": "https://foresight.group/",
+      "search_path": "/news-insights/",
+      "rss_url": null,
+      "notes": "Large fund manager (9 Scottish transactions). News & Insights section features exit announcements, case studies, and investment themes. Recent example: Fieldway exit to Axis CLC (June 2026)."
+    },
+    {
+      "slug": "playfair-capital-news",
+      "name": "Playfair Capital — Content",
+      "type": "vc_newsrooms",
+      "url": "https://playfair.vc/",
+      "search_path": "/content.php",
+      "rss_url": null,
+      "notes": "Pre-seed focused venture capital with content and portfolio sections. Covers early-stage funding announcements and founder resources."
+    },
+    {
+      "slug": "sfc-capital-blog",
+      "name": "SFC Capital — Blog",
+      "type": "vc_newsrooms",
+      "url": "https://sfccapital.com/blog",
+      "search_path": null,
+      "rss_url": null,
+      "notes": "SFC Capital manages portfolio of 400+ early-stage businesses across B2B software, fintech, medtech, and green tech. Blog covers investment news and sector insights. 12 Scottish transactions."
+    },
+    {
+      "slug": "future-planet-capital-blog",
+      "name": "Future Planet Capital — Blog",
+      "type": "vc_newsrooms",
+      "url": "https://www.futureplanetcapital.com/blog",
+      "search_path": null,
+      "rss_url": null,
+      "notes": "Impact-focused venture capital specializing in university spinouts and growth companies tackling global challenges. Blog covers portfolio company updates and investment announcements. 7 Scottish transactions."
+    },
+    {
+      "slug": "green-angel-ventures-stories",
+      "name": "Green Angel Ventures — Stories",
+      "type": "vc_newsrooms",
+      "url": "https://greenangelventures.com/stories/",
+      "search_path": null,
+      "rss_url": null,
+      "notes": "Climate tech focused angel syndicate. Stories section highlights portfolio companies and climate tech innovations. 4 Scottish transactions."
+    },
+    {
+      "slug": "ada-ventures-insights",
+      "name": "Ada Ventures — Updates & Insights",
+      "type": "vc_newsrooms",
+      "url": "https://www.adaventures.com/",
+      "search_path": null,
+      "rss_url": null,
+      "notes": "Impact-led venture capital with focus on inclusive investing. Updates & Insights section features investment rationales (e.g., 'Why we invested' posts), industry research, and impact reports."
+    },
+    {
+      "slug": "500global-news",
+      "name": "500 Global — Content Hub & Rise Report",
+      "type": "vc_newsrooms",
+      "url": "https://500.co/",
+      "search_path": null,
+      "rss_url": null,
+      "notes": "Global accelerator with 35+ billion-dollar portfolio companies. Content Hub and Rise Report provide investment insights and portfolio updates. 2 Scottish transactions. Global scope but may cover relevant UK ecosystem stories."
+    },
+    {
+      "slug": "techstars-news",
+      "name": "Techstars — Newsroom & Blog",
+      "type": "vc_newsrooms",
+      "url": "https://techstars.com/",
+      "search_path": null,
+      "rss_url": null,
+      "notes": "Global accelerator network with 23 billion-dollar portfolio companies ($133.4B cumulative market cap). Newsroom and blog cover portfolio company announcements and funding rounds. Global scope but captures larger UK/Scottish deals that achieve significant follow-on funding."
+    },
+    {
+      "slug": "stac-news",
+      "name": "STAC — News",
+      "type": "vc_newsrooms",
+      "url": "https://www.stac.ac/news/",
+      "search_path": null,
+      "rss_url": null,
+      "notes": "Scottish deep tech accelerator and investor (6 transactions). News section features investment announcements across quantum computing, clean energy, healthtech, and housing tech. Card-based layout with category tags (Invest, News, Events). Active portfolio company announcements and milestone updates."
+    },
+    {
+      "slug": "futurescot",
+      "name": "FutureScot",
+      "type": "news_site",
+      "url": "https://futurescot.com",
+      "search_path": null,
+      "rss_url": null,
+      "queries": [
+        "Scottish startup funding",
+        "Scottish VC investment"
+      ],
+      "best_effort": false,
+      "notes": "Scottish technology and business news site. Covered Wordsmith AI Series B (June 2026) with detailed reporting on the round, investors, and growth plans. Regularly covers Scottish startup funding events."
+    },
+    {
+      "slug": "theedinburghreporter",
+      "name": "The Edinburgh Reporter",
+      "type": "news_site",
+      "url": "https://theedinburghreporter.co.uk",
+      "search_path": null,
+      "rss_url": null,
+      "queries": [
+        "startup funding investment"
+      ],
+      "best_effort": false,
+      "notes": "Edinburgh local news site that covers Edinburgh startup funding, sometimes ahead of larger outlets. Produced the primary article on Infrawatch's pre-seed round (May 2026) before it appeared elsewhere. Worth monitoring for early Edinburgh-specific deal coverage."
+    },
+    {
+      "slug": "crunchbase",
+      "name": "Crunchbase",
+      "type": "browser",
+      "url": "https://www.crunchbase.com/discover/funding_rounds/e3120c30307a4df552a2e1c7559da4a2",
+      "search_path": null,
+      "rss_url": null,
+      "queries": null,
+      "best_effort": true,
+      "notes": "Scottish funding rounds filtered by HQ city (Edinburgh, Glasgow, Aberdeen, Dundee, Stirling, Perth, Inverness, Livingston, Paisley, Dunfermline). Browser-only source — handled in Stage 1c, not by Stage 1a or 1b. Free tier shows top 5 most recent results sorted by announced date. Requires Chrome open and logged in to Crunchbase via claude-in-chrome MCP. URL is a saved search with all 10 city filters applied."
     }
   ]
 }

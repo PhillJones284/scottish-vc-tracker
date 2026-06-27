@@ -238,5 +238,35 @@
     "url": "https://dailybusinessgroup.co.uk/feed/",
     "error": "RSS fetch failed: Client error '403 Forbidden' for url 'https://dailybusinessgroup.co.uk/feed/'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403; fallback failed: Client error '403 Forbidden' for url 'https://dailybusinessgroup.co.uk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
     "timestamp": "2026-06-24T14:15:30.370470+00:00"
+  },
+  {
+    "source": "crunchbase-scotland",
+    "url": "https://www.crunchbase.com/discover/funding_rounds?location=Scotland&date_range=90d",
+    "error": "Client error '403 Forbidden' for url 'https://www.crunchbase.com/discover/funding_rounds?location=Scotland&date_range=90d'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+    "timestamp": "2026-06-27T09:19:43.598169+00:00"
+  },
+  {
+    "source": "highlight-capital-news",
+    "url": "https://www.highlightcapital.com/news",
+    "error": "timed out",
+    "timestamp": "2026-06-27T09:20:51.766534+00:00"
+  },
+  {
+    "source": "seiicef-news",
+    "url": "https://www.seiicef.scot/news",
+    "error": "[Errno 8] nodename nor servname provided, or not known",
+    "timestamp": "2026-06-27T09:21:13.924723+00:00"
+  },
+  {
+    "source": "green-angel-ventures-stories",
+    "url": "https://greenangelventures.com/stories/",
+    "error": "Client error '403 Forbidden' for url 'https://greenangelventures.com/stories/'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+    "timestamp": "2026-06-27T09:21:51.967545+00:00"
+  },
+  {
+    "source": "stac-news",
+    "url": "https://www.stac.ac/news/",
+    "error": "Client error '403 Forbidden' for url 'https://www.stac.ac/news/'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+    "timestamp": "2026-06-27T09:21:53.908056+00:00"
   }
 ]

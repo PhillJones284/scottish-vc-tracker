@@ -16,5 +16,32 @@
     "note": "Same company (Swurf), same amount (\u00a3200k), same investors (Gareth Williams, Anna Lagerqvist Christopherson) named slightly differently across two articles, same underlying March 2026 raise \u2014 but logged under two different round-type labels ('Pre-Seed' vs 'Seed'), so the dedup matcher's name-plus-round-type check classified this as only a 'possible' match rather than 'definite', and it was never auto-merged. Identified manually by Phill + Claude on 2026-06-24 during a pipeline-simulation review and merged immediately on review rather than left pending.",
     "flagged_date": "2026-06-24",
     "status": "merged"
+  },
+  {
+    "match_type": "probable",
+    "scope": "against_ledger",
+    "record_a": "earth-blox_growth_2026-03-18",
+    "record_b": "earth-blox_series-a_2026-03-31",
+    "note": "Same company name, different round types ('Growth' vs 'Series A')",
+    "flagged_date": "2026-06-27",
+    "status": "merged"
+  },
+  {
+    "match_type": "probable",
+    "scope": "against_ledger",
+    "record_a": "aveni_series-b_2026-06-04",
+    "record_b": "aveni_growth_2026-06-04",
+    "note": "Same company name, different round types ('Series B' vs 'Growth')",
+    "flagged_date": "2026-06-27",
+    "status": "merged"
+  },
+  {
+    "match_type": "probable",
+    "scope": "against_ledger",
+    "record_a": "highway-data-systems_growth_undated",
+    "record_b": "highway-data-systems_seed_2026-04-30",
+    "note": "Same company name, different round types ('Growth' vs 'Seed')",
+    "flagged_date": "2026-06-27",
+    "status": "merged"
   }
 ]

@@ -371,6 +371,10 @@ def _fetch_queries(client: httpx.Client, source: dict, candidates: list, log: di
 
 
 def _process_source(client: httpx.Client, source: dict, candidates: list) -> dict:
+    if source.get("type") == "browser":
+        log = _make_log_entry(source["slug"])
+        log["skipped"] = "browser-only source — handled in Stage 1c"
+        return log
     log = _make_log_entry(source["slug"])
     try:
         if source.get("rss_url"):

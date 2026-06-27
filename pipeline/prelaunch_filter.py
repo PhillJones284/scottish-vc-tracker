@@ -38,7 +38,8 @@ def main():
         print(f"ERROR: {INPUT_FILE} not found — run Stage 2 (parser) first")
         raise SystemExit(1)
 
-    records = json.loads(INPUT_FILE.read_text())
+    data = json.loads(INPUT_FILE.read_text())
+    records = data["investments"]
 
     kept, removed = [], []
     for r in records:
@@ -48,7 +49,9 @@ def main():
         else:
             kept.append(r)
 
-    INPUT_FILE.write_text(json.dumps(kept, indent=2))
+    data["investments"] = kept
+    data["record_count"] = len(kept)
+    INPUT_FILE.write_text(json.dumps(data, indent=2))
 
     print(f"Reference date : {args.date}")
     print(f"Cutoff         : {cutoff} (records on or after this date removed)")

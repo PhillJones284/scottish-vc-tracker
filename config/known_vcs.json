@@ -423,6 +423,22 @@
       "stage_focus": ["Pre-Seed"],
       "scotland_active": true,
       "notes": "Participated in Cnuic $3m pre-seed round (Edinburgh, April 2026). Very limited public profile. Source: https://tech.eu/2026/04/28/cnuic-secures-eur3m-pre-seed-to-unlock-next-generation-photonic-chip-production/"
+    },
+    {
+      "canonical_name": "Apollo Informal Investment",
+      "aliases": ["Apollo Informal"],
+      "hq": "Scotland",
+      "stage_focus": ["Seed"],
+      "scotland_active": true,
+      "notes": "Scottish informal investor operating in the angel syndicate space. Participated in Lentitek £700k seed round (Edinburgh, May 2026) alongside lead Equity Gap, Gabriel-IS, and Scottish Enterprise. Source: https://angelcapital.scot/news/lentitek-raises-700k-for-cancer-treatment-technology/"
+    },
+    {
+      "canonical_name": "The FSE Group",
+      "aliases": ["FSE Group"],
+      "hq": null,
+      "stage_focus": ["Seed"],
+      "scotland_active": true,
+      "notes": "Primarily a Northern England investor (NPIF ecosystem). Co-invested in JET Connectivity £1.2m Pre-Series A (Scotland, May 2026) alongside lead Tricapital Angels — first confirmed Scottish deal. Source: https://angelcapital.scot/deals/tricapital-angels-leads-1-2m-investment-into-sovereign-dual-use-5g-solutions/"
     }
   ]
 }
