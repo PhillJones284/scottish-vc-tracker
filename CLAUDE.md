@@ -261,11 +261,6 @@ Whenever a new entry lands in `data/processed/merge_candidates.json` — during 
 
 ## Managing known VCs
 
-### When the agent encounters an unknown VC
-If the scraper finds an investor not in `config/known_vcs.json`, record the deal using 
-the name as found. Stage the VC in `config/suggested_vcs.json` for review rather than 
-writing directly to `known_vcs.json`:
-
 ### If Phill asks you to add a new VC
 1. Search for the firm's website, investment focus, stage preference, and geographic activity
 2. Propose a new entry — see an existing entry in `config/known_vcs.json` for the required fields
@@ -302,9 +297,6 @@ This writes `data/processed/vc_stats.json`. Then invoke the agent: `subagent_typ
 The profiler only rewrites files for VCs present in `vc_stats.json` for that invocation — every other file in `data/vc-profiles/` is left alone.
 
 ## Managing sources
-
-### When the agent encounters an unknown source
-If the scraper finds a useful source not in `config/sources.json`, it should not add it directly. Instead, stage it in `config/suggested_sources.json` with enough context to evaluate it
 
 ### If asked to add a new source
 Phill will type the following command "add [source name or URL] to sources". Claude Code will:
