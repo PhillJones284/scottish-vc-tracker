@@ -103,7 +103,7 @@ def _build_html(issue_title: str, report_html: str) -> str:
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Scottish VC Tracker</title>
+  <title>Scottish Venture News</title>
   <style>
     :root {{
       --navy:       #1F3B57;
@@ -216,8 +216,8 @@ def _build_html(issue_title: str, report_html: str) -> str:
       color: var(--slate); font-style: normal; font-size: 12px;
     }}
     .report-body p:first-child {{
-      font-size: 13px; color: var(--slate); font-style: italic;
-      border-left: 3px solid var(--light-grey); padding: 2px 10px;
+      font-size: 14px; color: var(--ink); font-style: italic;
+      border-left: 3px solid var(--blue); padding: 2px 10px;
       margin-bottom: 16px;
     }}
     .report-body p:first-child em {{
@@ -236,7 +236,7 @@ def _build_html(issue_title: str, report_html: str) -> str:
 <div class="container">
 
   <header class="site-header">
-    <h1>Scottish VC Tracker</h1>
+    <h1>Scottish Venture News</h1>
     <p>A weekly intelligence briefing monitoring public news coverage for venture capital investment
     activity in Scottish startups and scaleups — tracking who's investing, at what stages,
     in which sectors, and with what cadence.</p>

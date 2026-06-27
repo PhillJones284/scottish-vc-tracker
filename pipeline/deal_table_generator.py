@@ -383,7 +383,7 @@ def _render(data: dict) -> str:
     <div class="no-results" id="no-results">No deals match your filters.</div>
   </div>
 
-  <footer>Scottish VC Tracker &nbsp;·&nbsp; Data sourced from public news coverage only &nbsp;·&nbsp; Not investment advice</footer>
+  <footer>Scottish Venture News &nbsp;·&nbsp; Data sourced from public news coverage only &nbsp;·&nbsp; Not investment advice</footer>
 
 </div>
 <script>

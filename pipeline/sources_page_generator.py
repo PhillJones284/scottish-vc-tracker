@@ -101,7 +101,7 @@ def build_page(sources: list[dict], today: str) -> str:
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Intelligence Sources — Scottish VC Tracker</title>
+  <title>Intelligence Sources — Scottish Venture News</title>
   <style>
     :root {{
       --navy:       #1F3B57;
@@ -179,7 +179,7 @@ def build_page(sources: list[dict], today: str) -> str:
 <body>
 <div class="container">
 
-  <a class="back-link" href="../">← Scottish VC Tracker</a>
+  <a class="back-link" href="../">← Scottish Venture News</a>
 
   <header>
     <h1>Intelligence Sources</h1>
@@ -192,7 +192,7 @@ def build_page(sources: list[dict], today: str) -> str:
 
 {groups_html}
 
-  <footer>Scottish VC Tracker &nbsp;·&nbsp; Data sourced from public news coverage only &nbsp;·&nbsp; Not investment advice</footer>
+  <footer>Scottish Venture News &nbsp;·&nbsp; Data sourced from public news coverage only &nbsp;·&nbsp; Not investment advice</footer>
 
 </div>
 </body>

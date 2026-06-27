@@ -32,6 +32,18 @@ PROCESSED_DIR = ROOT / "data" / "processed"
 IMGBB_UPLOAD_URL = "https://api.imgbb.com/1/upload"
 BUTTONDOWN_EMAILS_URL = "https://api.buttondown.com/v1/emails"
 
+SITE_BASE = "https://philljones284.github.io/scottish-vc-tracker"
+
+EMAIL_FOOTER = f"""
+---
+
+**Browse the full dataset so far**
+
+- [Deal Table]({SITE_BASE}/deals/) — searchable, filterable table of every deal tracked this quarter and year to date
+- [Investor Directory]({SITE_BASE}/investors/) — per-investor stats and deal history for every VC firm active in Scotland
+- [Intelligence Sources]({SITE_BASE}/sources/) — every news source, VC newsroom, and database monitored by the pipeline
+"""
+
 IMAGE_LINK_RE = re.compile(r"!\[([^\]]*)\]\((charts/[^)]+\.png)\)")
 
 
@@ -112,7 +124,7 @@ def run(date_str: str | None = None) -> dict:
 
     report_text = report_path.read_text()
     subject = _extract_subject(report_text)
-    body, images = _rewrite_chart_links(report_text, report_path.parent, imgbb_key)
+    body, images = _rewrite_chart_links(report_text + EMAIL_FOOTER, report_path.parent, imgbb_key)
 
     draft = _publish_to_buttondown(subject, body, buttondown_key)
 

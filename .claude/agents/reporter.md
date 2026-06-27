@@ -26,7 +26,7 @@ Write a Markdown report to `data/reports/YYYY-MM-DD_vc-report.md` (use today's d
 ## Report Structure
 
 ### Header
-Start with an H1 title using today's date: `# Scottish VC Tracker — [Day Month Year]` (e.g. `# Scottish VC Tracker — 22 June 2026`).
+Start with an H1 title using today's date: `# Scottish Venture News — [Day Month Year]` (e.g. `# Scottish Venture News — 22 June 2026`).
 
 Immediately below it, on its own line, write this disclaimer, substituting `report_stats.json`'s `monitored_source_count` for the number — never guess or hardcode this figure:
 
