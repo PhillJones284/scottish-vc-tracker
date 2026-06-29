@@ -6,17 +6,17 @@
   <title>Scottish VC Deals — Q2 2026 / 2026 YTD</title>
   <style>
     :root {
-      --navy:       #1F3B57;
-      --slate:      #7C93A8;
-      --grey:       #9AA0A6;
-      --light-grey: #D8DCE0;
-      --blue:       #7B9EB9;
+      --navy:       oklch(0.380 0.085 112);
+      --slate:      oklch(0.560 0.030 110);
+      --grey:       oklch(0.580 0.018 108);
+      --light-grey: oklch(0.900 0.010 110);
+      --blue:       oklch(0.620 0.155 42);
       --green:      #6BA58A;
-      --gold:       #C49A5A;
+      --gold:       oklch(0.620 0.155 42);
       --maroon:     #A07878;
       --tan:        #A89B8C;
-      --ink:        #222222;
-      --bg:         #F7F7F6;
+      --ink:        oklch(0.195 0.025 108);
+      --bg:         oklch(1.000 0.000 0);
       --white:      #FFFFFF;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -137,7 +137,7 @@
       color: var(--slate);
       text-transform: uppercase;
       letter-spacing: 0.06em;
-      background: #F0F1F2;
+      background: oklch(0.950 0.012 110);
       border-bottom: 1px solid var(--light-grey);
       white-space: nowrap;
       cursor: pointer;
@@ -149,7 +149,7 @@
     th.sort-asc .sort-icon, th.sort-desc .sort-icon { color: var(--navy); }
     tbody tr { border-bottom: 1px solid var(--light-grey); transition: background 0.08s; }
     tbody tr:last-child { border-bottom: none; }
-    tbody tr:hover { background: #F4F5F6; }
+    tbody tr:hover { background: oklch(0.957 0.010 110); }
     td { padding: 9px 12px; vertical-align: top; }
 
     /* ── cell styles ── */
@@ -177,7 +177,7 @@
       letter-spacing: 0.04em;
       white-space: nowrap;
     }
-    .badge-stage { background: #ECF1F7; color: var(--navy); }
+    .badge-stage { background: oklch(0.925 0.020 112); color: var(--navy); }
     .badge-high   { background: #E8F4EF; color: #3A7860; }
     .badge-medium { background: #FEF4E3; color: #8A6828; }
     .badge-low    { background: #F5ECEC; color: #8A4848; }
