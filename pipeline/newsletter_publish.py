@@ -124,7 +124,10 @@ def run(date_str: str | None = None) -> dict:
 
     report_text = report_path.read_text()
     subject = _extract_subject(report_text)
-    body, images = _rewrite_chart_links(report_text + EMAIL_FOOTER, report_path.parent, imgbb_key)
+    # Strip the leading H1 — Buttondown renders the newsletter name + date as its
+    # own header, so keeping the H1 in the body produces a triple title.
+    body_text = re.sub(r"^#[^#][^\n]*\n+", "", report_text, count=1)
+    body, images = _rewrite_chart_links(body_text + EMAIL_FOOTER, report_path.parent, imgbb_key)
 
     draft = _publish_to_buttondown(subject, body, buttondown_key)
 

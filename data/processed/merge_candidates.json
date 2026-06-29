@@ -43,5 +43,38 @@
     "note": "Same company name, different round types ('Growth' vs 'Seed')",
     "flagged_date": "2026-06-27",
     "status": "merged"
+  },
+  {
+    "match_type": "possible",
+    "scope": "within_run",
+    "record_a": "go-swag_unknown_2026-05-27",
+    "record_b": "go-swag_seed_2026-05-27",
+    "note": "Same company name, different round types ('Unknown' vs 'Seed')",
+    "flagged_date": "2026-06-29",
+    "status": "merged",
+    "merged_into": "go-swag_seed_2026-05-27",
+    "resolved_date": "2026-06-29"
+  },
+  {
+    "match_type": "possible",
+    "scope": "against_ledger",
+    "record_a": "nami-surgical_seed_2026-02-09",
+    "record_b": "nami-surgical_growth_2026-01-29",
+    "note": "Same company name, different round types ('Seed' vs 'Growth')",
+    "flagged_date": "2026-06-29",
+    "status": "merged",
+    "merged_into": "nami-surgical_growth_2026-01-29",
+    "resolved_date": "2026-06-29"
+  },
+  {
+    "match_type": "probable",
+    "scope": "against_ledger",
+    "record_a": "highway-data-systems_seed_2026-04-30",
+    "record_b": "highway-data-systems_growth_2026-04-30",
+    "note": "Same company name, different round types ('Seed' vs 'Growth')",
+    "flagged_date": "2026-06-29",
+    "status": "merged",
+    "merged_into": "highway-data-systems_seed_2026-04-30",
+    "resolved_date": "2026-06-29"
   }
 ]

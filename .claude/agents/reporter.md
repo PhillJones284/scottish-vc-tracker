@@ -38,6 +38,12 @@ Immediately below it, on its own line, write this disclaimer, substituting `repo
 - Records in `genuinely_new_records` are recent — present them as straightforward news.
 - Records in `backfill_records` are old news that only just surfaced — say so explicitly, e.g. "A £700k Lentitek round from March, surfaced this week via Daily Business Group." Never fold one into the list as if it were fresh news; that's the fastest way to erode reader trust.
 
+Immediately beneath each bullet, on its own indented line, add a source link for every URL in that record's `source_urls` field (from `investments_deduped.json`). Use the record's `source_name` as the link label. Format:
+```
+  *Source: [Source Name](url)*
+```
+If a record has multiple `source_urls`, list each as a separate link, comma-separated, on the same line. Use the DuckDuckGo search URL only if no better primary source URL exists — if a primary article URL is present, prefer it. Never use the raw URL as the link text.
+
 ### 2. The Numbers
 All figures here come directly from `report_stats.json` — using `announcement_date`-based totals (not discovery date) is already baked into the file, so the total never jumps around just because of when something was found.
 

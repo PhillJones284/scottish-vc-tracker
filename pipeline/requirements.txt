@@ -5,3 +5,4 @@ trafilatura
 httpx
 matplotlib
 python-dotenv
+firecrawl-py

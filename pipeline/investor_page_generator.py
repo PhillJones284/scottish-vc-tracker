@@ -397,10 +397,14 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
 
     /* footer */
     footer { margin-top: 20px; color: var(--grey); font-size: 11px; text-align: right; }
+    .back-link { font-size: 12px; color: var(--slate); margin-bottom: 20px; display: inline-block; }
+    .back-link:hover { color: var(--navy); text-decoration: none; }
   </style>
 </head>
 <body>
 <div class="container">
+
+  <a class="back-link" href="../">← Scottish Venture News</a>
 
   <header>
     <h1>Scottish VC Investors</h1>

@@ -19,7 +19,7 @@ Report format and structure is defined in `.claude/agents/reporter.md`. Full per
 ## Running the agent
 If asked to "run the agent", execute the full pipeline in sequence using the Agent tool, with a gate check after each stage. Stop and report failure if any gate fails — do not proceed to the next stage (except Stage 1a, which has a soft gate — see below).
 
-**Stage 1** has three sub-steps: **Stage 1a** (Fetcher, Python), **Stage 1c** (Crunchbase Browser Scrape, inline MCP), and **Stage 1b** (Scraper, Claude agent). **Stage 3.5** (Report Stats) and **Stage 3.6** (Chart Generator) are pure Python steps that run between the deduplicator and the reporter — see below for why. **Stage 4** (reporter) is a Claude agent. **Stage 5** (VC profiler) has a Python stats step and a Claude agent step, same shape as Stage 1. **Stage 6** (Deal Table Generator) is a pure Python step that runs after Stage 5. **Stage 7** (Investor Page Generator) is a pure Python step that runs after Stage 6. **Stage 8** (Landing Page Generator) is a pure Python step that runs after Stage 7. **Stage 9** (git commit + push) and **Stage 10** (Buttondown draft) are the final two steps, both soft.
+**Stage 1** has three sub-steps: **Stage 1a** (Fetcher, Python), **Stage 1c** (Firecrawl Scraper, Python), and **Stage 1b** (Scraper, Claude agent). **Stage 3.5** (Report Stats) and **Stage 3.6** (Chart Generator) are pure Python steps that run between the deduplicator and the reporter — see below for why. **Stage 4** (reporter) is a Claude agent. **Stage 5** (VC profiler) has a Python stats step and a Claude agent step, same shape as Stage 1. **Stage 6** (Deal Table Generator) is a pure Python step that runs after Stage 5. **Stage 7** (Investor Page Generator) is a pure Python step that runs after Stage 6. **Stage 8** (Landing Page Generator) is a pure Python step that runs after Stage 7. **Stage 9** (git commit + push) and **Stage 10** (Buttondown draft) are the final two steps, both soft.
 **Stages 2, 3, 3.5, 3.6, 6, 7, and 8** are Python — run them with the relevant `python pipeline/<script>.py` command via the Bash tool. Stages 2, 3, 3.5, and 3.6 accept an optional `--date YYYY-MM-DD` argument; omit it to default to today. Stages 6, 7, and 8 take no arguments (Stage 8 runs two scripts — see Stage 8 section).
 
 **How to invoke agent stages:** Use the Agent tool with `subagent_type: "general-purpose"`. Read the body of the relevant `.claude/agents/<stage>.md` file (everything after the second `---` frontmatter delimiter) and use it as the prompt, prepending `Today's date is YYYY-MM-DD.` with today's actual date substituted.
@@ -55,49 +55,29 @@ If the gate fails: do **not** stop — proceed to Stage 1b anyway (the scraper a
 - a brief summary of what went wrong (error messages, which sources failed)
 - that the fetch_log is available for bug fixing before the next run
 
-### Stage 1c — Crunchbase Browser Scrape (inline MCP)
-**Handled by the pipeline runner directly** (not a sub-agent), using claude-in-chrome MCP tools. Run after Stage 1a, before Stage 1b.
+**Skipped source types**: Stage 1a skips `type: "firecrawl"` sources (handled by Stage 1c) and `type: "vc_newsrooms"` sources with no `rss_url` (handled by Stage 1b via WebFetch — plain httpx is frequently blocked by bot protection on VC firm websites). These appear in the fetch log with a `"skipped"` entry rather than an error.
 
-1. Read `config/sources.json` and find the entry with `slug: "crunchbase"`. Get its `url` field.
-2. Load the claude-in-chrome tools if not already loaded (ToolSearch: `select:mcp__claude-in-chrome__navigate,mcp__claude-in-chrome__get_page_text,mcp__claude-in-chrome__tabs_create_mcp`).
-3. Create a new tab and navigate to the Crunchbase URL.
-4. Call `get_page_text` to extract the table content.
-5. Parse the 5 results. Each deal appears as a sequential block in the text:
-   ```
-   [Transaction Name]
-   [Company Name]
-   [Funding Type]
-   [Money Raised or —]
-   [Announced Date]
-   [Lead Investors or —]
-   [Investor Names]
-   [4 more — lines for other columns]
-   ```
-   The 5 blocks repeat later in the text due to DOM rendering — take only the first occurrence of each company.
-6. For each deal, write a record in this format:
-   ```json
-   {
-     "company_name": "Wordsmith AI",
-     "round_type": "Series B",
-     "amount_original": "$70,000,000",
-     "announcement_date": "Jun 3, 2026",
-     "lead_investor": "Highland Europe",
-     "other_investors": ["Index Ventures"],
-     "company_location": "Scotland",
-     "source_url": "https://www.crunchbase.com/discover/funding_rounds/e3120c30307a4df552a2e1c7559da4a2",
-     "source_name": "Crunchbase",
-     "confidence": "high"
-   }
-   ```
-   - Set `amount_original` to `null` if Money Raised shows "—"
-   - Set `lead_investor` to `null` if Lead Investors shows "—"
-   - Split Investor Names by comma to build `other_investors`; remove any name already in `lead_investor`
-   - `announcement_date` can be left in "Mon DD, YYYY" format — the parser handles it
-7. Write the array to `data/raw/YYYY-MM-DD_crunchbase.json`.
+### Stage 1c — Firecrawl Scraper (Python)
+Run: `python pipeline/firecrawl_scraper.py` (or called automatically by `pipeline/run.py`).
 
-**Gate (soft)**: `data/raw/YYYY-MM-DD_crunchbase.json` must exist. If it fails (Cloudflare block, paywall change, not logged in), log a warning and proceed — Crunchbase is supplementary.
+Handles all sources with `type: "firecrawl"` in `config/sources.json`. Currently: `crunchbase`.
 
-**Coverage check note**: `crunchbase` will not appear in `YYYY-MM-DD_candidates.json` (Stage 1a skips `type: "browser"` sources), so the Stage 1b coverage check will not flag it as missing — this is expected.
+Each source must have a parse function registered in `pipeline/firecrawl_scraper.py`. If a source has no parse function, Stage 1c raises immediately for that source — add `_parse_{slug}()` and register it in `_PARSERS` before adding a new firecrawl source to `sources.json`.
+
+Sources needing cookie auth specify `"cookie_env_var": "<VAR_NAME>"` in `sources.json`. The value is read from `.env` at runtime. If the env var is missing, the scrape proceeds without auth (deal amounts may show as "—").
+
+**Cookie expiry (Crunchbase)**: `CRUNCHBASE_AUTH_COOKIE` expires periodically. When it does, deal amounts return "—" instead of values. To refresh:
+1. Go to crunchbase.com in Chrome (must be logged in)
+2. Open DevTools (Cmd+Option+I) → Network tab
+3. Refresh the page, filter requests by "v4/data"
+4. Click any request → Cookies tab → copy the `authcookie` value (the long `eyJ...` string)
+5. Update `CRUNCHBASE_AUTH_COOKIE` in `.env`
+
+**Gate (soft)**: Each `type: "firecrawl"` source should produce `data/raw/YYYY-MM-DD_{slug}.json`. Per-source failures are caught and logged — firecrawl sources are supplementary.
+
+**Coverage check note**: Two source types do not appear in `YYYY-MM-DD_candidates.json` and will never be flagged by the coverage check — this is expected:
+- `type: "firecrawl"` sources — handled by Stage 1c
+- `type: "vc_newsrooms"` sources with no `rss_url` — fetched directly by Stage 1b via WebFetch
 
 ### Stage 1b — Scraper (Claude agent)
 Agent tool: `subagent_type: "general-purpose"`, prompt = today's date + body of `.claude/agents/scraper.md`
@@ -352,6 +332,10 @@ Phill will type the following command "add [source name or URL] to sources". Cla
 1. Fetch the site and assess its relevance to Scottish VC news
 2. Propose a new entry — see an existing entry in `config/sources.json` for the required fields
 3. Wait for approval before writing it
+
+**Routing for `vc_newsrooms` sources**: The presence of `rss_url` determines which stage handles the source:
+- `rss_url` set → Stage 1a fetches and filters feed items; high value when a feed has many articles
+- `rss_url` null → Stage 1b fetches the page directly via WebFetch; use this for VC newsroom pages without a feed (plain httpx is frequently blocked by bot protection on these sites)
 
 ### Reviewing staged sources
 Say "review suggested sources". Claude Code will go through `config/suggested_sources.json`

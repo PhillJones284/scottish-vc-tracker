@@ -17,8 +17,8 @@
       "type": "news_site",
       "url": "https://www.scotsman.com/business",
       "search_path": null,
-      "rss_url": "https://www.scotsman.com/rss",
-      "notes": "Scan business section headlines. No section-specific feed — full-site RSS used."
+      "rss_url": "https://www.scotsman.com/business/rss",
+      "notes": "Scan business section headlines. Business-section RSS confirmed working at /business/rss — returns ~12 items, all business-relevant."
     },
     {
       "slug": "herald-business",
@@ -435,13 +435,15 @@
     {
       "slug": "crunchbase",
       "name": "Crunchbase",
-      "type": "browser",
+      "type": "firecrawl",
       "url": "https://www.crunchbase.com/discover/funding_rounds/e3120c30307a4df552a2e1c7559da4a2",
       "search_path": null,
       "rss_url": null,
       "queries": null,
+      "cookie_env_var": "CRUNCHBASE_AUTH_COOKIE",
+      "wait_ms": 5000,
       "best_effort": true,
-      "notes": "Scottish funding rounds filtered by HQ city (Edinburgh, Glasgow, Aberdeen, Dundee, Stirling, Perth, Inverness, Livingston, Paisley, Dunfermline). Browser-only source — handled in Stage 1c, not by Stage 1a or 1b. Free tier shows top 5 most recent results sorted by announced date. Requires Chrome open and logged in to Crunchbase via claude-in-chrome MCP. URL is a saved search with all 10 city filters applied."
+      "notes": "Scottish funding rounds filtered by HQ city (Edinburgh, Glasgow, Aberdeen, Dundee, Stirling, Perth, Inverness, Livingston, Paisley, Dunfermline). Handled in Stage 1c by pipeline/firecrawl_scraper.py, not by Stage 1a or 1b. Free tier shows top 5 most recent results sorted by announced date. URL is a saved search with all 10 city filters applied. Requires CRUNCHBASE_AUTH_COOKIE in .env — see CLAUDE.md Stage 1c for refresh instructions."
     }
   ]
 }

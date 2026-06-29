@@ -1,10 +1,10 @@
 [
   {
-    "id": "exergy3_seed_2026-04-01",
+    "id": "exergy3_seed_2026-04-21",
     "company_name": "Exergy3",
     "company_location": "Edinburgh",
     "round_type": "Seed",
-    "amount_gbp_millions": 9.838,
+    "amount_gbp_millions": 10.0,
     "investors": [
       "Axeleo Capital",
       "Bayern Kapital",
@@ -14,27 +14,28 @@
       "Old College Capital"
     ],
     "lead_investor": "Axeleo Capital",
-    "announcement_date": "2026-04-01",
+    "announcement_date": "2026-04-21",
     "source_urls": [
-      "https://www.eu-startups.com/2026/04/edinburghs-exergy3-raises-e11-4-million-to-turn-surplus-renewable-power-into-clean-industrial-heat/"
+      "https://startuprise.co.uk/exergy3-raises-e11-4m-seed-funding-to-scale-thermal-energy-storage-for-industrial-decarbonisation/"
     ],
     "confidence": "high",
     "data_quality_score": 95,
     "source_count": 1,
     "first_seen": "2026-05-25",
-    "last_seen": "2026-06-27",
+    "last_seen": "2026-06-29",
     "sector_normalised": true,
-    "amount_original": "\u20ac11.4m",
-    "currency_original": "EUR",
-    "source_url": "https://www.eu-startups.com/2026/04/edinburghs-exergy3-raises-e11-4-million-to-turn-surplus-renewable-power-into-clean-industrial-heat/",
-    "source_name": "DuckDuckGo \u2014 Scottish VC search",
-    "headline": "Edinburgh's Exergy3 raises \u20ac11.4 million to turn surplus renewable power into clean industrial heat",
-    "summary": "Exergy3, an Edinburgh-based CleanTech spinout from the University of Edinburgh, raised \u20ac11.4m (\u00a310m) in Seed funding to scale its ultra-high temperature thermal energy storage technology. The round was led by French VC Axeleo Capital, with participation from Bayern Kapital, Kibo Invest, Scottish Enterprise, Zero Carbon Capital and Old College Capital. The technology converts curtailed or negative-priced renewable electricity into industrial heat at up to 1,200\u00b0C.",
+    "amount_original": "\u00a310m (\u20ac11.4m)",
+    "currency_original": "GBP",
+    "source_url": "https://startuprise.co.uk/exergy3-raises-e11-4m-seed-funding-to-scale-thermal-energy-storage-for-industrial-decarbonisation/",
+    "source_name": "Startup Rise",
+    "headline": "Exergy3 Raises \u20ac11.4M Seed Funding To Scale Thermal Energy Storage For Industrial Decarbonisation",
+    "summary": "Exergy3, a University of Edinburgh spinout, raised \u00a310 million (\u20ac11.4 million) in seed funding to scale its ultra-high temperature thermal energy storage technology for industrial decarbonisation. The round was led by Axeleo Capital with Bayern Kapital, Kibo Invest, Scottish Enterprise, Zero Carbon Capital and Old College Capital also participating. Exergy3's modular technology converts surplus renewable electricity into process heat across a range from 50\u00b0C to 1,200\u00b0C.",
     "issues": [],
-    "raw_snippet": "Exergy3, an Edinburgh-based CleanTech startup specialising in ultra-high temperature thermal energy storage solutions, has raised \u20ac11.4 million (\u00a310 million) in Seed funding to scale its proprietary technology, addressing industrial decarbonisation, grid balancing and energy security. The round was led by Axeleo Capital, with participation from Bavaria-based public venture capital investor Bayern Kapital and Singapore-based Kibo Invest. Existing investors Scottish Enterprise, Zero Carbon Capital and Old College Capital, the University of Edinburgh's in-house venture investment fund, also participated in the round.",
+    "raw_snippet": "Exergy3, an Edinburgh-based CleanTech startup, has raised \u20ac11.4 million (\u00a310 million) in Seed funding to scale its ultra-high temperature thermal energy storage technology. The round was led by Axeleo Capital, with participation from Bayern Kapital and Kibo Invest. Existing investors, including Scottish Enterprise, Zero Carbon Capital and Old College Capital, also participated.",
     "merge_confidence": null,
     "duplicate_of": null,
     "company_sectors": [
+      "Deep Tech",
       "Energy & Cleantech"
     ]
   },
@@ -101,14 +102,14 @@
     "source_count": 2,
     "merge_confidence": "definite",
     "first_seen": "2026-05-25",
-    "last_seen": "2026-06-08",
+    "last_seen": "2026-06-29",
     "sector_normalised": true,
     "amount_original": "\u00a32.5m",
     "currency_original": "GBP",
     "source_url": "https://angelcapital.scot/news/scottish-quantum-hardware-company-raises-2-5m-to-build-uks-sovereign-manufacturing-capability/",
     "source_name": "Angel Capital Scotland",
     "headline": "Scottish quantum hardware company raises \u00a32.5m to build UK's sovereign manufacturing capability",
-    "summary": "Quantcore, a University of Glasgow spin-out and the only UK company producing quantum hardware using niobium, has raised \u00a32.5m in seed funding co-led by PXN Ventures, Blackfinch Ventures and Scottish Enterprise, with additional investment from Quantum Exponential and STAC.",
+    "summary": "Glasgow-based Quantcore, a University of Glasgow spin-out, raised \u00a32.5m in seed funding co-led by PXN Ventures, Blackfinch Ventures and Scottish Enterprise, with Quantum Exponential and STAC also participating. Quantcore plans to grow from four to 12 employees over 18 months and is the only UK company producing quantum hardware using niobium.",
     "issues": [],
     "raw_snippet": "Quantcore, a University of Glasgow spin-out, has raised \u00a32.5m in seed funding to create a sovereign supply chain for quantum hardware, as the UK races to build domestic capacity in technologies critical to national security and economic competitiveness. The round was co-led by PXN Ventures, Blackfinch Ventures and Scottish Enterprise, with investment also coming from Quantum Exponential and STAC.",
     "duplicate_of": null,
@@ -139,14 +140,14 @@
     "data_quality_score": 95,
     "source_count": 2,
     "first_seen": "2026-05-25",
-    "last_seen": "2026-06-27",
+    "last_seen": "2026-06-29",
     "sector_normalised": true,
     "amount_original": "\u00a31.58m",
     "currency_original": "GBP",
     "source_url": "https://angelcapital.scot/deals/edinburgh-uni-spin-out-at-cutting-edge-of-cancer-research-gets-1-6m-injection/",
     "source_name": "Angel Capital Scotland",
     "headline": "Edinburgh Uni spin-out at cutting edge of cancer research gets \u00a31.6m injection",
-    "summary": "BIOCAPTIVA, an Edinburgh University spin-out developing technology to transform how blood samples are prepared for liquid biopsy (early cancer detection), raised \u00a31.58m in a round led by Archangels with support from Old College Capital, British Business Investments, Scottish Enterprise and new investor EverQuest Capital Partners. The funding supports platform development and launch of the company's first product in the US.",
+    "summary": "BIOCAPTIVA, a Scottish biotech firm behind a platform to revolutionise early diagnosis of difficult-to-detect cancers, raised \u00a31.6 million in a fresh funding round and launched its first product in the US. The round was led by existing investor Archangels, with support from Old College Capital, BBI, Scottish Enterprise and new investor EverQuest Capital Partners. BIOCAPTIVA's magnetic bead technology addresses a bottleneck in liquid biopsy sample preparation.",
     "issues": [],
     "raw_snippet": "A Scottish biotech firm behind a platform that could revolutionise the early diagnosis and monitoring of difficult-to-detect cancers has raised \u00a31.6 million in a fresh funding round and launched its first product in the US. Its latest financing round was led by existing investor Archangels, with support from Old College Capital, BBI, Scottish Enterprise and new investor EverQuest Capital Partners.",
     "merge_confidence": "definite",
@@ -198,7 +199,7 @@
     "id": "nami-surgical_growth_2026-01-29",
     "company_name": "Nami Surgical",
     "company_location": "Glasgow",
-    "round_type": "Growth",
+    "round_type": "Seed",
     "amount_gbp_millions": 1.9,
     "investors": [
       "Eos Advisory",
@@ -208,13 +209,14 @@
     "lead_investor": "Eos Advisory",
     "announcement_date": "2026-01-29",
     "source_urls": [
-      "https://www.scottish-enterprise-mediacentre.com/news/ultrasonic-surgery-specialist-nami-appoints-nikki-palfrey-as-ceo-and-completes-latest-investment-round"
+      "https://www.scottish-enterprise-mediacentre.com/news/ultrasonic-surgery-specialist-nami-appoints-nikki-palfrey-as-ceo-and-completes-latest-investment-round",
+      "https://www.campfire.scot/p/signals-launches-stac-announces-15m"
     ],
     "confidence": "high",
     "data_quality_score": 90,
-    "source_count": 1,
+    "source_count": 2,
     "first_seen": "2026-05-25",
-    "last_seen": "--date",
+    "last_seen": "2026-06-29",
     "sector_normalised": true,
     "amount_original": "\u00a31.9m",
     "currency_original": "GBP",
@@ -222,51 +224,46 @@
     "source_name": "Scottish Enterprise Newsroom",
     "headline": "Ultrasonic surgery specialist Nami appoints Nikki Palfrey as CEO and completes latest investment round",
     "summary": "Nami Surgical, a University of Glasgow spinout developing ultrasonic robotic-assisted surgery technology, completed a \u00a31.9m round led by Eos Advisory with participation from Maven and Scottish Enterprise. The funding supports the company's transition from advanced development to commercialisation in the robotic-assisted surgery market. New CEO Nikki Palfrey was appointed alongside the close.",
-    "issues": [
-      "location_unknown",
-      "company_not_clearly_scottish"
-    ],
+    "issues": [],
     "raw_snippet": "Nami recently completed its latest investment, a \u00a31.9 million round led by Eos Advisory with participation from the Investment Fund for Scotland managed by Maven Capital Partners (and delivered by the British Business Bank), and Scottish Enterprise. The funding supports the company's transition from advanced development to commercialisation as Nami targets the global robotic-assisted surgery market, which is forecast to reach over $25 billion by 2030.",
-    "merge_confidence": null,
+    "merge_confidence": "definite",
     "duplicate_of": null,
     "company_sectors": [
       "Healthtech",
-      "SaaS & Enterprise Software"
+      "SaaS & Enterprise Software",
+      "Deep Tech"
     ]
   },
   {
     "id": "esk_growth_2026-05-11",
     "company_name": "Esk",
-    "company_location": "Edinburgh",
+    "company_location": "Other Scotland",
     "round_type": "Growth",
     "amount_gbp_millions": 2.6,
     "investors": [
       "Maven Capital Partners",
-      "Maven Income and Growth VCTs",
-      "Investment Fund for Scotland (IFS Maven Equity Finance)",
-      "British Business Bank"
+      "IFS Maven Equity Finance"
     ],
     "lead_investor": "Maven Capital Partners",
     "announcement_date": "2026-05-11",
     "source_urls": [
-      "https://www.mavencp.com/latest-news",
       "https://www.mavencp.com/latest-news/maven-leads-2.6-million-funding-round-in-esk"
     ],
-    "confidence": "high",
+    "confidence": "medium",
     "data_quality_score": 100,
-    "source_count": 2,
+    "source_count": 1,
     "first_seen": "2026-05-25",
-    "last_seen": "2026-06-08",
+    "last_seen": "2026-06-29",
     "sector_normalised": true,
     "amount_original": "\u00a32.6m",
     "currency_original": "GBP",
     "source_url": "https://www.mavencp.com/latest-news/maven-leads-2.6-million-funding-round-in-esk",
     "source_name": "Maven Capital Partners \u2014 Latest News",
-    "headline": "Maven leads \u00a32.6 million funding round in Esk",
-    "summary": "Edinburgh-based Esk, which delivers high-end live experiences for blue-chip brands including Netflix, Paramount, and BAFTA, secured \u00a32.6m from Maven Capital Partners via its VCTs and the Investment Fund for Scotland. The funding will support business development, marketing, IP portfolio growth, and development of the company's proprietary hardware technology. Esk has completed over 550 shows globally.",
+    "headline": "Maven invests \u00a32.6 million in Esk",
+    "summary": "Esk, a global entertainment technology company specialising in high-end live experiences, secured \u00a32.6 million from Maven Income and Growth VCTs and IFS Maven Equity Finance. Esk licenses iconic IP from major rightsholders (Netflix, Paramount, BAFTA) and transforms it into live entertainment formats, and has developed a proprietary media control system for audio-visual playback in venues. The IFS Maven Equity Finance involvement indicates Scottish operations.",
     "issues": [],
-    "raw_snippet": "Maven leads \u00a32.6m investment in Esk, an Edinburgh-based global entertainment technology company that delivers high-end live experiences for brands such as Netflix, Paramount and BAFTA. Funding from Maven Income and Growth VCTs and the Investment Fund for Scotland (IFS Maven Equity Finance), delivered by the British Business Bank. The capital will enable Esk to invest in business development, marketing, IP portfolio expansion, and proprietary hardware development. Announced May 11, 2026.",
-    "merge_confidence": "definite",
+    "raw_snippet": "Esk, global entertainment technology company specializing in delivering high-end live experiences. Licenses iconic intellectual property from major rightsholders (Netflix, Paramount, BAFTA) and transforms it into live entertainment formats. Funding Amount: \u00a32.6 million from Maven Income and Growth VCTs and IFS Maven Equity Finance (managed by Maven, delivered by British Business Bank). Announcement Date: May 11, 2026.",
+    "merge_confidence": null,
     "duplicate_of": null,
     "company_sectors": [
       "Creative & Media",
@@ -343,7 +340,7 @@
     ]
   },
   {
-    "id": "bioliberty_series-a_2026-03-19",
+    "id": "bioliberty_series-a_2026-03-31",
     "company_name": "Bioliberty",
     "company_location": "Edinburgh",
     "sector_normalised": true,
@@ -353,18 +350,18 @@
     "currency_original": "GBP",
     "investors": [
       "Scottish National Investment Bank",
-      "Conduit Connect",
       "Archangels",
       "Eos Advisory",
       "Old College Capital",
-      "Hanna Capital SEZC"
+      "Hanna Capital SEZC",
+      "Conduit Connect"
     ],
     "lead_investor": "Scottish National Investment Bank",
-    "announcement_date": "2026-03-19",
+    "announcement_date": "2026-03-31",
     "source_url": "https://angelcapital.scot/deals/healthtech-firm-bioliberty-to-accelerate-international-growth-with-new-investment/",
     "source_name": "Angel Capital Scotland",
     "headline": "Healthtech firm Bioliberty to accelerate international growth with new investment",
-    "summary": "Edinburgh and Boston-based Bioliberty closed a \u00a36.2m first close of its Series A, led by \u00a33m from the Scottish National Investment Bank, alongside Archangels, Eos Advisory, Old College Capital, Hanna Capital SEZC and new investor Conduit Connect. The full Series A (announced as $10.5m) is expected to close later in 2026. The company builds functional intelligence capabilities for post-acute care.",
+    "summary": "Scottish healthtech firm Bioliberty secured \u00a36.2m in a partial close of its Series A round, led by \u00a33m from the Scottish National Investment Bank alongside Archangels, Eos Advisory, Old College Capital, Hanna Capital SEZC, and new investor Conduit Connect. The full Series A target is $10.5m (approximately \u00a38m) with the round expected to close later in 2026. This follows a \u00a31.5m pre-Series A round in mid-2025.",
     "confidence": "high",
     "data_quality_score": 95,
     "issues": [],
@@ -377,9 +374,10 @@
     "merge_confidence": "definite",
     "duplicate_of": null,
     "first_seen": "2026-05-26",
-    "last_seen": "2026-06-27",
+    "last_seen": "2026-06-29",
     "is_new_this_run": true,
     "company_sectors": [
+      "AI & Machine Learning",
       "Deep Tech",
       "Healthtech",
       "SaaS & Enterprise Software"
@@ -627,23 +625,22 @@
     ],
     "sector_normalised": true,
     "round_type": "Seed",
-    "amount_original": "\u00a3506,000",
+    "amount_original": "\u00a3506k",
     "amount_gbp_millions": 0.506,
     "currency_original": "GBP",
     "investors": [
-      "Tricapital",
-      "Scottish Enterprise Investment Fund"
+      "Tricapital"
     ],
     "lead_investor": "Tricapital",
     "announcement_date": "2026-06-09",
     "source_url": "https://angelcapital.scot/deals/tricapital-scots-syndicate-leads-3m-plus-deals-and-unveils-key-hire/",
     "source_name": "Angel Capital Scotland",
     "headline": "Tricapital: Scots syndicate leads \u00a33m-plus deals and unveils key hire",
-    "summary": "Subsea robotics specialist HonuWorx secured \u00a3506,000 in a seed round led by Tricapital with matched investment from Scottish Enterprise. The deal is part of a series of fresh investments totalling more than \u00a33m by Tricapital in a single announcement. Tricapital's members have invested \u00a36.8m of personal capital since inception, matched by Scottish Enterprise and leveraged into more than \u00a340m of total investment in early-stage Scottish businesses.",
+    "summary": "Subsea robotics specialist HonuWorx received \u00a3506,000 from Scottish angel syndicate Tricapital as part of a series of fresh investments totalling more than \u00a33 million. Tricapital focuses on critical areas such as industrial transition and ocean technology. The syndicate's members have invested \u00a36.8m of personal capital, matched by Scottish Enterprise and leveraged into more than \u00a340m of total investment.",
     "confidence": "medium",
     "data_quality_score": 95,
     "issues": [],
-    "raw_snippet": "The latest investments involve \u00a3506,000 of backing for subsea robotics specialist HonuWorx, \u00a3430,000 for sustainable seaweed business Kaly and \u00a3620,000 for low-carbon insulation manufacturer Sisaltech. In little over two years, the syndicate's members have invested \u00a36.8m of personal capital, matched by Scottish Enterprise and leveraged into more than \u00a340m of total investment supporting early-stage Scottish businesses.",
+    "raw_snippet": "Angel syndicate Tricapital has led a series of fresh investments totalling more than \u00a33 million as it focuses on critical areas such as the industrial transition and ocean technology. The latest investments involve \u00a3506,000 of backing for subsea robotics specialist HonuWorx.",
     "source_urls": [
       "https://angelcapital.scot/deals/tricapital-scots-syndicate-leads-3m-plus-deals-and-unveils-key-hire/"
     ],
@@ -651,7 +648,7 @@
     "merge_confidence": null,
     "duplicate_of": null,
     "first_seen": "2026-05-27",
-    "last_seen": "2026-06-27",
+    "last_seen": "2026-06-29",
     "is_new_this_run": true
   },
   {
@@ -664,23 +661,22 @@
     ],
     "sector_normalised": true,
     "round_type": "Seed",
-    "amount_original": "\u00a3430,000",
+    "amount_original": "\u00a3430k",
     "amount_gbp_millions": 0.43,
     "currency_original": "GBP",
     "investors": [
-      "Tricapital",
-      "Scottish Enterprise Investment Fund"
+      "Tricapital"
     ],
     "lead_investor": "Tricapital",
     "announcement_date": "2026-06-09",
     "source_url": "https://angelcapital.scot/deals/tricapital-scots-syndicate-leads-3m-plus-deals-and-unveils-key-hire/",
     "source_name": "Angel Capital Scotland",
     "headline": "Tricapital: Scots syndicate leads \u00a33m-plus deals and unveils key hire",
-    "summary": "Sustainable seaweed business Kaly secured \u00a3430,000 in a seed round led by Tricapital with matched investment from Scottish Enterprise, as part of Tricapital's focus on ocean technology and the industrial transition. The deal was part of a multi-company announcement covering three investments totalling more than \u00a33m by the Tricapital syndicate.",
+    "summary": "Kaly, a sustainable seaweed business, received \u00a3430,000 from Scottish angel syndicate Tricapital as part of a series of fresh investments. Tricapital focuses on critical areas including industrial transition and ocean technology. Details on Kaly's exact location within Scotland were not disclosed in the announcement.",
     "confidence": "medium",
     "data_quality_score": 95,
     "issues": [],
-    "raw_snippet": "The latest investments involve \u00a3506,000 of backing for subsea robotics specialist HonuWorx, \u00a3430,000 for sustainable seaweed business Kaly and \u00a3620,000 for low-carbon insulation manufacturer Sisaltech. Angel syndicate Tricapital has led a series of fresh investments totalling more than \u00a33 million as it focuses on critical areas such as the industrial transition and ocean technology.",
+    "raw_snippet": "Angel syndicate Tricapital has led a series of fresh investments totalling more than \u00a33 million. The latest investments involve \u00a3430,000 for sustainable seaweed business Kaly.",
     "source_urls": [
       "https://angelcapital.scot/deals/tricapital-scots-syndicate-leads-3m-plus-deals-and-unveils-key-hire/"
     ],
@@ -688,36 +684,35 @@
     "merge_confidence": null,
     "duplicate_of": null,
     "first_seen": "2026-05-27",
-    "last_seen": "2026-06-27",
+    "last_seen": "2026-06-29",
     "is_new_this_run": true
   },
   {
     "id": "sisaltech_seed_2026-06-09",
     "company_name": "Sisaltech",
-    "company_location": "Edinburgh",
+    "company_location": "Other Scotland",
     "company_sectors": [
       "Energy & Cleantech",
       "low-carbon insulation, sustainability"
     ],
     "sector_normalised": true,
     "round_type": "Seed",
-    "amount_original": "\u00a3620,000",
+    "amount_original": "\u00a3620k",
     "amount_gbp_millions": 0.62,
     "currency_original": "GBP",
     "investors": [
-      "Tricapital",
-      "Scottish Enterprise Investment Fund"
+      "Tricapital"
     ],
     "lead_investor": "Tricapital",
     "announcement_date": "2026-06-09",
     "source_url": "https://angelcapital.scot/deals/tricapital-scots-syndicate-leads-3m-plus-deals-and-unveils-key-hire/",
     "source_name": "Angel Capital Scotland",
     "headline": "Tricapital: Scots syndicate leads \u00a33m-plus deals and unveils key hire",
-    "summary": "Low-carbon insulation manufacturer Sisaltech raised \u00a3620,000 in a seed round led by Tricapital with matched investment from Scottish Enterprise. The deal was part of Tricapital's focus on the industrial transition and ocean technology, announced alongside investments in HonuWorx and Kaly as part of a \u00a33m-plus multi-deal announcement.",
+    "summary": "Sisaltech, a low-carbon insulation manufacturer, received \u00a3620,000 from Scottish angel syndicate Tricapital as part of a series of fresh investments totalling over \u00a33 million. Tricapital's recent focus has been on industrial transition and critical sustainability sectors.",
     "confidence": "medium",
     "data_quality_score": 95,
     "issues": [],
-    "raw_snippet": "The latest investments involve \u00a3506,000 of backing for subsea robotics specialist HonuWorx, \u00a3430,000 for sustainable seaweed business Kaly and \u00a3620,000 for low-carbon insulation manufacturer Sisaltech. Angel syndicate Tricapital has led a series of fresh investments totalling more than \u00a33 million as it focuses on critical areas such as the industrial transition and ocean technology.",
+    "raw_snippet": "Angel syndicate Tricapital has led a series of fresh investments totalling more than \u00a33 million. The latest investments involve \u00a3620,000 for low-carbon insulation manufacturer Sisaltech.",
     "source_urls": [
       "https://angelcapital.scot/deals/tricapital-scots-syndicate-leads-3m-plus-deals-and-unveils-key-hire/"
     ],
@@ -725,7 +720,7 @@
     "merge_confidence": null,
     "duplicate_of": null,
     "first_seen": "2026-05-27",
-    "last_seen": "2026-06-27",
+    "last_seen": "2026-06-29",
     "is_new_this_run": true
   },
   {
@@ -738,7 +733,7 @@
     ],
     "sector_normalised": true,
     "round_type": "Seed",
-    "amount_original": "\u00a3700,000",
+    "amount_original": "\u00a3700k",
     "amount_gbp_millions": 0.7,
     "currency_original": "GBP",
     "investors": [
@@ -752,13 +747,13 @@
     "source_url": "https://angelcapital.scot/news/lentitek-raises-700k-for-cancer-treatment-technology/",
     "source_name": "Angel Capital Scotland",
     "headline": "Lentitek raises \u00a3700k for cancer treatment technology",
-    "summary": "Edinburgh biotech Lentitek raised \u00a3700,000 from Equity Gap (Scottish angel syndicate), co-investing alongside Gabriel-IS, Apollo Informal Investment and Scottish Enterprise, to accelerate its next-generation cancer treatments. This brings total investment in the business to \u00a31m in six months, following a \u00a3300,000 Innovate UK grant. The Equity Gap-led round will support commercialisation of its technology.",
+    "summary": "Edinburgh biotech Lentitek secured \u00a3700,000 from Equity Gap (Scottish angel syndicate) to accelerate its next-generation cancer treatments. This brings total investment to \u00a31 million in six months, following a \u00a3300,000 Innovate UK grant. Funding was also provided by Gabriel-IS, Apollo Informal Investment, Scottish Enterprise, and prominent private investors.",
     "confidence": "high",
     "data_quality_score": 100,
     "issues": [
       "possible_grant_not_vc"
     ],
-    "raw_snippet": "Biotech company Lentitek has secured \u00a3700,000 from Equity Gap, the Scottish angel syndicate, to accelerate its next-generation cancer treatments. It brings total investment in the Edinburgh business to \u00a31 million in the last six months, following a \u00a3300,000 Innovate UK grant. Equity Gap helped pull together those committed to advancing its technology towards commercialisation. Funding was also provided by existing investors, including Gabriel-IS, Apollo Informal Investment, Scottish Enterprise, as well as prominent private investors.",
+    "raw_snippet": "Biotech company Lentitek has secured \u00a3700,000 from Equity Gap, the Scottish angel syndicate, to accelerate its next-generation cancer treatments. It brings total investment in the Edinburgh business to \u00a31 million in the last six months, following a \u00a3300,000 Innovate UK grant. Funding was also provided by existing investors, including Gabriel-IS, Apollo Informal Investment, Scottish Enterprise, as well as prominent private investors.",
     "source_urls": [
       "https://angelcapital.scot/news/lentitek-raises-700k-for-cancer-treatment-technology/"
     ],
@@ -766,7 +761,7 @@
     "merge_confidence": null,
     "duplicate_of": null,
     "first_seen": "2026-05-27",
-    "last_seen": "2026-06-27",
+    "last_seen": "2026-06-29",
     "is_new_this_run": true
   },
   {
@@ -813,16 +808,17 @@
     "is_new_this_run": true
   },
   {
-    "id": "wordsmith-ai_series-b_2026-06-01",
+    "id": "wordsmith-ai_series-b_2026-06-04",
     "company_name": "Wordsmith AI",
     "company_location": "Edinburgh",
     "company_sectors": [
       "AI & Machine Learning",
+      "Other",
       "SaaS & Enterprise Software"
     ],
     "sector_normalised": true,
     "round_type": "Series B",
-    "amount_original": "$70m",
+    "amount_original": "$70m (~\u00a352m)",
     "amount_gbp_millions": 51.87,
     "currency_original": "USD",
     "investors": [
@@ -830,23 +826,25 @@
       "Index Ventures"
     ],
     "lead_investor": "Highland Europe",
-    "announcement_date": "2026-06-01",
-    "source_url": "https://www.eu-startups.com/2026/06/edinburgh-based-wordsmith-raises-e60-2-million-series-b-to-scale-legal-ai-platform-for-in-house-teams/",
-    "source_name": "DuckDuckGo \u2014 Scottish VC search",
-    "headline": "Edinburgh-based Wordsmith raises \u20ac60.2 million Series B to scale legal AI platform for in-house teams",
-    "summary": "Wordsmith AI, an Edinburgh-based legal AI startup founded in 2023, raised a $70m (\u00a352m / \u20ac60.2m) Series B led by Highland Europe and Index Ventures. The platform captures, triages, resolves and records every legal request from in-house teams using AI agents. Total funding now stands at $100m and the company plans to scale to 300 people globally.",
+    "announcement_date": "2026-06-04",
+    "source_url": "https://www.campfire.scot/p/blockchain-scotland-meetup-edge-final",
+    "source_name": "Campfire Scotland Newsletter",
+    "headline": "Congrats to Wordsmith for raising its $70m series B",
+    "summary": "Edinburgh legal AI startup Wordsmith raised its $70m Series B, noted in the Campfire Scotland newsletter. Wordsmith builds the legal operations platform for in-house legal teams. The round was led by Highland Europe and Index Ventures, bringing total funding to approximately $100m.",
     "confidence": "high",
     "data_quality_score": 95,
     "issues": [],
-    "raw_snippet": "Wordsmith, an Edinburgh-based legal AI startup building the legal operations platform for in-house teams, today announced a \u20ac60.2 million ($70 million) Series B funding round, bringing the company's total funding to \u20ac86 million ($100 million). The funding was secured from Highland Europe and Index Ventures, among others.",
+    "raw_snippet": "Here's your Campfire for Monday, June 8th. Congrats to Wordsmith for raising its $70m series B!",
     "source_urls": [
+      "https://www.campfire.scot/p/blockchain-scotland-meetup-edge-final",
+      "https://www.crunchbase.com/discover/funding_rounds/e3120c30307a4df552a2e1c7559da4a2",
       "https://www.eu-startups.com/2026/06/edinburgh-based-wordsmith-raises-e60-2-million-series-b-to-scale-legal-ai-platform-for-in-house-teams/"
     ],
-    "source_count": 1,
-    "merge_confidence": null,
+    "source_count": 3,
+    "merge_confidence": "definite",
     "duplicate_of": null,
     "first_seen": "2026-06-08",
-    "last_seen": "2026-06-27",
+    "last_seen": "2026-06-29",
     "is_new_this_run": true
   },
   {
@@ -857,7 +855,7 @@
       "Deep Tech",
       "cybersecurity"
     ],
-    "sector_normalised": false,
+    "sector_normalised": true,
     "round_type": "Pre-Seed",
     "amount_original": "undisclosed",
     "amount_gbp_millions": null,
@@ -870,13 +868,13 @@
     "lead_investor": "Outward VC",
     "announcement_date": "2026-05-01",
     "source_url": "https://theedinburghreporter.co.uk/2026/05/edinburgh-cyber-security-start-up-raises-millions-in-pre-seed-round/",
-    "source_name": "DuckDuckGo \u2014 Scottish VC search",
+    "source_name": "The Edinburgh Reporter",
     "headline": "Edinburgh cyber security start up raises millions in pre-seed round",
-    "summary": "Edinburgh-born Lloyd Davies raised an undisclosed pre-seed round (described as \"millions\") for Infrawatch, a cybersecurity startup building an Internet Infrastructure Intelligence Layer. The round was led by Outward VC alongside Triple Point Ventures and Portfolio Ventures. Infrawatch monitors attacker infrastructure in real time, processing tens of billions of events daily, and was built by alumni of CrowdStrike, Recorded Future and Intel 471.",
+    "summary": "Edinburgh-born Lloyd Davies has raised a pre-seed round for Infrawatch, a new cybersecurity platform building the Internet Infrastructure Intelligence Layer. The round was led by Outward VC with Triple Point Ventures, Portfolio Ventures, and leading fintech and cyber angel investors. Infrawatch was built by a team of CrowdStrike, Recorded Future and Intel 471 alumni, offering security, fraud and investigations teams real-time internet infrastructure intelligence.",
     "confidence": "medium",
-    "data_quality_score": 70,
+    "data_quality_score": 80,
     "issues": [],
-    "raw_snippet": "The new finance is a pre-seed round to build the Internet Infrastructure Intelligence Layer which is a new category of cybersecurity platform. This funding round was led by Outward VC along with Triple Point Ventures and Portfolio Ventures and leading fintech and cyber angel investors. Davies founded Infrawatch which was built by a team of CrowdStrike, Recorded Future and Intel 471 alumni.",
+    "raw_snippet": "Edinburgh born Lloyd Davies who launched his own cyber security firm and has confirmed today that he has raised significant backing from investors. The new finance is a pre-seed round to build the Internet Infrastructure Intelligence Layer which is a new category of cybersecurity platform. This funding round was led by Outward VC along with Triple Point Ventures and Portfolio Ventures and leading fintech and cyber angel investors.",
     "source_urls": [
       "https://theedinburghreporter.co.uk/2026/05/edinburgh-cyber-security-start-up-raises-millions-in-pre-seed-round/"
     ],
@@ -884,7 +882,7 @@
     "merge_confidence": null,
     "duplicate_of": null,
     "first_seen": "2026-06-08",
-    "last_seen": "2026-06-27",
+    "last_seen": "2026-06-29",
     "is_new_this_run": true
   },
   {
@@ -892,35 +890,37 @@
     "company_name": "Go Swag",
     "company_location": "Glasgow",
     "company_sectors": [
-      "SaaS & Enterprise Software"
+      "SaaS & Enterprise Software",
+      "ecommerce, corporate gifting, tech"
     ],
-    "sector_normalised": true,
+    "sector_normalised": false,
     "round_type": "Seed",
-    "amount_original": "$5m",
+    "amount_original": "$5m (~\u00a33.7m)",
     "amount_gbp_millions": 3.705,
     "currency_original": "USD",
     "investors": [
-      "Mercia Ventures",
+      "Mercia Asset Management",
       "Techstart Ventures"
     ],
-    "lead_investor": "Mercia Ventures",
+    "lead_investor": "Mercia Asset Management",
     "announcement_date": "2026-05-27",
-    "source_url": "https://www.uktechnews.info/category/region/scotland/",
+    "source_url": "https://html.duckduckgo.com/html/?q=%22Go+Swag%22+Scotland+startup+funding+2026",
     "source_name": "DuckDuckGo \u2014 Scottish VC search",
-    "headline": "Go Swag raises $5 million led by Mercia Ventures",
-    "summary": "Glasgow-based Go Swag, a tech-powered platform modernising corporate gifting, has raised $5 million (approximately \u00a33.7 million) in a funding round led by Mercia Ventures, with participation from Techstart Ventures and strategic angel investors. The investment will support expansion of the platform which connects companies with branded merchandise and gifting solutions.",
+    "headline": "Go Swag raises $5m seed round led by Mercia Ventures",
+    "summary": "Glasgow-based Go Swag, a tech-powered platform modernising corporate gifting, raised $5 million in seed funding led by Mercia Ventures with participation from Techstart Ventures and strategic angel investors. The round brings total funding to $6.2 million. Go Swag supplies merchandise to major companies including Meta, Apple, Netflix and ElevenLabs, serving over 1,000 companies in total.",
     "confidence": "high",
-    "data_quality_score": 100,
+    "data_quality_score": 85,
     "issues": [],
-    "raw_snippet": "GLASGOW, United Kingdom (27th May 2026) \u2013 Go Swag, the tech-powered platform modernising corporate gifting, has raised $5 million (\u00a33.7 million) in a funding round led by Mercia Ventures, with participation from Techstart Ventures and strategic angel investors.",
+    "raw_snippet": "Go Swag secured $5 million (approximately \u00a33.7 million) in a seed funding round announced on May 27, 2026. The funding round was led by Mercia Ventures, with participation from Techstart Ventures and strategic angel investors. This brought the company's total funding to $6.2 million. Go Swag is a Glasgow-based ecommerce startup providing a tech-powered platform modernising corporate gifting.",
     "source_urls": [
-      "https://www.uktechnews.info/category/region/scotland/"
+      "https://html.duckduckgo.com/html/?q=%22Go+Swag%22+Scotland+startup+funding+2026",
+      "https://www.crunchbase.com/discover/funding_rounds/e3120c30307a4df552a2e1c7559da4a2"
     ],
-    "source_count": 1,
+    "source_count": 2,
     "merge_confidence": "definite",
     "duplicate_of": null,
     "first_seen": "2026-06-08",
-    "last_seen": "2026-06-08",
+    "last_seen": "2026-06-29",
     "is_new_this_run": true
   },
   {
@@ -1040,7 +1040,8 @@
     "company_location": "Other Scotland",
     "company_sectors": [
       "Deep Tech",
-      "commstech"
+      "commstech",
+      "telecoms, 5G, secure communications"
     ],
     "sector_normalised": false,
     "round_type": "Unknown",
@@ -1056,11 +1057,11 @@
     "source_url": "https://angelcapital.scot/deals/tricapital-angels-leads-1-2m-investment-into-sovereign-dual-use-5g-solutions/",
     "source_name": "Angel Capital Scotland",
     "headline": "TRICAPITAL Angels leads \u00a31.2m investment into sovereign dual use 5G solutions",
-    "summary": "JET Connectivity, which has developed land and sea-based alternatives to satellite networks delivering secure, high-bandwidth communications to offshore, coastal and ultra-remote locations, secured a \u00a31.2m Pre-Series A round led by Tricapital Angels with participation from The FSE Group. The investment will enable the company to scale its sovereign 5G network systems in response to demand across national security and resilience applications.",
+    "summary": "JET Connectivity, a UK company developing land and sea-based alternatives to satellite networks for secure high-bandwidth communications, secured \u00a31.2m in a Pre-Series A round led by TRICAPITAL Angels with participation from The FSE Group and private investors. The funding will enable JET Connectivity to rapidly scale its operations. The technology delivers secure 5G connectivity to offshore, coastal and ultra-remote sites.",
     "confidence": "medium",
     "data_quality_score": 75,
     "issues": [],
-    "raw_snippet": "JET Connectivity has developed land and sea-based alternatives to satellite networks such as Starlink and brings secure, high-bandwidth communications to offshore, coastal and ultra-remote sites anywhere on the planet. The \u00a31.2m Pre-Series A funding round was led by TRICAPITAL Angels, with participation from private investors and The FSE Group. The investment will enable JET Connectivity to rapidly scale its operations throughout 2026 and meet accelerating demand for its secure sovereign 5G network systems, particularly across national security and resilience applications.",
+    "raw_snippet": "JET Connectivity has developed land and sea-based alternatives to satellite networks such as Starlink and brings secure, high-bandwidth communications to offshore, coastal and ultra-remote sites anywhere on the planet. The \u00a31.2m Pre-Series A funding round was led by TRICAPITAL Angels, with participation from private investors and The FSE Group.",
     "source_urls": [
       "https://angelcapital.scot/deals/tricapital-angels-leads-1-2m-investment-into-sovereign-dual-use-5g-solutions/"
     ],
@@ -1068,7 +1069,7 @@
     "merge_confidence": null,
     "duplicate_of": null,
     "first_seen": "2026-05-27",
-    "last_seen": "2026-06-27",
+    "last_seen": "2026-06-29",
     "is_new_this_run": false
   },
   {
@@ -1110,7 +1111,7 @@
     "is_new_this_run": true
   },
   {
-    "id": "earth-blox_growth_2026-03-18",
+    "id": "earth-blox_growth_2026-03-31",
     "company_name": "Earth Blox",
     "company_location": "Edinburgh",
     "company_sectors": [
@@ -1131,15 +1132,15 @@
       "European Space Agency"
     ],
     "lead_investor": "PXN Ventures",
-    "announcement_date": "2026-03-18",
+    "announcement_date": "2026-03-31",
     "source_url": "https://angelcapital.scot/deals/earth-blox-secures-6m-to-help-businesses-and-banks-finance-the-transition-to-a-nature-positive-economy/",
     "source_name": "Angel Capital Scotland",
     "headline": "Earth Blox secures \u00a36m to help businesses and banks finance the transition to a nature-positive economy",
-    "summary": "Earth Blox, an Edinburgh-based technology company helping organisations understand how nature loss and climate hazards affect financial performance, raised \u00a36m led by PXN Ventures with support from Scottish Enterprise, follow-on investment from Archangels and funding from the European Space Agency (ESA). The investment comes as banks and businesses face growing pressure to quantify environmental risks.",
+    "summary": "Edinburgh-based Earth Blox secured \u00a36 million led by PXN Ventures with Scottish Enterprise, follow-on from Archangels, and the European Space Agency. The company helps organisations understand how nature loss and climate hazards affect financial value. The investment will fund team growth and product development.",
     "confidence": "high",
     "data_quality_score": 95,
     "issues": [],
-    "raw_snippet": "Earth Blox, an Edinburgh-based technology company helping organisations understand how nature loss and climate hazards affect financial performance, has secured \u00a36 million in new investment led by PXN Ventures with support from Scottish Enterprise, follow-on investment from Archangels and funding from the European Space Agency (ESA). The investment comes as banks and businesses face growing pressure to understand how environmental risks could affect assets, supply chains and long-term investment decisions.",
+    "raw_snippet": "Earth Blox, an Edinburgh-based technology company helping organisations understand how nature loss and climate hazards affect financial performance, has secured \u00a36 million in new investment led by PXN Ventures with support from Scottish Enterprise, follow-on investment from Archangels and funding from the European Space Agency (ESA).",
     "source_urls": [
       "https://angelcapital.scot/deals/earth-blox-secures-6m-to-help-businesses-and-banks-finance-the-transition-to-a-nature-positive-economy/",
       "https://archangelsonline.com/earth-blox-secures-6m-to-help-businesses-and-banks-finance-the-transition-to-a-nature-positive-economy/",
@@ -1149,11 +1150,83 @@
     "merge_confidence": "definite",
     "duplicate_of": null,
     "first_seen": "2026-05-26",
-    "last_seen": "2026-06-27",
+    "last_seen": "2026-06-29",
     "is_new_this_run": true
   },
   {
     "id": "aveni_series-b_2026-06-04",
+    "company_name": "Aveni",
+    "company_location": "Other Scotland",
+    "company_sectors": [
+      "AI & Machine Learning",
+      "Fintech",
+      "Other"
+    ],
+    "sector_normalised": false,
+    "round_type": "Series B",
+    "amount_original": "\u00a312,000,000",
+    "amount_gbp_millions": 12.0,
+    "currency_original": "GBP",
+    "investors": [],
+    "lead_investor": null,
+    "announcement_date": "2026-06-04",
+    "source_url": "https://www.crunchbase.com/discover/funding_rounds/e3120c30307a4df552a2e1c7559da4a2",
+    "source_name": "Crunchbase",
+    "headline": "",
+    "summary": "",
+    "confidence": "high",
+    "data_quality_score": 65,
+    "issues": [
+      "investor_unnamed"
+    ],
+    "raw_snippet": "",
+    "source_urls": [
+      "https://www.crunchbase.com/discover/funding_rounds/e3120c30307a4df552a2e1c7559da4a2"
+    ],
+    "source_count": 1,
+    "merge_confidence": null,
+    "duplicate_of": null,
+    "first_seen": "2026-06-08",
+    "last_seen": "2026-06-29",
+    "is_new_this_run": true
+  },
+  {
+    "id": "ardgowan-distillery_unknown_2026-06-04",
+    "company_name": "Ardgowan Distillery",
+    "company_location": "Other Scotland",
+    "company_sectors": [
+      "Other"
+    ],
+    "sector_normalised": false,
+    "round_type": "Unknown",
+    "amount_original": "\u00a34.2m",
+    "amount_gbp_millions": 4.2,
+    "currency_original": "GBP",
+    "investors": [],
+    "lead_investor": null,
+    "announcement_date": "2026-06-04",
+    "source_url": "https://www.thespiritsbusiness.com/2026/06/ardgowan-gains-4-2m-investment/",
+    "source_name": "The Spirits Business",
+    "headline": "",
+    "summary": "",
+    "confidence": "medium",
+    "data_quality_score": 60,
+    "issues": [
+      "investor_unnamed"
+    ],
+    "raw_snippet": "",
+    "source_urls": [
+      "https://www.thespiritsbusiness.com/2026/06/ardgowan-gains-4-2m-investment/"
+    ],
+    "source_count": 1,
+    "merge_confidence": null,
+    "duplicate_of": null,
+    "first_seen": "2026-06-29",
+    "last_seen": "2026-06-29",
+    "is_new_this_run": true
+  },
+  {
+    "id": "aveni_growth_2026-06-04",
     "company_name": "Aveni",
     "company_location": "Edinburgh",
     "company_sectors": [
@@ -1161,7 +1234,7 @@
       "Fintech"
     ],
     "sector_normalised": true,
-    "round_type": "Series B",
+    "round_type": "Growth",
     "amount_original": "\u00a312m",
     "amount_gbp_millions": 12.0,
     "currency_original": "GBP",
@@ -1174,35 +1247,36 @@
     ],
     "lead_investor": "PXN Ventures",
     "announcement_date": "2026-06-04",
-    "source_url": "https://scottishfinancialreview.com/2026/06/04/aveni-edinburgh-ai-wealth-startup-raises-12m/",
-    "source_name": "DuckDuckGo \u2014 Scottish VC search",
-    "headline": "Aveni, Edinburgh AI wealth startup, raises \u00a312m",
-    "summary": "Edinburgh AI fintech Aveni raised \u00a312m in its latest funding round led by PXN Ventures, with support from Puma Growth Partners, Lloyds Banking Group, Nationwide and Scottish Enterprise. The company, a University of Edinburgh startup, specialises in AI for wealth management, financial advice and banking. This follows a \u00a311m Series A in 2024.",
+    "source_url": "https://edinburgh-innovations.ed.ac.uk/news/fintech-startup-aveni-announces-12m-raise",
+    "source_name": "Edinburgh Innovations",
+    "headline": "Fintech startup Aveni announces \u00a312m raise",
+    "summary": "University of Edinburgh startup Aveni, an AI specialist in wealth management and banking, raised \u00a312 million led by PXN Ventures with Puma Growth Partners, Lloyds Banking Group, Nationwide and Scottish Enterprise. The funding will accelerate development of Aveni's Unified Assurance Platform and new Agent Assure and Agent Approve solutions for assessing the conduct risk of AI agents in financial services.",
     "confidence": "high",
-    "data_quality_score": 95,
+    "data_quality_score": 100,
     "issues": [],
-    "raw_snippet": "University of Edinburgh startup Aveni, an AI specialist in wealth management, financial advice and banking, has announced \u00a312 million raised in its latest funding round. The round was led by PXN Ventures and supported by existing investors Puma Growth Partners, Lloyds Banking Group, Nationwide and Scottish Enterprise. Its Series A raise of \u00a311 million in 2024 was one of the largest in Scottish business that year.",
+    "raw_snippet": "University of Edinburgh startup Aveni, a leading AI specialist in wealth management, financial advice and banking, today announced \u00a312 million raised in its latest funding round. The round was led by PXN Ventures and supported by existing investors Puma Growth Partners, Lloyds Banking Group, Nationwide and Scottish Enterprise.",
     "source_urls": [
+      "https://edinburgh-innovations.ed.ac.uk/news/fintech-startup-aveni-announces-12m-raise",
       "https://scottishfinancialreview.com/2026/06/04/aveni-edinburgh-ai-wealth-startup-raises-12m/"
     ],
-    "source_count": 1,
+    "source_count": 2,
     "merge_confidence": "definite",
     "duplicate_of": null,
-    "first_seen": "2026-06-08",
-    "last_seen": "2026-06-27",
+    "first_seen": "2026-06-29",
+    "last_seen": "2026-06-29",
     "is_new_this_run": true
   },
   {
-    "id": "highway-data-systems_growth_2026-04-30",
+    "id": "highway-data-systems_seed_2026-04-30",
     "company_name": "Highway Data Systems",
     "company_location": "Glasgow",
     "company_sectors": [
+      "Property & Construction Tech",
       "Deep Tech",
-      "Mobility & Transport",
-      "Property & Construction Tech"
+      "Mobility & Transport"
     ],
     "sector_normalised": true,
-    "round_type": "Growth",
+    "round_type": "Seed",
     "amount_original": "\u00a31.25m",
     "amount_gbp_millions": 1.25,
     "currency_original": "GBP",
@@ -1211,23 +1285,64 @@
     ],
     "lead_investor": "Maven Capital Partners",
     "announcement_date": "2026-04-30",
-    "source_url": "https://www.mavencp.com/latest-news",
+    "source_url": "https://www.mavencp.com/latest-news/ifs-maven-equity-finance-invests-in-1.25-million-in-highway-data-systems",
     "source_name": "Maven Capital Partners \u2014 Latest News",
     "headline": "IFS Maven Equity Finance invests \u00a31.25 million in Highway Data Systems",
-    "summary": "Highway Data Systems, a Scottish company, received \u00a31.25m from IFS Maven Equity Finance (Investment Fund for Scotland, managed by Maven Capital Partners). The investment is confirmed as Scottish by the IFS branding (Investment Fund for Scotland) which is exclusively focused on Scottish businesses. No announcement date or city is available from the headline alone.",
-    "confidence": "medium",
-    "data_quality_score": 90,
+    "summary": "Glasgow-based Highway Data Systems (HDS) received \u00a31.25 million from IFS Maven Equity Finance (Investment Fund for Scotland) in what represents the first investment through the Greater Glasgow Innovation Cluster. HDS develops automated quality assurance technologies for road construction and asphalt industries, combining proprietary hardware, embedded electronics and software. The funding supports new contract delivery, customer expansion, product development and US operations.",
+    "confidence": "high",
+    "data_quality_score": 100,
     "issues": [],
-    "raw_snippet": "IFS Maven Equity Finance invests \u00a31.25 million in Highway Data Systems [news headline on https://www.mavencp.com/latest-news, retrieved 2026-06-27]. IFS = Investment Fund for Scotland, confirming the company is Scotland-based.",
+    "raw_snippet": "Highway Data Systems (HDS), located in Glasgow, Scotland, develops automated quality assurance technologies for road construction and asphalt industries. Investment amount of \u00a31.25 million from Investment Fund for Scotland managed by Maven, delivered by the British Business Bank. This represents the first investment through the Greater Glasgow Innovation Cluster.",
     "source_urls": [
+      "https://www.mavencp.com/latest-news/ifs-maven-equity-finance-invests-in-1.25-million-in-highway-data-systems",
       "https://www.mavencp.com/latest-news",
       "https://www.uktechnews.info/category/region/scotland/"
     ],
-    "source_count": 2,
+    "source_count": 3,
     "merge_confidence": "definite",
     "duplicate_of": null,
     "first_seen": "2026-05-25",
-    "last_seen": "2026-06-27",
+    "last_seen": "2026-06-29",
+    "is_new_this_run": true
+  },
+  {
+    "id": "regeno_seed_2026-03-20",
+    "company_name": "Regeno",
+    "company_location": "Glasgow",
+    "company_sectors": [
+      "Energy & Cleantech"
+    ],
+    "sector_normalised": true,
+    "round_type": "Seed",
+    "amount_original": "undisclosed",
+    "amount_gbp_millions": null,
+    "currency_original": "GBP",
+    "investors": [
+      "SFC Capital",
+      "Scottish Enterprise Investment Fund",
+      "One Planet Capital",
+      "Gabriel-IS",
+      "British Business Investments",
+      "University of Strathclyde"
+    ],
+    "lead_investor": "SFC Capital",
+    "announcement_date": "2026-03-20",
+    "source_url": "https://www.strath.ac.uk/whystrathclyde/news/2026/strathclyde-supportedstart-upsecuresbackingtodeveloplower-costwindenergy/",
+    "source_name": "University of Strathclyde \u2014 News",
+    "headline": "Strathclyde-supported start-up secures backing to develop lower-cost wind energy",
+    "summary": "Regeno, a University of Strathclyde spinout based in the Glasgow City Innovation District, secured investment from SFC Capital (lead), Scottish Enterprise, One Planet Capital, Gabriel Investment Syndicate, British Business Bank and the University of Strathclyde. The company is developing an innovative wind turbine design that can be serviced from ground level, eliminating the need for large cranes and reducing installation costs. CEO Adarsh Bhardwaj is a Strathclyde alumnus who received early-stage support through Strathclyde Inspire.",
+    "confidence": "medium",
+    "data_quality_score": 85,
+    "issues": [],
+    "raw_snippet": "Regeno, based in the Glasgow City Innovation District, is developing innovative wind turbine technology designed to be serviced from ground level, eliminating the need for large cranes or offshore equipment. Investors: University of Strathclyde, SFC Capital (lead investor), Scottish Enterprise, One Planet Capital, Gabriel Investment Syndicate, British Business Bank. Announcement Date: 20 March 2026.",
+    "source_urls": [
+      "https://www.strath.ac.uk/whystrathclyde/news/2026/strathclyde-supportedstart-upsecuresbackingtodeveloplower-costwindenergy/"
+    ],
+    "source_count": 1,
+    "merge_confidence": null,
+    "duplicate_of": null,
+    "first_seen": "2026-06-29",
+    "last_seen": "2026-06-29",
     "is_new_this_run": true
   }
 ]

@@ -1,7 +1,7 @@
 ---
 canonical_name: Scottish National Investment Bank
-last_updated: 2026-06-24
-last_updated_via: "2026-06-24_vc-report.md"
+last_updated: 2026-06-29
+last_updated_via: "2026-06-29_vc-report.md"
 ---
 
 ### Scottish National Investment Bank

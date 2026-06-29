@@ -24,9 +24,20 @@ Check whether `data/raw/YYYY-MM-DD_candidates.json` exists and contains at least
 
 ### Pre-fetched mode (candidates file exists and is non-empty)
 
-Read `data/raw/YYYY-MM-DD_candidates.json`. Each record contains: `source_slug`, `source_name`, `url`, `title`, `published`, and `text` (full article text already extracted by the Python fetcher).
+**Step 1 — Process candidates**
 
-Extract structured investment records from the pre-fetched text. **Do NOT use WebFetch or WebSearch.**
+Read `data/raw/YYYY-MM-DD_candidates.json`. Each record contains: `source_slug`, `source_name`, `url`, `title`, `published`, and `text` (full article text already extracted by the Python fetcher). Extract structured investment records from the pre-fetched text. **Do NOT use WebFetch or WebSearch for these.**
+
+**Step 2 — Fetch vc_newsrooms sources directly**
+
+Load `config/sources.json` and find all sources with `type: "vc_newsrooms"` and no `rss_url`. The Python fetcher skips these — its httpx client is frequently blocked by bot protection on VC firm websites. WebFetch each one directly:
+
+1. Fetch the source's `url`
+2. Scan for investment announcements in the last 90 days — follow article links where needed to get full deal details
+3. Extract structured records using the schema below
+4. Save to `data/raw/YYYY-MM-DD_<source-slug>.json`
+
+If a source is unreachable, log to `errors.json` and continue.
 
 ### Fallback mode (candidates file missing or empty)
 

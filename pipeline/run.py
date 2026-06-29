@@ -50,7 +50,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 sys.path.insert(0, str(ROOT))
-from pipeline import fetcher, parser, deduplicator, report_stats, chart_generator, vc_profile_stats, deal_table_generator, investor_page_generator, landing_page_generator, sources_page_generator, newsletter_publish
+from pipeline import fetcher, firecrawl_scraper, parser, deduplicator, report_stats, chart_generator, vc_profile_stats, deal_table_generator, investor_page_generator, landing_page_generator, sources_page_generator, newsletter_publish
 
 DOCS_VC_PROFILES = ROOT / "data" / "vc-profiles"
 DATA_REPORTS_CHARTS = DATA_REPORTS / "charts"
@@ -206,6 +206,15 @@ def main():
         logger.warning("Stage 1a gate: %s — scraper will use fallback mode", err)
     else:
         logger.info("Stage 1a gate passed. Candidates: %d", fetch_result.get("candidates", 0))
+
+    # Stage 1c — Firecrawl Scraper (Python)
+    logger.info("=== Stage 1c: Firecrawl Scraper ===")
+    try:
+        firecrawl_counts = firecrawl_scraper.run(date=run_date)
+        for slug, n in firecrawl_counts.items():
+            logger.info("Stage 1c (%s): %d deals", slug, n)
+    except Exception as e:
+        logger.warning("Stage 1c (Firecrawl) failed: %s — soft gate, continuing", e)
 
     # Stage 1b — Scraper (Claude agent)
     logger.info("=== Stage 1b: Scraper ===")

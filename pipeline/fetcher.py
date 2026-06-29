@@ -371,9 +371,13 @@ def _fetch_queries(client: httpx.Client, source: dict, candidates: list, log: di
 
 
 def _process_source(client: httpx.Client, source: dict, candidates: list) -> dict:
-    if source.get("type") == "browser":
+    if source.get("type") in ("browser", "firecrawl"):
         log = _make_log_entry(source["slug"])
-        log["skipped"] = "browser-only source — handled in Stage 1c"
+        log["skipped"] = f"{source['type']} source — handled in Stage 1c"
+        return log
+    if source.get("type") == "vc_newsrooms" and not source.get("rss_url"):
+        log = _make_log_entry(source["slug"])
+        log["skipped"] = "vc_newsrooms without RSS — handled by Stage 1b scraper"
         return log
     log = _make_log_entry(source["slug"])
     try:

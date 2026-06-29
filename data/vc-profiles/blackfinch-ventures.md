@@ -1,11 +1,12 @@
 ---
 canonical_name: Blackfinch Ventures
-last_updated: 2026-05-26
-last_updated_via: "2026-05-26a_vc-report.md (backfill)"
+last_updated: 2026-06-29
+last_updated_via: "2026-06-29_vc-report.md"
 ---
 
 ### Blackfinch Ventures
-
-**HQ:** Gloucester | **Stage focus:** Seed to Series A | **Scotland deals in ledger:** 1 (Quantcore)
-
-Blackfinch is an EIS/SEIS-focused fund that makes selective investments across the UK. Its participation in the Quantcore quantum hardware seed round is a first appearance in this dataset. One deal is insufficient to characterise a Scottish strategy; the EIS wrapper is consistent with backing early-stage hardware companies with R&D expenditure profiles. Worth monitoring for further Scottish activity.
+**Historical deals in ledger**: 1 (Quantcore)
+**Sectors favoured**: Deep Tech
+**Stages**: Seed
+**HQ**: Gloucester
+**Trajectory**: Limited data point — a single Scottish deal recorded, so no trend can yet be projected. Blackfinch Ventures is a Gloucester-based EIS/SEIS-focused fund that co-invested in Quantcore's £2.5m seed round (Glasgow, March 2026) alongside lead PXN Ventures and Scottish Enterprise. Its participation in a quantum hardware company is consistent with an EIS mandate backing early-stage deep tech with R&D expenditure profiles. No further Scottish activity has been observed since.

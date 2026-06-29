@@ -439,6 +439,22 @@
       "stage_focus": ["Seed"],
       "scotland_active": true,
       "notes": "Primarily a Northern England investor (NPIF ecosystem). Co-invested in JET Connectivity £1.2m Pre-Series A (Scotland, May 2026) alongside lead Tricapital Angels — first confirmed Scottish deal. Source: https://angelcapital.scot/deals/tricapital-angels-leads-1-2m-investment-into-sovereign-dual-use-5g-solutions/"
+    },
+    {
+      "canonical_name": "SFC Capital",
+      "aliases": ["SFC Capital Ltd"],
+      "hq": "London",
+      "stage_focus": ["Pre-Seed", "Seed"],
+      "scotland_active": true,
+      "notes": "UK-wide SEIS/EIS fund manager with 400+ portfolio companies across B2B software, fintech, medtech, and green tech. Led the seed round for Regeno (Glasgow wind turbine spinout, March 2026). Source: https://www.strath.ac.uk/whystrathclyde/news/2026/strathclyde-supportedstart-upsecuresbackingtodeveloplower-costwindenergy/"
+    },
+    {
+      "canonical_name": "One Planet Capital",
+      "aliases": [],
+      "hq": null,
+      "stage_focus": ["Seed"],
+      "scotland_active": true,
+      "notes": "Impact/cleantech-focused investor. Co-invested in Regeno seed round (Glasgow wind turbine spinout, March 2026) alongside SFC Capital, Scottish Enterprise, Gabriel-IS, and British Business Investments. Very limited public profile. Source: https://www.strath.ac.uk/whystrathclyde/news/2026/strathclyde-supportedstart-upsecuresbackingtodeveloplower-costwindenergy/"
     }
   ]
 }
