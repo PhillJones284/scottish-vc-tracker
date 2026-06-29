@@ -74,7 +74,7 @@ def _md_to_html(text: str) -> str:
                 parts.append("<ul>")
                 in_ul = True
             parts.append(f"<li>{inline(line[2:].strip())}</li>")
-        elif line.strip() == "":
+        elif line.strip() in ("", "---"):
             flush_ul()
             parts.append("")
         else:
