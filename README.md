@@ -58,7 +58,7 @@ Fetches content from configured sources and filters it down to investment-releva
 * Function: HTTP fetching, RSS/Atom parsing, text extraction (trafilatura), keyword filtering
 * Implementation: `pipeline/fetcher.py`
 
-Skips sources with `type: "firecrawl"` (handled by Stage 1c) and `type: "vc_newsrooms"` sources without an `rss_url` (handled by Stage 1b via WebFetch, since plain HTTP is frequently blocked by bot protection on VC websites).
+Skips sources with `type: "firecrawl"` (handled by Stage 1c) and `type: "vc_newsrooms"` sources without an `rss_url` and without `direct_fetch_confirmed: true` (handled by Stage 1b via WebFetch, since plain HTTP is frequently blocked by bot protection or JS-rendered content on VC websites). `direct_fetch_confirmed` marks sources individually verified to extract cleanly via plain httpx — see the 2026-07-01 vc_newsrooms audit.
 
 ---
 

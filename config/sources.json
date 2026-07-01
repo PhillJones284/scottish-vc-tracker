@@ -33,9 +33,9 @@
       "name": "Insider.co.uk",
       "type": "news_site",
       "url": "https://www.insider.co.uk",
-      "search_path": "/search?q=funding+investment+venture",
-      "rss_url": "https://www.insider.co.uk/news/?service=rss",
-      "notes": "Scottish business focused, very relevant"
+      "search_path": null,
+      "rss_url": null,
+      "notes": "Scottish business focused, very relevant. RSS feed is dead (stub channel, lastBuildDate 2022) and /search?q= doesn't run a real site search (returns nav only) — removed both, homepage link extraction confirmed working (funding-relevant headlines present directly on /)."
     },
     {
       "slug": "techhub-scotland",
@@ -45,15 +45,6 @@
       "search_path": null,
       "rss_url": "https://scottishbusinessnews.net/feed/",
       "notes": "Aggregates Scottish business news"
-    },
-    {
-      "slug": "crunchbase-scotland",
-      "name": "Crunchbase — Scotland recent",
-      "type": "database",
-      "url": "https://www.crunchbase.com/discover/funding_rounds",
-      "search_path": "?location=Scotland&date_range=90d",
-      "best_effort": true,
-      "notes": "Filter by Scotland, last 90 days. Partially paywalled — extract whatever free content is visible"
     },
     {
       "slug": "duckduckgo-scottish-vc",
@@ -149,10 +140,11 @@
       "slug": "bgf-news",
       "name": "BGF — News",
       "type": "vc_newsrooms",
-      "url": "https://www.bgf.co.uk/news",
+      "url": "https://www.bgf.co.uk/newsroom/",
       "search_path": null,
-      "rss_url": "https://www.bgf.co.uk/feed/",
-      "notes": "Growth-stage investor with Edinburgh office. RSS feed exists but was empty at last check — fall back to HTML if feed yields nothing."
+      "rss_url": null,
+      "direct_fetch_confirmed": true,
+      "notes": "Growth-stage investor with Edinburgh office. RSS feed is dead (empty channel) — removed. /news was also the wrong URL (an evergreen insights/blog page dated back to 2022) — the real, actively-updated deal announcement feed is at /newsroom/, confirmed with entries dated as recently as this week. 2026-07-01 audit: plain httpx + link extraction works cleanly — moved to Stage 1a."
     },
     {
       "slug": "prairie-fund-news",
@@ -168,7 +160,8 @@
       "type": "vc_newsrooms",
       "url": "https://www.mavencp.com/latest-news",
       "search_path": null,
-      "notes": "Maven's newsroom covers deal announcements across their funds including Investment Fund for Scotland (IFS Maven Equity Finance). Good source for Scottish Seed/Growth deals."
+      "direct_fetch_confirmed": true,
+      "notes": "Maven's newsroom covers deal announcements across their funds including Investment Fund for Scotland (IFS Maven Equity Finance). Good source for Scottish Seed/Growth deals. 2026-07-01 audit: plain httpx + link extraction works cleanly — moved to Stage 1a."
     },
     {
       "slug": "kelvin-capital-news",
@@ -203,7 +196,8 @@
       "type": "vc_newsrooms",
       "url": "https://parkwalk.vc/news/",
       "search_path": null,
-      "notes": "University spinout specialist active across UK ecosystems including Edinburgh and St Andrews. Covers funding rounds and portfolio milestones."
+      "direct_fetch_confirmed": true,
+      "notes": "University spinout specialist active across UK ecosystems including Edinburgh and St Andrews. Covers funding rounds and portfolio milestones. 2026-07-01 audit: plain httpx + link extraction works cleanly — moved to Stage 1a."
     },
     {
       "slug": "edinburgh-innovations-news",
@@ -211,7 +205,8 @@
       "type": "vc_newsrooms",
       "url": "https://edinburgh-innovations.ed.ac.uk/news",
       "search_path": null,
-      "notes": "University of Edinburgh's commercialisation arm. Covers spinout funding rounds and investment news via Old College Capital. High relevance for Edinburgh deep tech and life sciences deals."
+      "direct_fetch_confirmed": true,
+      "notes": "University of Edinburgh's commercialisation arm. Covers spinout funding rounds and investment news via Old College Capital. High relevance for Edinburgh deep tech and life sciences deals. 2026-07-01 audit: plain httpx + link extraction works cleanly — moved to Stage 1a."
     },
     {
       "slug": "angel-capital-scotland",
@@ -295,7 +290,8 @@
       "url": "https://www.scottishedge.com/news",
       "search_path": null,
       "rss_url": null,
-      "notes": "Scotland's biggest funding competition. News page features winner announcements and follow-on funding details for past round winners. Regular archive of competition rounds (2020–2026) with card-based layout. No RSS feed — newsletter signup available."
+      "direct_fetch_confirmed": true,
+      "notes": "Scotland's biggest funding competition. News page features winner announcements and follow-on funding details for past round winners. Regular archive of competition rounds (2020–2026) with card-based layout. No RSS feed — newsletter signup available. 2026-07-01 audit: plain httpx + link extraction works cleanly — moved to Stage 1a."
     },
     {
       "slug": "sosv-news",
@@ -304,7 +300,8 @@
       "url": "https://sosv.com/news/",
       "search_path": null,
       "rss_url": null,
-      "notes": "Deep tech venture capital firm with active Scottish portfolio companies. News page features investment announcements, company milestones, and founder stories. Focus on hard tech, climate, and health tech. Chronological feed format."
+      "direct_fetch_confirmed": true,
+      "notes": "Deep tech venture capital firm with active Scottish portfolio companies. News page features investment announcements, company milestones, and founder stories. Focus on hard tech, climate, and health tech. Chronological feed format. 2026-07-01 audit: plain httpx + link extraction returns genuine article/event headlines cleanly (no Scottish matches that day, but extraction itself works) — moved to Stage 1a."
     },
     {
       "slug": "strathclyde-news",
@@ -313,7 +310,8 @@
       "url": "https://www.strath.ac.uk/whystrathclyde/news/",
       "search_path": null,
       "rss_url": null,
-      "notes": "Glasgow-based university with active spinout investment program. News section covers spinout funding announcements, company valuations, and commercialization milestones. High relevance for Glasgow tech and manufacturing spinouts."
+      "direct_fetch_confirmed": true,
+      "notes": "Glasgow-based university with active spinout investment program. News section covers spinout funding announcements, company valuations, and commercialization milestones. High relevance for Glasgow tech and manufacturing spinouts. 2026-07-01 audit: plain httpx + link extraction works cleanly — moved to Stage 1a."
     },
     {
       "slug": "4bio-capital-news",
@@ -322,7 +320,8 @@
       "url": "https://www.4biocapital.com/news",
       "search_path": null,
       "rss_url": null,
-      "notes": "Biotech-focused venture capital firm. Newsroom covers life sciences and biotech investment announcements and portfolio company milestones."
+      "direct_fetch_confirmed": true,
+      "notes": "Biotech-focused venture capital firm. Newsroom covers life sciences and biotech investment announcements and portfolio company milestones. 2026-07-01 audit: plain httpx + link extraction works cleanly — moved to Stage 1a."
     },
     {
       "slug": "foresight-group-news",
@@ -349,7 +348,8 @@
       "url": "https://sfccapital.com/blog",
       "search_path": null,
       "rss_url": null,
-      "notes": "SFC Capital manages portfolio of 400+ early-stage businesses across B2B software, fintech, medtech, and green tech. Blog covers investment news and sector insights. 12 Scottish transactions."
+      "direct_fetch_confirmed": true,
+      "notes": "SFC Capital manages portfolio of 400+ early-stage businesses across B2B software, fintech, medtech, and green tech. Blog covers investment news and sector insights. 12 Scottish transactions. 2026-07-01 audit: plain httpx + link extraction works cleanly — moved to Stage 1a."
     },
     {
       "slug": "future-planet-capital-blog",
@@ -358,7 +358,8 @@
       "url": "https://www.futureplanetcapital.com/blog",
       "search_path": null,
       "rss_url": null,
-      "notes": "Impact-focused venture capital specializing in university spinouts and growth companies tackling global challenges. Blog covers portfolio company updates and investment announcements. 7 Scottish transactions."
+      "direct_fetch_confirmed": true,
+      "notes": "Impact-focused venture capital specializing in university spinouts and growth companies tackling global challenges. Blog covers portfolio company updates and investment announcements. 7 Scottish transactions. 2026-07-01 audit: plain httpx + link extraction returns genuine article headlines cleanly (no Scottish matches that day, but extraction itself works) — moved to Stage 1a."
     },
     {
       "slug": "green-angel-ventures-stories",
@@ -412,12 +413,9 @@
       "url": "https://futurescot.com",
       "search_path": null,
       "rss_url": null,
-      "queries": [
-        "Scottish startup funding",
-        "Scottish VC investment"
-      ],
+      "queries": [],
       "best_effort": false,
-      "notes": "Scottish technology and business news site. Covered Wordsmith AI Series B (June 2026) with detailed reporting on the round, investors, and growth plans. Regularly covers Scottish startup funding events."
+      "notes": "Scottish technology and business news site. Covered Wordsmith AI Series B (June 2026) with detailed reporting on the round, investors, and growth plans. Regularly covers Scottish startup funding events. Removed `queries` — that mechanism is DuckDuckGo-specific (result-parsing hardcoded to DDG's HTML) and `?q=` isn't this site's real search syntax, so it was silently doing nothing; homepage link extraction confirmed working directly."
     },
     {
       "slug": "theedinburghreporter",
@@ -426,11 +424,9 @@
       "url": "https://theedinburghreporter.co.uk",
       "search_path": null,
       "rss_url": null,
-      "queries": [
-        "startup funding investment"
-      ],
+      "queries": [],
       "best_effort": false,
-      "notes": "Edinburgh local news site that covers Edinburgh startup funding, sometimes ahead of larger outlets. Produced the primary article on Infrawatch's pre-seed round (May 2026) before it appeared elsewhere. Worth monitoring for early Edinburgh-specific deal coverage."
+      "notes": "Edinburgh local news site that covers Edinburgh startup funding, sometimes ahead of larger outlets. Produced the primary article on Infrawatch's pre-seed round (May 2026) before it appeared elsewhere. Worth monitoring for early Edinburgh-specific deal coverage. Removed `queries` — DuckDuckGo-specific search mechanism was silently doing nothing against this site's own domain; homepage link extraction confirmed working directly."
     },
     {
       "slug": "bdaily-scotland",

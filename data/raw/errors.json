@@ -286,5 +286,11 @@
     "url": "https://dailybusinessgroup.co.uk/feed/",
     "error": "RSS fetch failed: Client error '403 Forbidden' for url 'https://dailybusinessgroup.co.uk/feed/'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403; fallback failed: Client error '403 Forbidden' for url 'https://dailybusinessgroup.co.uk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
     "timestamp": "2026-07-01T07:21:38.677894+00:00"
+  },
+  {
+    "source": "daily-business-group",
+    "url": "https://dailybusinessgroup.co.uk",
+    "error": "Client error '403 Forbidden' for url 'https://dailybusinessgroup.co.uk'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403",
+    "timestamp": "2026-07-01T11:19:18.627230+00:00"
   }
 ]

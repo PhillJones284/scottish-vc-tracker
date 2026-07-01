@@ -45,7 +45,7 @@ Read `data/raw/YYYY-MM-DD_candidates.json`. Each record contains: `source_slug`,
 
 **Step 2 — Fetch vc_newsrooms sources directly**
 
-Load `config/sources.json` and find all sources with `type: "vc_newsrooms"` and no `rss_url`. The Python fetcher skips these — its httpx client is frequently blocked by bot protection on VC firm websites. WebFetch each one directly:
+Load `config/sources.json` and find all sources with `type: "vc_newsrooms"`, no `rss_url`, and no `direct_fetch_confirmed: true`. The Python fetcher skips these — its httpx client is frequently blocked by bot protection, or the page is JS-rendered and only returns nav junk via plain HTTP. (Sources with `direct_fetch_confirmed: true` are handled by Stage 1a instead — skip those here, they're already in the candidates file.) WebFetch each remaining one directly:
 
 1. Fetch the source's `url`
 2. Scan for investment announcements in the last 90 days — follow article links where needed to get full deal details

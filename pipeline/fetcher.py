@@ -9,7 +9,7 @@ import time
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
 from pathlib import Path
-from urllib.parse import quote_plus, unquote
+from urllib.parse import quote_plus, unquote, urljoin
 
 import httpx
 import trafilatura
@@ -135,32 +135,8 @@ def _fetch_rss(client: httpx.Client, source: dict, candidates: list, log: dict) 
         log["error"] = f"RSS fetch failed: {e}"
 
     if not rss_ok or not items:
-        # Fall back to direct URL fetch
-        fallback_url = source["url"]
-        try:
-            resp2 = client.get(fallback_url)
-            log["http_status"] = resp2.status_code
-            resp2.raise_for_status()
-            text = trafilatura.extract(resp2.text)
-            log["items_found"] = 1
-            if not text:
-                log["text_extract_failures"] = 1
-            elif _passes_filter(text[:2000]):
-                candidates.append(
-                    {
-                        "source_slug": source["slug"],
-                        "source_name": source["name"],
-                        "url": fallback_url,
-                        "title": None,
-                        "published": None,
-                        "text": text,
-                    }
-                )
-                log["items_passed_filter"] = 1
-                log["candidates_added"] = 1
-        except Exception as e2:
-            prior = log.get("error") or ""
-            log["error"] = (prior + f"; fallback failed: {e2}").lstrip("; ")
+        # Fall back to a direct page fetch with link extraction (see _fetch_page)
+        _fetch_page(client, source["url"], source, candidates, log)
         return
 
     log["items_found"] = len(items)
@@ -206,6 +182,51 @@ def _fetch_rss(client: httpx.Client, source: dict, candidates: list, log: dict) 
     log["text_extract_failures"] = failures
 
 
+MAX_PAGE_LINKS = 20
+
+_ANY_LINK_RE = re.compile(
+    r'<a[^>]+href=["\']([^"\']+)["\'][^>]*>(.*?)</a>',
+    re.IGNORECASE | re.DOTALL,
+)
+
+
+def _clean(s: str) -> str:
+    # Strip entire style/script blocks first — some sites embed inline CSS inside
+    # <a> tags (e.g. responsive-image styles), and a plain tag-strip would leave
+    # the raw CSS/JS text behind as if it were link text.
+    s = re.sub(r"<(style|script)\b[^>]*>.*?</\1>", "", s, flags=re.IGNORECASE | re.DOTALL)
+    text = html_lib.unescape(re.sub(r"<[^>]+>", "", s))
+    return re.sub(r"\s+", " ", text).strip()
+
+
+def _extract_page_links(html: str, base_url: str) -> list:
+    """Extract candidate article links (url, title) from an arbitrary listing/homepage.
+
+    Generalizes the DuckDuckGo-specific parsing in `_parse_search_results` to any
+    site: pull every <a> tag, resolve relative URLs, and drop obvious non-article
+    links (nav, anchors, mailto). Titles under 10 chars are dropped as a cheap way
+    to filter nav labels like "Home" or "About".
+    """
+    seen: set = set()
+    links = []
+    for href, title_raw in _ANY_LINK_RE.findall(html):
+        if href.startswith(("#", "mailto:", "javascript:")):
+            continue
+        title = _clean(title_raw)
+        if len(title) < 10:
+            continue
+        resolved = urljoin(base_url, href)
+        if (
+            not resolved.startswith("http")
+            or resolved.rstrip("/") == base_url.rstrip("/")
+            or resolved in seen
+        ):
+            continue
+        seen.add(resolved)
+        links.append({"url": resolved, "title": title})
+    return links
+
+
 def _fetch_page(client: httpx.Client, url: str, source: dict, candidates: list, log: dict) -> None:
     log["url_fetched"] = url
     log["items_found"] = 1
@@ -218,6 +239,45 @@ def _fetch_page(client: httpx.Client, url: str, source: dict, candidates: list, 
         log["error"] = str(e)
         return
 
+    links = _extract_page_links(resp.text, url)
+    passing_links = [link for link in links if _passes_filter(link["title"])][:MAX_PAGE_LINKS]
+
+    if passing_links:
+        log["items_found"] = len(links)
+        passed = added = failures = 0
+        for link in passing_links:
+            passed += 1
+            article_text = None
+            try:
+                article_resp = client.get(link["url"])
+                article_resp.raise_for_status()
+                article_text = trafilatura.extract(article_resp.text)
+            except Exception:
+                pass
+
+            if not article_text:
+                failures += 1
+                article_text = link["title"]
+
+            candidates.append(
+                {
+                    "source_slug": source["slug"],
+                    "source_name": source["name"],
+                    "url": link["url"],
+                    "title": link["title"],
+                    "published": None,
+                    "text": article_text,
+                }
+            )
+            added += 1
+
+        log["items_passed_filter"] = passed
+        log["candidates_added"] = added
+        log["text_extract_failures"] = failures
+        return
+
+    # No usable links found (e.g. url is itself a single article) — fall back to
+    # whole-page extraction.
     text = trafilatura.extract(resp.text)
     if not text:
         log["text_extract_failures"] = 1
@@ -250,9 +310,6 @@ def _parse_search_results(html: str) -> list:
         r'class=["\']result__snippet["\'][^>]*>(.*?)</(?:a|span|div)>',
         re.IGNORECASE | re.DOTALL,
     )
-
-    def _clean(s):
-        return html_lib.unescape(re.sub(r"<[^>]+>", "", s)).strip()
 
     snippets = [_clean(m) for m in snippet_re.findall(html)]
 
@@ -375,7 +432,11 @@ def _process_source(client: httpx.Client, source: dict, candidates: list) -> dic
         log = _make_log_entry(source["slug"])
         log["skipped"] = f"{source['type']} source — handled in Stage 1c"
         return log
-    if source.get("type") == "vc_newsrooms" and not source.get("rss_url"):
+    if (
+        source.get("type") == "vc_newsrooms"
+        and not source.get("rss_url")
+        and not source.get("direct_fetch_confirmed")
+    ):
         log = _make_log_entry(source["slug"])
         log["skipped"] = "vc_newsrooms without RSS — handled by Stage 1b scraper"
         return log

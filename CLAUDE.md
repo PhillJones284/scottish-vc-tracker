@@ -55,7 +55,7 @@ If the gate fails: do **not** stop — proceed to Stage 1b anyway (the scraper a
 - a brief summary of what went wrong (error messages, which sources failed)
 - that the fetch_log is available for bug fixing before the next run
 
-**Skipped source types**: Stage 1a skips `type: "firecrawl"` sources (handled by Stage 1c) and `type: "vc_newsrooms"` sources with no `rss_url` (handled by Stage 1b via WebFetch — plain httpx is frequently blocked by bot protection on VC firm websites). These appear in the fetch log with a `"skipped"` entry rather than an error.
+**Skipped source types**: Stage 1a skips `type: "firecrawl"` sources (handled by Stage 1c) and `type: "vc_newsrooms"` sources with no `rss_url` and no `direct_fetch_confirmed: true` (handled by Stage 1b via WebFetch — plain httpx is frequently blocked by bot protection, or the page is JS-rendered and only returns nav junk, on these VC firm websites). `direct_fetch_confirmed: true` marks a `vc_newsrooms` source individually verified to extract cleanly via plain httpx — see the 2026-07-01 vc_newsrooms audit; those sources are fetched directly by Stage 1a instead. These appear in the fetch log with a `"skipped"` entry rather than an error.
 
 ### Stage 1c — Firecrawl Scraper (Python)
 Run: `python pipeline/firecrawl_scraper.py` (or called automatically by `pipeline/run.py`).
